@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class EnemyPlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody2D rb;
+    public float speed;
+
     void Start()
     {
-        
+
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
+
     }
+    private void FixedUpdate()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector2 movedir = new Vector2(horizontal, vertical);
+        rb.velocity = movedir * speed * Time.fixedDeltaTime;
+    }
+
 }
