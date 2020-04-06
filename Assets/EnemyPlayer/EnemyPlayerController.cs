@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class EnemyPlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public float speed;
+    private Vector2 moveAmount;
+
 
     void Start()
     {
 
+        rb = GetComponent<Rigidbody2D>();
 
     }
 
 
     void Update()
     {
-
-
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveAmount = moveInput.normalized * speed;
     }
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector2 movedir = new Vector2(horizontal, vertical);
-        rb.velocity = movedir * speed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
     }
 
 }
