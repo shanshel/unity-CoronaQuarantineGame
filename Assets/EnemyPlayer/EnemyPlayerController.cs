@@ -9,20 +9,29 @@ public class EnemyPlayerController : MonoBehaviour
     private Vector2 moveAmount;
     //sneeze
     public GameObject Sneeze;
+    private float timer;
     //
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
     }
 
 
     void Update()
     {
+        timer += Time.deltaTime;
         //sneeze
-         
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            timer = 0;
+            
+            Invoke("destroyProjectile", 0.1f);
+        }
+        if(timer >= 10)
         {
             Invoke("destroyProjectile", 0.1f);
+            timer = 0;
         }
         //
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
