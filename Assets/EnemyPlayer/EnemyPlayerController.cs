@@ -13,6 +13,12 @@ public class EnemyPlayerController : MonoBehaviour
     private float movingTIMER = 0;
     //animation
     private Animator anim;
+    //bulet
+    public GameObject projectile;
+    public Transform shotPoint;
+    public float timeBetweenShots;
+    private float shotTime;
+   
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,8 +29,9 @@ public class EnemyPlayerController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        //sneeze
+        //sneeze + bullet
         sneezeFN();
+        
         //animation + movement
         AnimationFN();
         //weopne rotation
@@ -39,6 +46,11 @@ public class EnemyPlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.C))
         {
+            if (Time.time >= shotTime)
+            {
+                Instantiate(projectile, shotPoint.position, weopon.transform.rotation);
+                shotTime = Time.time + timeBetweenShots;
+            }
             anim.SetTrigger("Sneez");
             timer = 0;
             isSneezing = false;
@@ -83,7 +95,7 @@ public class EnemyPlayerController : MonoBehaviour
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - weopon.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(angle , Vector3.forward);
         weopon.transform.rotation = rotation;
     }
 
