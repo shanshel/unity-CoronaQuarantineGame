@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - PlayerLayer
   - 
   - 
   - 
@@ -38,6 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 211083129
+    locked: 0
+  - name: Ground
+    uniqueID: 2949353455
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Forground
+    uniqueID: 72982165
+    locked: 0
+  - name: EffectUnderWall
+    uniqueID: 1033707367
+    locked: 0
+  - name: Player
+    uniqueID: 246151553
+    locked: 0
+  - name: Wall
+    uniqueID: 2604526887
+    locked: 0
+  - name: Effects
+    uniqueID: 89596683
     locked: 0

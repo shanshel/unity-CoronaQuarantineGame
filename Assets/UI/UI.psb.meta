@@ -94,30 +94,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2626
-      y: 314
-      width: 613
-      height: 196
-    spriteID: aa17d7ccdb20a3b4796c56f171ebea86
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 1753, y: -688}
-  - name: StartButton
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 2626
-      y: 4
+      x: 2791
+      y: 3535
       width: 1053
       height: 307
     spriteID: 56cf36c9014deae45940da0c13c12c99
@@ -130,7 +108,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2011, y: -430}
+    uvTransform: {x: 1901, y: 2135}
   - name: CornerPiece
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -138,7 +116,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2060
+      x: 2791
       y: 4
       width: 558
       height: 2048
@@ -152,30 +130,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 2060, y: 4}
+    uvTransform: {x: 2791, y: 4}
   - name: Background
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 2060
-      width: 2048
-      height: 2048
-    spriteID: bed57b3c6bee2684ba8d9010165a2050
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 2060}
-  - name: Layer 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -186,7 +142,7 @@ ScriptedImporter:
       y: 4
       width: 2048
       height: 2048
-    spriteID: 2c84a34a15c395745a3800cc4150e535
+    spriteID: bed57b3c6bee2684ba8d9010165a2050
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -197,12 +153,287 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-  platformSettings: []
+  - name: Content
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1019
+      y: 2060
+      width: 805
+      height: 152
+    spriteID: 2a9259078f0a27f40a3c6e9232126224
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 428, y: 1603}
+  - name: Label
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2060
+      width: 1007
+      height: 270
+    spriteID: 9a4132882121b7e419bd9928051e93bc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -524, y: 1695}
+  - name: PopupStyle2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2791
+      y: 2060
+      width: 1091
+      height: 791
+    spriteID: 09a3cdafec868834fadf69204bf9b3bd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1834, y: 1422}
+  - name: Popup
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2791
+      y: 2859
+      width: 964
+      height: 668
+    spriteID: 0cca74dbf6357f14da7c1897090287b3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2761, y: 2098}
+  - name: CustomizitionSlotChain
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2060
+      y: 2414
+      width: 348
+      height: 324
+    spriteID: 8832af239c9c6aa409ab0d216cffc434
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1959, y: 690}
+  - name: CustomiztionSlot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2060
+      y: 2060
+      width: 415
+      height: 346
+    spriteID: ffd3e21eaea82f64baf93c42b4177592
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1988, y: 358}
+  - name: LockClose
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1832
+      y: 2060
+      width: 134
+      height: 196
+    spriteID: eceb340e617890d4983a21076ca6eeef
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 701, y: 272}
+  - name: LockOpen
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3850
+      y: 3845
+      width: 134
+      height: 196
+    spriteID: 2da2648ff5b5c724c8a7e424d1d5cc62
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2960, y: 2057}
+  - name: InputStyle2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2791
+      y: 3845
+      width: 578
+      height: 128
+    spriteID: e54aeb71276f19d4fa4c610fa924645d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2694, y: 2358}
+  - name: Input
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3377
+      y: 3845
+      width: 465
+      height: 128
+    spriteID: 0bf37db70dd470e4aad27b1d2fa5c517
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2052, y: 2057}
+  - name: Coin
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3763
+      y: 2859
+      width: 326
+      height: 324
+    spriteID: 7b7d0ad0fea258d47a8220c46acba560
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3251, y: 1146}
+  - name: CornerPiece_style2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2060
+      y: 4
+      width: 723
+      height: 2048
+    spriteID: 50e233652cd9bc14fb6f90fe4f160e3a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 735, y: 4}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 35
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
+  importedTextureWidth: 2048
   importedTextureHeight: 2048
   documentSize: {x: 2048, y: 2048}
   paperDollMode: 0
@@ -210,47 +441,117 @@ ScriptedImporter:
   spriteCategoryList:
     categories: []
   textureActualWidth: 4096
-  textureActualHeight: 8192
+  textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Content
+    spriteName: Content
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2a9259078f0a27f40a3c6e9232126224
+    layerID: 51
+    mosaicPosition: {x: 1019, y: 2060}
+  - name: Label
+    spriteName: Label
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9a4132882121b7e419bd9928051e93bc
+    layerID: 49
+    mosaicPosition: {x: 4, y: 2060}
+  - name: PopupStyle2
+    spriteName: PopupStyle2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 09a3cdafec868834fadf69204bf9b3bd
+    layerID: 46
+    mosaicPosition: {x: 2791, y: 2060}
+  - name: Popup
+    spriteName: Popup
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0cca74dbf6357f14da7c1897090287b3
+    layerID: 38
+    mosaicPosition: {x: 2791, y: 2859}
+  - name: CustomizitionSlotChain
+    spriteName: CustomizitionSlotChain
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8832af239c9c6aa409ab0d216cffc434
+    layerID: 43
+    mosaicPosition: {x: 2060, y: 2414}
+  - name: CustomiztionSlot
+    spriteName: CustomiztionSlot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ffd3e21eaea82f64baf93c42b4177592
+    layerID: 33
+    mosaicPosition: {x: 2060, y: 2060}
+  - name: LockClose
+    spriteName: LockClose
+    isGroup: 0
+    parentIndex: -1
+    spriteID: eceb340e617890d4983a21076ca6eeef
+    layerID: 31
+    mosaicPosition: {x: 1832, y: 2060}
+  - name: LockOpen
+    spriteName: LockOpen
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2da2648ff5b5c724c8a7e424d1d5cc62
+    layerID: 22
+    mosaicPosition: {x: 3850, y: 3845}
+  - name: InputStyle2
+    spriteName: InputStyle2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e54aeb71276f19d4fa4c610fa924645d
+    layerID: 45
+    mosaicPosition: {x: 2791, y: 3845}
+  - name: Input
+    spriteName: Input
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0bf37db70dd470e4aad27b1d2fa5c517
+    layerID: 21
+    mosaicPosition: {x: 3377, y: 3845}
+  - name: Coin
+    spriteName: Coin
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7b7d0ad0fea258d47a8220c46acba560
+    layerID: 19
+    mosaicPosition: {x: 3763, y: 2859}
   - name: Button
     spriteName: Button
     isGroup: 0
     parentIndex: -1
-    spriteID: aa17d7ccdb20a3b4796c56f171ebea86
-    layerID: 11
-    mosaicPosition: {x: 2626, y: 314}
-  - name: StartButton
-    spriteName: StartButton
-    isGroup: 0
-    parentIndex: -1
     spriteID: 56cf36c9014deae45940da0c13c12c99
     layerID: 9
-    mosaicPosition: {x: 2626, y: 4}
+    mosaicPosition: {x: 2791, y: 3535}
   - name: CornerPiece
     spriteName: CornerPiece
     isGroup: 0
     parentIndex: -1
     spriteID: a9b721c964a3cca4eb013ae926091645
     layerID: 3
-    mosaicPosition: {x: 2060, y: 4}
-  - name: Layer 1
-    spriteName: Layer 1
+    mosaicPosition: {x: 2791, y: 4}
+  - name: CornerPiece_style2
+    spriteName: CornerPiece_style2
     isGroup: 0
     parentIndex: -1
-    spriteID: 2c84a34a15c395745a3800cc4150e535
-    layerID: 13
-    mosaicPosition: {x: 4, y: 4}
+    spriteID: 50e233652cd9bc14fb6f90fe4f160e3a
+    layerID: 14
+    mosaicPosition: {x: 2060, y: 4}
   - name: Background
     spriteName: Background
     isGroup: 0
     parentIndex: -1
     spriteID: bed57b3c6bee2684ba8d9010165a2050
     layerID: 2
-    mosaicPosition: {x: 4, y: 2060}
+    mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []
     parts: []
