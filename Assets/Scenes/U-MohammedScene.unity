@@ -358,12 +358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   weopon: {fileID: 126024046}
-  projectile: {fileID: 4336473992092604745, guid: f4e501f2fe8d7d546b7b158dd668f390,
-    type: 3}
+  projectile: {fileID: 0}
   shotPoint: {fileID: 1636766855}
   timeBetweenShots: 0.1
-  bulletSpeed: 20
-  lifeTime: 2
 --- !u!1 &1636766854
 GameObject:
   m_ObjectHideFlags: 0
