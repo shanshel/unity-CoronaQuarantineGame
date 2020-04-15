@@ -93,10 +93,12 @@ public class EnemyPlayerController : MonoBehaviour
 
     void weoponFN()
     {
+        /*
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - weopon.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle , Vector3.forward);
         weopon.transform.rotation = rotation;
+        */
     }
 
 
