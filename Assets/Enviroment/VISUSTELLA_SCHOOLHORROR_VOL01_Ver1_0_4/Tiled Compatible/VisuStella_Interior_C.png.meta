@@ -1,0 +1,3392 @@
+fileFormatVersion: 2
+guid: 8d2d81e0c9eb9554c920b571209b0d12
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8159954192977926658
+    second: BigRaf
+  - first:
+      213: 2795825603562265612
+    second: Raf1
+  - first:
+      213: -1904625790702234767
+    second: RafWithJrar
+  - first:
+      213: 3313085484544181058
+    second: GlossyRaf
+  - first:
+      213: 6973140511861080445
+    second: JararatRaf
+  - first:
+      213: -8511035739322502606
+    second: StudyTable6
+  - first:
+      213: -3625438837296066956
+    second: BigOneRaf
+  - first:
+      213: 7212682957623518704
+    second: MetalRaf1
+  - first:
+      213: -6441123079155883776
+    second: MetalRaf2
+  - first:
+      213: 3002464539954749865
+    second: SideTable1
+  - first:
+      213: 5170392895276238906
+    second: Mez1
+  - first:
+      213: -5171227379838960102
+    second: Mez2
+  - first:
+      213: -5512889233212531938
+    second: Mez3
+  - first:
+      213: 1008125745015292967
+    second: Mez4
+  - first:
+      213: 8712896191717746291
+    second: VisuStella_Interior_C_14
+  - first:
+      213: 5297870073556802826
+    second: Mez5
+  - first:
+      213: -4278626275054682063
+    second: Mez6
+  - first:
+      213: -1772162781809700524
+    second: Mez7
+  - first:
+      213: -5044963424761029292
+    second: Mez9
+  - first:
+      213: -8337891639134070606
+    second: MetalJararat
+  - first:
+      213: 4387879886167575613
+    second: Safe
+  - first:
+      213: -5631573331036045129
+    second: VisuStella_Interior_C_21
+  - first:
+      213: -3032451453583804154
+    second: RestTable1
+  - first:
+      213: 3359203067562735299
+    second: RestTable2
+  - first:
+      213: 194633135562411636
+    second: ColorfulSharedChairTop1
+  - first:
+      213: -1564476109900416281
+    second: ClosetGroup
+  - first:
+      213: -1349414475527259317
+    second: VisuStella_Interior_C_26
+  - first:
+      213: -5156302193537123168
+    second: Closet2Side2
+  - first:
+      213: 6614552336019694834
+    second: BabyTableStyle2
+  - first:
+      213: -2621672720193343465
+    second: VisuStella_Interior_C_29
+  - first:
+      213: -8900511009847404463
+    second: ColorfulSharedChair1
+  - first:
+      213: -6454850709003306905
+    second: ColorfulSharedChair2
+  - first:
+      213: -7786861484059159058
+    second: ColorfulSharedChair3
+  - first:
+      213: 1914015354792271112
+    second: ColorfulSharedChair4
+  - first:
+      213: 7887074437887774344
+    second: ColorfulSharedChairTop2
+  - first:
+      213: 3025503944441612846
+    second: VisuStella_Interior_C_35
+  - first:
+      213: -3864511779805160044
+    second: VisuStella_Interior_C_36
+  - first:
+      213: -3285003247560757125
+    second: ColorfulSharedChairTop3
+  - first:
+      213: -4651328976258993912
+    second: VisuStella_Interior_C_38
+  - first:
+      213: 1594223503612806966
+    second: ColorfulSharedChairTop4
+  - first:
+      213: 3056833342042355032
+    second: CloseGroupTop
+  - first:
+      213: -4753439089476785102
+    second: VisuStella_Interior_C_41
+  - first:
+      213: 4236225325943252446
+    second: Table3
+  - first:
+      213: -4175660610894770488
+    second: Table2
+  - first:
+      213: -893348412059824954
+    second: TableWithChair1
+  - first:
+      213: -6959901685358661487
+    second: Table
+  - first:
+      213: 7898615881467078984
+    second: Sofa1-left
+  - first:
+      213: -1071315049047149962
+    second: Sofa1-right
+  - first:
+      213: -8261634518928488027
+    second: ClosetGroupSide1
+  - first:
+      213: 6542272801098456213
+    second: ClosetGroupSide2
+  - first:
+      213: 224887831452143911
+    second: RafSide1
+  - first:
+      213: 8953704603297307457
+    second: RafSide2
+  - first:
+      213: 613552678505822001
+    second: ShoeRafEmpty
+  - first:
+      213: -7931302001356276409
+    second: Table4
+  - first:
+      213: 8426450303578592346
+    second: SchoolChair1
+  - first:
+      213: 1627626025198359179
+    second: SchoolChair2
+  - first:
+      213: 7131761637368567053
+    second: TeacherChair1
+  - first:
+      213: -6462920691255192598
+    second: TeacherChair4
+  - first:
+      213: -4038513902128246851
+    second: Chair1
+  - first:
+      213: -6227829066404376532
+    second: Chair2
+  - first:
+      213: 7072528148624556580
+    second: FallingChair
+  - first:
+      213: 1597337386753604200
+    second: Sofa1-back
+  - first:
+      213: -1215581613781055403
+    second: ShoeRaf
+  - first:
+      213: 3770964890525660160
+    second: SchoolChair3
+  - first:
+      213: -6582505194389637281
+    second: SchoolChair4
+  - first:
+      213: -7101986712005946608
+    second: TeacherChair3
+  - first:
+      213: -7709583087925927800
+    second: Chair3
+  - first:
+      213: 3026359209960622981
+    second: Chair4
+  - first:
+      213: -8165451687834630784
+    second: FallingChair2
+  - first:
+      213: -3613171312920376895
+    second: Sofa1-front
+  - first:
+      213: -1185979027190835909
+    second: Raf2Side1
+  - first:
+      213: 5169032331391680543
+    second: Raf2Side2
+  - first:
+      213: 8988805418490424990
+    second: VisuStella_Interior_C_72
+  - first:
+      213: -1476869486658787019
+    second: GardenChair3
+  - first:
+      213: -3221907419220217553
+    second: GardenChair2
+  - first:
+      213: 1148410031956288094
+    second: BabyChair2
+  - first:
+      213: -5027334784498727706
+    second: BabyChair3
+  - first:
+      213: -8000484392820036285
+    second: BabyTable1
+  - first:
+      213: -3233031704182586638
+    second: BabyTable2
+  - first:
+      213: -4428523402497539881
+    second: FallingBabyTable1
+  - first:
+      213: 6446116769199592822
+    second: FallingBabyChair2
+  - first:
+      213: -8003565630372489593
+    second: SmallRaf1
+  - first:
+      213: 2905000950613294924
+    second: VisuStella_Interior_C_82
+  - first:
+      213: -2625792951936350778
+    second: VisuStella_Interior_C_83
+  - first:
+      213: -6516114367138552255
+    second: BabyChair4
+  - first:
+      213: 5483290215526826242
+    second: BabyChair1
+  - first:
+      213: 9046425655181830701
+    second: BabyTable3
+  - first:
+      213: -8964388985774294985
+    second: BabyTable4
+  - first:
+      213: 8049417347577437368
+    second: FallingBabyChair3
+  - first:
+      213: 4017620350308418099
+    second: FallingBabyChair4
+  - first:
+      213: 6975809509178609983
+    second: VisuStella_Interior_C_90
+  - first:
+      213: 7201157055445079250
+    second: VisuStella_Interior_C_91
+  - first:
+      213: 6753105307632348257
+    second: GardenChair1
+  - first:
+      213: -1499503036234956531
+    second: Stool1
+  - first:
+      213: -1239064881558689944
+    second: Stool2
+  - first:
+      213: -2840655974432895029
+    second: Stool3
+  - first:
+      213: -4951944165247896932
+    second: RafTop5
+  - first:
+      213: -5374382461337666510
+    second: VisuStella_Interior_C_97
+  - first:
+      213: -8264374598982021933
+    second: VisuStella_Interior_C_98
+  - first:
+      213: 892281250863804554
+    second: StudyTable5
+  - first:
+      213: -4338014619486364399
+    second: StudyTable4
+  - first:
+      213: -1665712910626654622
+    second: StudyTable3
+  - first:
+      213: 576941376739638469
+    second: StudyTable2
+  - first:
+      213: 6582789215022692256
+    second: StudyTable1
+  - first:
+      213: -6504992220204455037
+    second: StudyTable12
+  - first:
+      213: 4732230265207863582
+    second: StudyTable11
+  - first:
+      213: 2393665381416643109
+    second: StudyTable10
+  - first:
+      213: 4258914499286047757
+    second: StudyTable9
+  - first:
+      213: 7899963494159354122
+    second: StudyTable8
+  - first:
+      213: 3022744665080288018
+    second: StudyTable7
+  - first:
+      213: -2586602225688769056
+    second: DrinkMachine1
+  - first:
+      213: 3376499849754312557
+    second: DrinkMachine2
+  - first:
+      213: -2795730919781401955
+    second: Raf2
+  - first:
+      213: 1097838656776905717
+    second: EmptyRaf1
+  - first:
+      213: -3755014284495000466
+    second: EmptyRaf2
+  - first:
+      213: -4781980378567302412
+    second: EmptyRaf3
+  - first:
+      213: 1099689965319788162
+    second: Closet1
+  - first:
+      213: -771819473794363866
+    second: Closet2
+  - first:
+      213: -8974478435401557022
+    second: StudyTableSide
+  - first:
+      213: -3462566015484940981
+    second: StudyTableWithChairSide
+  - first:
+      213: -8950969247760036335
+    second: SideTable2
+  - first:
+      213: -5081298231908859017
+    second: SideTable3
+  - first:
+      213: 4976066474647828346
+    second: SideTable4
+  - first:
+      213: 4167064405960790213
+    second: Empl1
+  - first:
+      213: -1396949309574299595
+    second: VisuStella_Interior_C_124
+  - first:
+      213: -2059028538854580477
+    second: VisuStella_Interior_C_125
+  - first:
+      213: 5494972055914016726
+    second: VisuStella_Interior_C_126
+  - first:
+      213: 4124085399671136805
+    second: TvTableEmpty
+  - first:
+      213: -9173079930562367240
+    second: Tv2
+  - first:
+      213: 6470047490507765578
+    second: Tv1
+  - first:
+      213: -6084279208038301433
+    second: TeacherChair2
+  - first:
+      213: 7761561587649669651
+    second: VisuStella_Interior_C_131
+  - first:
+      213: -6856214152454769651
+    second: VisuStella_Interior_C_132
+  - first:
+      213: -9073789647981005546
+    second: VisuStella_Interior_C_133
+  - first:
+      213: 2247420029602037664
+    second: VisuStella_Interior_C_134
+  - first:
+      213: 4744141147295679683
+    second: VisuStella_Interior_C_135
+  - first:
+      213: -4769251498728586130
+    second: MetalTable1
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigRaf
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 687
+        width: 144
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5671015e402ce80800000000000000
+      internalID: -8159954192977926658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raf1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 687
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c5542d294ccc620800000000000000
+      internalID: 2795825603562265612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RafWithJrar
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 687
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173552b3fe86195e0800000000000000
+      internalID: -1904625790702234767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlossyRaf
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 687
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24342c8d1b17afd20800000000000000
+      internalID: 3313085484544181058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JararatRaf
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 672
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d718d5aa95295c060800000000000000
+      internalID: 6973140511861080445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 724
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2323707a61ab2e980800000000000000
+      internalID: -8511035739322502606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigOneRaf
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e001cf59adfadc0800000000000000
+      internalID: -3625438837296066956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MetalRaf1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 591
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5e9ae7fe8981460800000000000000
+      internalID: 7212682957623518704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MetalRaf2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 591
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001e750afa88c96a0800000000000000
+      internalID: -6441123079155883776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideTable1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 626
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1a5b26795eaa920800000000000000
+      internalID: 3002464539954749865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 627
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38c420c1fce0c740800000000000000
+      internalID: 5170392895276238906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez2
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 627
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ebceba81c1c38b0800000000000000
+      internalID: -5171227379838960102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez3
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 627
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b9a4073784e73b0800000000000000
+      internalID: -5512889233212531938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez4
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 627
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724009816059dfd00800000000000000
+      internalID: 1008125745015292967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376a0386cec6ae870800000000000000
+      internalID: 8712896191717746291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez5
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 576
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d968833c0d58940800000000000000
+      internalID: 5297870073556802826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez6
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 576
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13086bc62144f94c0800000000000000
+      internalID: -4278626275054682063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez7
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 576
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451901ad6530867e0800000000000000
+      internalID: -1772162781809700524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mez9
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 576
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45dd74a9e70bcf9b0800000000000000
+      internalID: -5044963424761029292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Safe
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 495
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c891c2281e4ec30800000000000000
+      internalID: 4387879886167575613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_21
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 532
+        width: 72
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0880d84e1a8d1b0800000000000000
+      internalID: -5631573331036045129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestTable1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 489
+        width: 48
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609358638719ae5d0800000000000000
+      internalID: -3032451453583804154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestTable2
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 480
+        width: 74
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6ba7264694e9e20800000000000000
+      internalID: 3359203067562735299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChairTop1
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 485
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ec7ba3ec973b200800000000000000
+      internalID: 194633135562411636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClosetGroup
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 364
+        width: 223
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eafcc9544dd94ae0800000000000000
+      internalID: -1564476109900416281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 432
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b7d6b1faae54de0800000000000000
+      internalID: -1349414475527259317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Closet2Side2
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 356
+        width: 32
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acf6a769722178b0800000000000000
+      internalID: -5156302193537123168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyTableStyle2
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 433
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f42fa0ed4c9bcb50800000000000000
+      internalID: 6614552336019694834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_29
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 433
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7103b8b1d82fd9bd0800000000000000
+      internalID: -2621672720193343465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChair1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 344
+        width: 29
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158979ab4680b7480800000000000000
+      internalID: -8900511009847404463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChair2
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 344
+        width: 29
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768fdabba73cb66a0800000000000000
+      internalID: -6454850709003306905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChair3
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 344
+        width: 29
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee59b7f9cb28fe390800000000000000
+      internalID: -7786861484059159058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChair4
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 344
+        width: 29
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d590503d2ff8a10800000000000000
+      internalID: 1914015354792271112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChairTop2
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 437
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e4d5be964847d60800000000000000
+      internalID: 7887074437887774344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a4cf2cecfbcf920800000000000000
+      internalID: 3025503944441612846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_36
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 345
+        width: 70
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d9666e20f7e5ac0800000000000000
+      internalID: -3864511779805160044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChairTop3
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 389
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70f22773f25962d0800000000000000
+      internalID: -3285003247560757125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_38
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801f99c90f8237fb0800000000000000
+      internalID: -4651328976258993912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ColorfulSharedChairTop4
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 341
+        width: 126
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6378b6974d1df1610800000000000000
+      internalID: 1594223503612806966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseGroupTop
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 288
+        width: 223
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85531029abd0c6a20800000000000000
+      internalID: 3056833342042355032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_41
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 288
+        width: 44
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ca74a3554680eb0800000000000000
+      internalID: -4753439089476785102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table3
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 240
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed56c5d4d781aca30800000000000000
+      internalID: 4236225325943252446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 249
+        width: 71
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cec6094cc21d06c0800000000000000
+      internalID: -4175660610894770488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TableWithChair1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 253
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ccc3863a503a93f0800000000000000
+      internalID: -893348412059824954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 249
+        width: 131
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190fd84da46796f90800000000000000
+      internalID: -6959901685358661487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sofa1-left
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 244
+        width: 33
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849aa18ab458d9d60800000000000000
+      internalID: 7898615881467078984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sofa1-right
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 244
+        width: 33
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672b30393ace121f0800000000000000
+      internalID: -1071315049047149962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClosetGroupSide1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 26
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a989235d27c85d80800000000000000
+      internalID: -8261634518928488027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClosetGroupSide2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 7
+        width: 26
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c5c2d3372daca50800000000000000
+      internalID: 6542272801098456213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RafSide1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 154
+        width: 26
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721530c8a46fe1300800000000000000
+      internalID: 224887831452143911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RafSide2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 154
+        width: 26
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bd05fd5e2f14c70800000000000000
+      internalID: 8953704603297307457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoeRafEmpty
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 192
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137345d09e6c38800800000000000000
+      internalID: 613552678505822001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table4
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 96
+        width: 44
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d70d20ada5ee190800000000000000
+      internalID: -7931302001356276409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolChair1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 192
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54d846e7e3c0f470800000000000000
+      internalID: 8426450303578592346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolChair2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 192
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8211231f3d769610800000000000000
+      internalID: 1627626025198359179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TeacherChair1
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 193
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d059c1a6c6b19f260800000000000000
+      internalID: 7131761637368567053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TeacherChair4
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 144
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae356329fd71f46a0800000000000000
+      internalID: -6462920691255192598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair1
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 192
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf4b23c00154f7c0800000000000000
+      internalID: -4038513902128246851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair2
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 192
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c205d17e57e4299a0800000000000000
+      internalID: -6227829066404376532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingChair
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 198
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422c7ba11eaa62260800000000000000
+      internalID: 7072528148624556580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sofa1-back
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 193
+        width: 92
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a36e3e3e1ea2610800000000000000
+      internalID: 1597337386753604200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoeRaf
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 96
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558851376f2612fe0800000000000000
+      internalID: -1215581613781055403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolChair3
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 145
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0047048a698255430800000000000000
+      internalID: 3770964890525660160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolChair4
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 145
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57fd3cb66e36a4a0800000000000000
+      internalID: -6582505194389637281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TeacherChair3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 144
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013575f96bca07d90800000000000000
+      internalID: -7101986712005946608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 146
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880e0d5570f020590800000000000000
+      internalID: -7709583087925927800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair4
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 146
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b4f68caa9cff920800000000000000
+      internalID: 3026359209960622981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingChair2
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 150
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085c00cc3fc7eae80800000000000000
+      internalID: -8165451687834630784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sofa1-front
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 145
+        width: 92
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9cfb495df6bddc0800000000000000
+      internalID: -3613171312920376895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raf2Side1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 7
+        width: 26
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b351a3dbb5e8a8fe0800000000000000
+      internalID: -1185979027190835909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raf2Side2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 12
+        width: 26
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f104c19c4871cb740800000000000000
+      internalID: 5169032331391680543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_72
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 97
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e6a3447e6aebc70800000000000000
+      internalID: 8988805418490424990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenChair3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1
+        width: 32
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539e614d60b118be0800000000000000
+      internalID: -1476869486658787019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenChair2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1
+        width: 32
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21fe2ac54c7943d0800000000000000
+      internalID: -3221907419220217553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyChair2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 101
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52ef3be6d8ffef00800000000000000
+      internalID: 1148410031956288094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyChair3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 101
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e40df246a15b3ab0800000000000000
+      internalID: -5027334784498727706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyTable1
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 101
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34da7e645d198f090800000000000000
+      internalID: -8000484392820036285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyTable2
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 101
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f20f9c5bc6f123d0800000000000000
+      internalID: -3233031704182586638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingBabyTable1
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 98
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d041a2cd69ba82c0800000000000000
+      internalID: -4428523402497539881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingBabyChair2
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 98
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67594d07c05357950800000000000000
+      internalID: 6446116769199592822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallRaf1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 49
+        width: 95
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7865f11c67f9de090800000000000000
+      internalID: -8003565630372489593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_82
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 84
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f3a7529f2a05820800000000000000
+      internalID: 2905000950613294924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_83
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 71
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c50c16e83f4f8bd0800000000000000
+      internalID: -2625792951936350778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyChair4
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 53
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14623e6c18c1295a0800000000000000
+      internalID: -6516114367138552255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyChair1
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 53
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2010ad8366f881c40800000000000000
+      internalID: 5483290215526826242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyTable3
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 53
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ae710143c5b8d70800000000000000
+      internalID: 9046425655181830701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyTable4
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 53
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738bf7a76b7189380800000000000000
+      internalID: -8964388985774294985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingBabyChair3
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 50
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc58331e6645bf60800000000000000
+      internalID: 8049417347577437368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FallingBabyChair4
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 50
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332838e1c6471c730800000000000000
+      internalID: 4017620350308418099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_90
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 58
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3112670acd0fc060800000000000000
+      internalID: 6975809509178609983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_91
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 27
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d41a954036afe360800000000000000
+      internalID: 7201157055445079250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenChair1
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 137
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c2b307f79d7bd50800000000000000
+      internalID: 6753105307632348257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stool1
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 7
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d018899eee1b03be0800000000000000
+      internalID: -1499503036234956531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stool2
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 7
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86768091e05fdcee0800000000000000
+      internalID: -1239064881558689944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stool3
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 7
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf06d21176f398d0800000000000000
+      internalID: -2840655974432895029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RafTop5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 95
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92b4daa409274bb0800000000000000
+      internalID: -4951944165247896932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_97
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 14
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cf0e840ab5a65b0800000000000000
+      internalID: -5374382461337666510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_98
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc4ae8b61b0f4d80800000000000000
+      internalID: -8264374598982021933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 724
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a807a75f115026c00800000000000000
+      internalID: 892281250863804554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 724
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d5017ffa64cc3c0800000000000000
+      internalID: -4338014619486364399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 724
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266f050eee232e8e0800000000000000
+      internalID: -1665712910626654622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable2
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 730
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc7ac81025b10800800000000000000
+      internalID: 576941376739638469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 730
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a733b8f9e3ca5b50800000000000000
+      internalID: 6582789215022692256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 678
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ba8086a00a9b5a0800000000000000
+      internalID: -6504992220204455037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable11
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 678
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1931119a524ca140800000000000000
+      internalID: 4732230265207863582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable10
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 678
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a2d727bf1083120800000000000000
+      internalID: 2393665381416643109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 678
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c94b22c24ba1b30800000000000000
+      internalID: 4258914499286047757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 682
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a090cef21fe42ad60800000000000000
+      internalID: 7899963494159354122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTable7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 682
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21351d8f142f2f920800000000000000
+      internalID: 3022744665080288018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DrinkMachine1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 689
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed069aeafa8a1cd0800000000000000
+      internalID: -2586602225688769056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DrinkMachine2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 689
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ff3c059bcbbde20800000000000000
+      internalID: 3376499849754312557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raf2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 602
+        width: 47
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a7ad67a819339d0800000000000000
+      internalID: -2795730919781401955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptyRaf1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f321e5117e4c3f00800000000000000
+      internalID: 1097838656776905717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptyRaf2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 506
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c6826376283ebc0800000000000000
+      internalID: -3755014284495000466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptyRaf3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 495
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2ab948e2ef2adb0800000000000000
+      internalID: -4781980378567302412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Closet1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 480
+        width: 38
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28692f17232e24f00800000000000000
+      internalID: 1099689965319788162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Closet2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 495
+        width: 38
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e02c12742f945f0800000000000000
+      internalID: -771819473794363866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MetalJararat
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 576
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8d6b1fabbd94c80800000000000000
+      internalID: -8337891639134070606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTableSide
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 625
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb9c7d696f347380800000000000000
+      internalID: -8974478435401557022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StudyTableWithChairSide
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 577
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d2eabed8e72ffc0800000000000000
+      internalID: -3462566015484940981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideTable2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 626
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e41d7b4e4c7c380800000000000000
+      internalID: -8950969247760036335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideTable3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 626
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77380411e2a9b79b0800000000000000
+      internalID: -5081298231908859017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideTable4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 626
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a773d18281a8e0540800000000000000
+      internalID: 4976066474647828346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empl1
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 672
+        width: 32
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c09779cff264d930800000000000000
+      internalID: 4167064405960790213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_124
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 576
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530c899110a0d9ce0800000000000000
+      internalID: -1396949309574299595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_125
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 576
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f5e2ff37cdc63e0800000000000000
+      internalID: -2059028538854580477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_126
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 578
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfe373a8ff024c40800000000000000
+      internalID: 5494972055914016726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TvTableEmpty
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 528
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522e5c612d1bb3930800000000000000
+      internalID: 4124085399671136805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tv2
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 528
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0b09a776ca2b080800000000000000
+      internalID: -9173079930562367240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tv1
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 528
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a477f9fa9e93ac950800000000000000
+      internalID: 6470047490507765578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TeacherChair2
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 192
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7010592db4c409ba0800000000000000
+      internalID: -6084279208038301433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_131
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 501
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31aec26342b96bb60800000000000000
+      internalID: 7761561587649669651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_132
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 501
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d047deadd85d9d0a0800000000000000
+      internalID: -6856214152454769651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_133
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 501
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615b971e36c631280800000000000000
+      internalID: -9073789647981005546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_134
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aff68d0c90703f10800000000000000
+      internalID: 2247420029602037664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VisuStella_Interior_C_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c48fd8ec3396d140800000000000000
+      internalID: 4744141147295679683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MetalTable1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6488cdc70730ddb0800000000000000
+      internalID: -4769251498728586130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -61,6 +61,7 @@ ScriptedImporter:
     maxTextureSizeSet: 0
     compressionQualitySet: 0
     textureFormatSet: 0
+    applyGammaDecoding: 0
   spriteImportData:
   - name: 
     originalName: 
@@ -9280,8 +9281,8 @@ ScriptedImporter:
     uvTransform: {x: 722, y: 696}
   platformSettings: []
   mosaicLayers: 1
-  documentPivot: {x: 0, y: 0}
-  documentAlignment: 7
+  documentPivot: {x: 0.5, y: 0.275}
+  documentAlignment: 9
   importHiddenLayers: 0
   importedTextureWidth: 2048
   importedTextureHeight: 2048
