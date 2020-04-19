@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6814155903015560043}
   - component: {fileID: 7335077628233287639}
   - component: {fileID: -7301361984315818894}
+  - component: {fileID: 7990597581554844028}
   m_Layer: 0
   m_Name: BabyChair1
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &-7301361984315818894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96,10 +97,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.3279541}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.04, y: 1.2}
     newSize: {x: 1.04, y: 1.2}
     adaptiveTilingThreshold: 0.5
@@ -107,5 +108,32 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.04, y: 1.2}
+  m_Size: {x: 1.04, y: 0.5440918}
   m_EdgeRadius: 0
+--- !u!114 &7990597581554844028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009578878439216932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: ef8fcbaf
+  m_ShapePath:
+  - {x: -0.46658707, y: 0.14572906, z: 0}
+  - {x: -0.0052604675, y: 0.05025482, z: 0}
+  - {x: 0.4444275, y: 0.15119171, z: 0}
+  - {x: 0.47465515, y: 0.59017944, z: 0}
+  - {x: -0.5048866, y: 0.58514404, z: 0}
+  m_ShapePathHash: -373330225
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -209718

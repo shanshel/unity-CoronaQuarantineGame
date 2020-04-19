@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 166392209717298110}
   m_Layer: 0
   m_Name: Blood2
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1345613841
-  m_SortingLayer: -1
+  m_SortingLayerID: -1690440409
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -4382988096944501918, guid: 97759a3febdeae94c8cc09076ad1d67f,
     type: 3}
@@ -81,4 +81,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8690775261387104746}
   - component: {fileID: 8690775261387104747}
+  - component: {fileID: 1344758525050601376}
+  - component: {fileID: 2175221417787232608}
   m_Layer: 0
   m_Name: Trash1
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,4 +83,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!61 &1344758525050601376
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690775261387104749}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.116147995, y: 0.39792252}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.36, y: 1.92}
+    newSize: {x: 0.34, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.77612686, y: 0.79584503}
+  m_EdgeRadius: 0
+--- !u!114 &2175221417787232608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690775261387104749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: ef8fcbaf
+  m_ShapePath:
+  - {x: -0.49165344, y: 0.13188171, z: 0}
+  - {x: -0.11175156, y: 0.026763916, z: 0}
+  - {x: 0.26563644, y: 0.11932373, z: 0}
+  - {x: 0.3535347, y: 0.73931885, z: 0}
+  - {x: -0.5607147, y: 0.76444244, z: 0}
+  m_ShapePathHash: 542108175
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 268858

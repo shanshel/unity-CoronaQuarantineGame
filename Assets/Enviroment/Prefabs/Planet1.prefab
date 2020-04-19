@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6071971984745791322}
   - component: {fileID: 6071971984745791323}
+  - component: {fileID: 7674065185050931479}
+  - component: {fileID: 8473545801614157832}
   m_Layer: 0
   m_Name: Planet1
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,4 +83,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!114 &7674065185050931479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071971984745791317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: ef8fcbaf
+  m_ShapePath:
+  - {x: -0.50655967, y: 0.31449977, z: 0}
+  - {x: -0.039824083, y: 0.056610763, z: 0}
+  - {x: 0.4436796, y: 0.26208317, z: 0}
+  - {x: 0.5799197, y: 1.4904518, z: 0}
+  - {x: -0.6283363, y: 1.5258867, z: 0}
+  m_ShapePathHash: -1611901193
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 166300
+--- !u!61 &8473545801614157832
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071971984745791317}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.016975999, y: 0.5058341}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.6, y: 3.44}
+    newSize: {x: 1.6, y: 3.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1246727, y: 1.0795937}
+  m_EdgeRadius: 0

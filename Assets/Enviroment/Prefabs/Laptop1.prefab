@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3377313655779072948}
   - component: {fileID: 809365975196803623}
+  - component: {fileID: 5246937107611131299}
   m_Layer: 0
   m_Name: Laptop1
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,4 +82,30 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!114 &5246937107611131299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207294167029512609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 27ed3d9b
+  m_ShapePath:
+  - {x: -0.56, y: 0.0000027418137, z: 0}
+  - {x: 0.56, y: 0.0000027418137, z: 0}
+  - {x: 0.5119438, y: 0.7592621, z: 0}
+  - {x: -0.51880646, y: 0.7592621, z: 0}
+  m_ShapePathHash: -1351064477
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -399820
