@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2067998872988621200}
   - component: {fileID: 2212964674199942589}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WomenSign
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2067998872988621200
 Transform:

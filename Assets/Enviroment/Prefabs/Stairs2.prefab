@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5293930655708725314}
   - component: {fileID: 6229879320421810238}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Stairs2
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5293930655708725314
 Transform:

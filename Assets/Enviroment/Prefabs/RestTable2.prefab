@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5765814021907371769}
   - component: {fileID: 4190979232380915211}
   - component: {fileID: 6520783079535216081}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RestTable2
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6518548403551293443
 Transform:
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ApplyToSortingLayers: ef8fcbaf
   m_ShapePath:
   - {x: -1.427171, y: 0.896524, z: 0}
   - {x: 1.3882036, y: 0.8867791, z: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   - {x: -1.427171, y: 1.7359031, z: 0}
   m_ShapePathHash: 510305818
   m_Mesh: {fileID: 0}
-  m_InstanceId: -182746
+  m_InstanceId: 967114
 --- !u!61 &6520783079535216081
 BoxCollider2D:
   m_ObjectHideFlags: 0

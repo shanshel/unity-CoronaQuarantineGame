@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5111027568274358356}
   - component: {fileID: 1160041294597203844}
   - component: {fileID: 9052912814132505836}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: EmptyRaf3
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6049493091333112877
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -0.8642731, y: 0.80083466, z: 0}
   m_ShapePathHash: -882925035
   m_Mesh: {fileID: 0}
-  m_InstanceId: -352414
+  m_InstanceId: 975656

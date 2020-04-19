@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5919289308872788557}
   - component: {fileID: 2118509260455754533}
   - component: {fileID: 7801592876021638378}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fridge
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2032310677341999727
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -0.87018204, y: 1.5606613, z: 0}
   m_ShapePathHash: 1982898389
   m_Mesh: {fileID: 0}
-  m_InstanceId: -264110
+  m_InstanceId: 966894

@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 257633295869638833}
   - component: {fileID: 4641106384313405410}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SchoolChair12
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &257633295869638833
 Transform:

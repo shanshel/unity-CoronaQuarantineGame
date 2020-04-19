@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7543519342526762651}
   - component: {fileID: 4456967031226483137}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bed3
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7543519342526762651
 Transform:

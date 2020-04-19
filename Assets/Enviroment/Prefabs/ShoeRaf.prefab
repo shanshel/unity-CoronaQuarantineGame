@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5453268101066148838}
   - component: {fileID: 3418037993626737469}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ShoeRaf
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5453268101066148838
 Transform:

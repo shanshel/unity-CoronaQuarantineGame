@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3702937893844951681}
   - component: {fileID: 6762670135991934126}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Komedy3
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3702937893844951681
 Transform:

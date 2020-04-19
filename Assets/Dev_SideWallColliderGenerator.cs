@@ -10,6 +10,7 @@ public class Dev_SideWallColliderGenerator : MonoBehaviour
     SpriteRenderer _renderer;
     Rigidbody2D _rigid;
     public bool isAlreadyShorten = false;
+    public static bool isFinished;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class Dev_SideWallColliderGenerator : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         buildCollider();
-        Invoke("removeUnused", 4f);
+
+        Invoke("removeUnused", Random.Range(2f, 5f));
     }
 
     void buildCollider()
@@ -33,5 +35,10 @@ public class Dev_SideWallColliderGenerator : MonoBehaviour
         Destroy(_rigid);
         _boxCollider.isTrigger = false;
         Debug.Log("finished");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("test coll on side");
     }
 }

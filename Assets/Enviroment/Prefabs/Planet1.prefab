@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6071971984745791323}
   - component: {fileID: 7674065185050931479}
   - component: {fileID: 8473545801614157832}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Planet1
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6071971984745791322
 Transform:
@@ -110,7 +110,7 @@ MonoBehaviour:
   - {x: -0.6283363, y: 1.5258867, z: 0}
   m_ShapePathHash: -1611901193
   m_Mesh: {fileID: 0}
-  m_InstanceId: 166300
+  m_InstanceId: 971568
 --- !u!61 &8473545801614157832
 BoxCollider2D:
   m_ObjectHideFlags: 0

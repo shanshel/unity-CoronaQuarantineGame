@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 7217791899007398731}
   - component: {fileID: 3023371487671349849}
   - component: {fileID: 546391277831774637}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5308271973462485098
 Transform:
@@ -109,7 +109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6, y: 0.32}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.26, y: 0.51, z: 0.21, w: 0.62}
     pivot: {x: 0.5114794, y: 0.06814523}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 51.71383, y: 0.8}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!114 &546391277831774637
 MonoBehaviour:
@@ -147,4 +147,4 @@ MonoBehaviour:
   - {x: -26.450558, y: 0.7, z: 0}
   m_ShapePathHash: 1868397357
   m_Mesh: {fileID: 0}
-  m_InstanceId: -847356
+  m_InstanceId: 32730

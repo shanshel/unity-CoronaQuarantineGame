@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 613972778610245284}
   - component: {fileID: 6111483409275733264}
   - component: {fileID: 3775843717149890251}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GardenChair2
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7082730364266799181
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -0.47525182, y: 5.332088, z: 0}
   m_ShapePathHash: 2130326825
   m_Mesh: {fileID: 0}
-  m_InstanceId: -166788
+  m_InstanceId: 960320

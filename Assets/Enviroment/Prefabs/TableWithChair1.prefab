@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1822845259898212806}
   - component: {fileID: 4271755808735490686}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TableWithChair1
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1822845259898212806
 Transform:

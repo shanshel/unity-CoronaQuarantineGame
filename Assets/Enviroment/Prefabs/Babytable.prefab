@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5803633827570465725}
   - component: {fileID: 3706823313105839956}
   - component: {fileID: 8126745398346931479}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Babytable
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2916861406010735771
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -0.91328233, y: 1.0816156, z: 0}
   m_ShapePathHash: -336104988
   m_Mesh: {fileID: 0}
-  m_InstanceId: -233628
+  m_InstanceId: 972158

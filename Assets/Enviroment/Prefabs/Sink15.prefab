@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4283452009699485404}
   - component: {fileID: 8897341286195707391}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sink15
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4283452009699485404
 Transform:

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3644559592407650869}
   - component: {fileID: -8874733338688445642}
   - component: {fileID: 3759565740838562584}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BabyChair3
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8436616540621186716
 Transform:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ApplyToSortingLayers: ef8fcbaf
   m_ShapePath:
   - {x: -0.48169708, y: 0.17880249, z: 0}
   - {x: -0.01758194, y: 0.02960968, z: 0}
@@ -136,4 +136,4 @@ MonoBehaviour:
   - {x: -0.4987259, y: 0.54872894, z: 0}
   m_ShapePathHash: 904815503
   m_Mesh: {fileID: 0}
-  m_InstanceId: -217798
+  m_InstanceId: 960928

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7786634571425219281}
   - component: {fileID: 1304934655784534452}
   - component: {fileID: 7103558218086001462}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BabyChair2
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1407989719446591924
 Transform:
@@ -136,4 +136,4 @@ MonoBehaviour:
   - {x: -0.49716568, y: 0.5376816, z: 0}
   m_ShapePathHash: 2137471631
   m_Mesh: {fileID: 0}
-  m_InstanceId: -201120
+  m_InstanceId: 969398

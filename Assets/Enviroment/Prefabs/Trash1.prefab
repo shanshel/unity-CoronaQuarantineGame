@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8690775261387104747}
   - component: {fileID: 1344758525050601376}
   - component: {fileID: 2175221417787232608}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trash1
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8690775261387104746
 Transform:
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8690775261387104749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -136,4 +136,4 @@ MonoBehaviour:
   - {x: -0.5607147, y: 0.76444244, z: 0}
   m_ShapePathHash: 542108175
   m_Mesh: {fileID: 0}
-  m_InstanceId: 268858
+  m_InstanceId: 450720

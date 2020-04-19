@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7551762804056642150}
   - component: {fileID: 4714109201780289696}
   - component: {fileID: 1842660606902189320}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ClosetGroup
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6385262621835541517
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -4.4078293, y: 1.7055664, z: 0}
   m_ShapePathHash: 1483824101
   m_Mesh: {fileID: 0}
-  m_InstanceId: 339304
+  m_InstanceId: 972134

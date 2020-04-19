@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6021042369451976732}
   - component: {fileID: 1745676075038065156}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Window4
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6021042369451976732
 Transform:

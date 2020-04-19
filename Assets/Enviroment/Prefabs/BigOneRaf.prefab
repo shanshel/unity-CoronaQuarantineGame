@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6665908537566324894}
   - component: {fileID: 6934034035622855256}
   - component: {fileID: 808623990320217822}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BigOneRaf
   m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6961628145944352589
 Transform:
@@ -135,4 +135,4 @@ MonoBehaviour:
   - {x: -2.8615875, y: 1.2797546, z: 0}
   m_ShapePathHash: -2094275107
   m_Mesh: {fileID: 0}
-  m_InstanceId: -324382
+  m_InstanceId: 977680
