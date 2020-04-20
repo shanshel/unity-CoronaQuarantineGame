@@ -56,11 +56,11 @@ public class EnemyPlayerController : MonoBehaviour
             isSneezing = false;
 
 
-          //  Invoke("destroyProjectile", 0.1f);
+          
         }
         if (timer >= 10)
         {
-          //  Invoke("destroyProjectile", 0.1f);
+          
             timer = 0;
         }
     }
@@ -100,12 +100,6 @@ public class EnemyPlayerController : MonoBehaviour
     }
 
 
-    void destroyProjectile()
-    {
-        
-       // Instantiate(Sneeze, transform.position, Quaternion.identity);
-       // Destroy(Sneeze);
-        
-    }
+   
 }
 
