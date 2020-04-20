@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Props
+=======
+  - WALL1
+>>>>>>> origin/enemyNEW1
   layers:
   - Default
   - TransparentFX
