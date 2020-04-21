@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9213080676742107900}
   - component: {fileID: 5817304276740319372}
+  - component: {fileID: 3847421288186598312}
+  - component: {fileID: 6557304998160989785}
   m_Layer: 0
   m_Name: SideTable3
   m_TagString: Props
@@ -82,3 +84,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!61 &3847421288186598312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112382055504309372}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.91195136}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.92, y: 1.84}
+    newSize: {x: 1.92, y: 1.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.92, y: 0.82585204}
+  m_EdgeRadius: 0
+--- !u!114 &6557304998160989785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112382055504309372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.004876673, y: 0.48292756, z: 0}
+  - {x: 0.9385366, y: 0.9926845, z: 0}
+  - {x: 0.9229284, y: 1.4324398, z: 0}
+  - {x: 0.09609616, y: 1.8292683, z: 0}
+  - {x: -0.9868293, y: 1.303414, z: 0}
+  - {x: -0.96048915, y: 0.8475608, z: 0}
+  m_ShapePathHash: 1612485719
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -433250

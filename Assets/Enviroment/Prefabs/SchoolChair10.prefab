@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5337683800810877383}
   - component: {fileID: 5474761821939996468}
+  - component: {fileID: 3394724638828760910}
+  - component: {fileID: 8960681642758454767}
   m_Layer: 0
   m_Name: SchoolChair10
   m_TagString: Props
@@ -82,3 +84,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &3394724638828760910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461462923338640824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.18487686, y: 0.7565865, z: 0}
+  - {x: 0.8931707, y: 0.76195234, z: 0}
+  - {x: 0.89853626, y: 1.8341461, z: 0}
+  - {x: -0.20634025, y: 1.7751216, z: 0}
+  m_ShapePathHash: 221725784
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -380032
+--- !u!65 &8960681642758454767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461462923338640824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.79902303, y: 1.7965854, z: 0.2}
+  m_Center: {x: 0.52048844, y: 0.8982927, z: 0}
