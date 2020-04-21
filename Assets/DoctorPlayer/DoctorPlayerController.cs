@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class DoctorPlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    //prams
     public float speed;
-    private Vector2 moveAmount;
-    //animation
-    private Animator anim;
-    //needle
     public GameObject needle;
     public Transform shotPoint;
     public float timeBetweenShots;
-    private float shotTime;
     public GameObject weopon;
+    [SerializeField]
+    GameObject aimObject;
+    [SerializeField]
+    GameObject doctorLight;
+    private Rigidbody2D rb;
+    private Vector2 moveAmount;
+    private Animator anim;
+    private float shotTime;
+  
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -25,12 +29,26 @@ public class DoctorPlayerController : MonoBehaviour
     void Update()
     {
         AnimationFN();
-        //
-        needleFN();
+        //needleFN();
+        aimFN();
+       
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+    }
+
+    void aimFN()
+    {
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        aimObject.transform.position = new Vector2(mousePos.x, mousePos.y);
+
+        Vector2 dir = mousePos - doctorLight.transform.position;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+        doctorLight.transform.rotation = rotation;
+
+
     }
    
     public void AnimationFN()
@@ -50,16 +68,13 @@ public class DoctorPlayerController : MonoBehaviour
     public void needleFN()
     {
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButtonDown(0))
         {
             if (Time.time >= shotTime)
             {
                 Instantiate(needle, shotPoint.position, weopon.transform.rotation);
                 shotTime = Time.time + timeBetweenShots;
             }
-            
-                   
-
         } 
     }
 
