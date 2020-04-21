@@ -12,17 +12,20 @@ public class DoctorPlayerController : MonoBehaviour
     public GameObject weopon;
     [SerializeField]
     GameObject aimObject;
-    [SerializeField]
-    GameObject doctorLight;
+
+    public GameObject doctorLight;
+    public Quaternion lightAngle;
     private Rigidbody2D rb;
     private Vector2 moveAmount;
     private Animator anim;
     private float shotTime;
-  
+
+    public bool isMine;
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+   
     }
 
 
@@ -46,6 +49,7 @@ public class DoctorPlayerController : MonoBehaviour
         Vector2 dir = mousePos - doctorLight.transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+        lightAngle = Quaternion.AngleAxis(angle, Vector3.forward);
         doctorLight.transform.rotation = rotation;
 
 
@@ -77,6 +81,8 @@ public class DoctorPlayerController : MonoBehaviour
             }
         } 
     }
+
+
 
 
 }

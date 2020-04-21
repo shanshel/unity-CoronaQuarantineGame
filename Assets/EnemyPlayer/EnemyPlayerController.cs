@@ -13,33 +13,98 @@ public class EnemyPlayerController : MonoBehaviour
     private float movingTIMER = 0;
     //animation
     private Animator anim;
+    private Renderer _renderer;
+
     //bulet
     public GameObject projectile;
     public Transform shotPoint;
     public float timeBetweenShots;
     private float shotTime;
-   
+
+    bool isMain;
+    
+    public SpriteRenderer[] allBodyPicesRenderer;
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        _renderer = GetComponent<Renderer>();
     }
 
 
     void Update()
     {
         timer += Time.deltaTime;
-        //sneeze + bullet
-        sneezeFN();
-        
-        //animation + movement
-        AnimationFN();
-        //weopne rotation
-        weoponFN();
+
+        if (isMain)
+        {
+            sneezeFN();
+            AnimationFN();
+            weoponFN();
+        }
+
+        RenderOnlyIfSeenByDoctor();
+
+
+
+    }
+
+    void RenderOnlyIfSeenByDoctor()
+    {
+        if (_renderer.isVisible)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position);
+            Debug.DrawRay(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position, Color.red);
+
+            Debug.Log(hit.transform.name);
+            if (hit.transform.tag == "Doctor")
+            {
+                var doctorScript = hit.transform.GetComponent<DoctorPlayerController>();
+                var dir = (transform.position - PlayerManager._inst.mainPlayerObject.transform.position);
+                var lightAngle = doctorScript.lightAngle.eulerAngles.z;
+
+                Quaternion rotation = Quaternion.AngleAxis(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, Vector3.forward);
+                float doctorToEnemyAngle = rotation.eulerAngles.z;
+    
+
+                if (Mathf.DeltaAngle(lightAngle, doctorToEnemyAngle) < 60f && Mathf.DeltaAngle(lightAngle, doctorToEnemyAngle) > -60f)
+                {
+                    for (var x = 0; x < allBodyPicesRenderer.Length; x++)
+                    {
+                        allBodyPicesRenderer[x].enabled = true;
+                    }
+                }
+                else
+                {
+                    for (var x = 0; x < allBodyPicesRenderer.Length; x++)
+                    {
+                        allBodyPicesRenderer[x].enabled = false;
+                    }
+                }
+
+           
+            }
+            else
+            {
+                for (var x = 0; x < allBodyPicesRenderer.Length; x++)
+                {
+                    allBodyPicesRenderer[x].enabled = false;
+                }
+            }
+        }
+        else
+        {
+            for (var x = 0; x < allBodyPicesRenderer.Length; x++)
+            {
+                allBodyPicesRenderer[x].enabled = false;
+            }
+        }
+
+
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
     }
     public void sneezeFN()
         {
