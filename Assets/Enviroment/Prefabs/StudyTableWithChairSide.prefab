@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5553392548869615204}
   - component: {fileID: 2946500150972697507}
-  m_Layer: 13
+  - component: {fileID: 5380536119940412767}
+  - component: {fileID: 3463916474519854577}
+  m_Layer: 0
   m_Name: StudyTableWithChairSide
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +84,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!61 &5380536119940412767
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381795256342753672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3441824, y: 1.0685502}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.84, y: 1.88}
+    newSize: {x: 1.84, y: 1.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0686996, y: 1.2911575}
+  m_EdgeRadius: 0
+--- !u!114 &3463916474519854577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381795256342753672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.8702389, y: 0.4229711, z: 0}
+  - {x: 0.19846123, y: 0.43126467, z: 0}
+  - {x: 0.21504825, y: 1.7390095, z: 0}
+  - {x: -0.85365146, y: 1.7307159, z: 0}
+  m_ShapePathHash: -1862439520
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -38946

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1840644150165648743}
   - component: {fileID: 1842380183183616741}
-  m_Layer: 13
+  - component: {fileID: 3439516745885764929}
+  - component: {fileID: 8297669347395069298}
+  m_Layer: 0
   m_Name: Raf2
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +84,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &3439516745885764929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930799822102666689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.94, y: 0, z: 0}
+  - {x: 0.94, y: 0, z: 0}
+  - {x: 0.95850337, y: 1.0986164, z: 0}
+  - {x: -0.9359729, y: 1.0978178, z: 0}
+  m_ShapePathHash: -2030565139
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 292836
+--- !u!61 &8297669347395069298
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930799822102666689}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.54790187}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.88, y: 2.8}
+    newSize: {x: 1.88, y: 2.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.88, y: 1.0958037}
+  m_EdgeRadius: 0

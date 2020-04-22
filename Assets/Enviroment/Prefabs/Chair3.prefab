@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 505559623599963850}
   - component: {fileID: 3106023161632400736}
-  m_Layer: 13
+  - component: {fileID: 5333195077152292074}
+  m_Layer: 0
   m_Name: Chair3
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +83,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &5333195077152292074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327326562550851335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.4645473, y: -0.42463288, z: 0}
+  - {x: 0.4967977, y: -0.43108606, z: 0}
+  - {x: 0.4645476, y: 0.10857279, z: 0}
+  - {x: -0.43874723, y: 0.10857279, z: 0}
+  m_ShapePathHash: 868190644
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -326734

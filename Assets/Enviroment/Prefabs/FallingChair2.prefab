@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1672378342325962251}
   - component: {fileID: 4746922113302866581}
-  m_Layer: 13
+  - component: {fileID: 5802113836043257953}
+  - component: {fileID: -4503515102984869785}
+  m_Layer: 0
   m_Name: FallingChair2
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +84,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &5802113836043257953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465271601105150355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.61380005, y: -0.32888794, z: 0}
+  - {x: 0.32115173, y: -0.33532715, z: 0}
+  - {x: 0.3138275, y: 0.28297424, z: 0}
+  - {x: -0.58802795, y: 0.31481934, z: 0}
+  m_ShapePathHash: -830763499
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 121814
+--- !u!61 &-4503515102984869785
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465271601105150355}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12628937, y: -0.21897888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.24, y: 1.28}
+    newSize: {x: 1.24, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.94947815, y: 0.23614502}
+  m_EdgeRadius: 0

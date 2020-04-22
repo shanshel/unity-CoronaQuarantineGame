@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1407989719446591924}
   - component: {fileID: 7786634571425219281}
-  - component: {fileID: 1304934655784534452}
-  - component: {fileID: 7103558218086001462}
-  m_Layer: 13
+  - component: {fileID: 4932685651847531425}
+  - component: {fileID: 3445051407801586340}
+  m_Layer: 0
   m_Name: BabyChair2
-  m_TagString: Props
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4106974243556401227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.74027, y: 120.66617, z: 11.494141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -122.903114, y: 130.38864, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,19 +72,19 @@ SpriteRenderer:
   m_SortingLayerID: -1690440409
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1148410031956288094, guid: 8d2d81e0c9eb9554c920b571209b0d12,
+  m_Sprite: {fileID: 3376499849754312557, guid: 8d2d81e0c9eb9554c920b571209b0d12,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.04, y: 1.2}
+  m_Size: {x: 1.92, y: 3.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
---- !u!61 &1304934655784534452
+  m_SpriteSortPoint: 0
+--- !u!61 &4932685651847531425
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,20 +97,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3223999}
+  m_Offset: {x: -0.009349823, y: 0.3928299}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.04, y: 1.2}
-    newSize: {x: 1.04, y: 1.2}
+    oldSize: {x: 1.92, y: 3.16}
+    newSize: {x: 1.92, y: 3.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.04, y: 0.5552002}
+  m_Size: {x: 1.8078232, y: 0.63609314}
   m_EdgeRadius: 0
---- !u!114 &7103558218086001462
+--- !u!114 &3445051407801586340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,13 +127,12 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: ef8fcbaf
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
   m_ShapePath:
-  - {x: -0.46863174, y: 0.18841553, z: 0}
-  - {x: -0.01442337, y: 0.03652954, z: 0}
-  - {x: 0.4343834, y: 0.15986633, z: 0}
-  - {x: 0.45721436, y: 0.53196716, z: 0}
-  - {x: -0.49716568, y: 0.5376816, z: 0}
-  m_ShapePathHash: 2137471631
+  - {x: -0.96, y: 0.0000017881393, z: 0}
+  - {x: 0.96, y: 0.0000017881393, z: 0}
+  - {x: 0.96, y: 0.72, z: 0}
+  - {x: -0.96, y: 0.73, z: 0}
+  m_ShapePathHash: -1723740423
   m_Mesh: {fileID: 0}
-  m_InstanceId: 969398
+  m_InstanceId: -104356

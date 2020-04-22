@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3985319625273410521}
   - component: {fileID: 2108109195489838274}
-  m_Layer: 13
+  - component: {fileID: 1451107671951311532}
+  - component: {fileID: 2108129453296184116}
+  m_Layer: 0
   m_Name: StudyTable11
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +84,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!61 &1451107671951311532
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506088259916675343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.32718205}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.92, y: 1.68}
+    newSize: {x: 1.92, y: 1.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.92, y: 1.0256358}
+  m_EdgeRadius: 0
+--- !u!114 &2108129453296184116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506088259916675343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: -0.93690485, y: 0.014522672, z: 0}
+  - {x: 0.93690485, y: -0.023969293, z: 0}
+  - {x: 0.96, y: 0.84, z: 0}
+  - {x: -0.96, y: 0.84, z: 0}
+  m_ShapePathHash: 1207822905
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -98462

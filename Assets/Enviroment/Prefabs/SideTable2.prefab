@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6542360147855806201}
   - component: {fileID: 260461979804980087}
-  m_Layer: 13
+  - component: {fileID: 2108249921561727939}
+  - component: {fileID: 871003340982297524}
+  m_Layer: 0
   m_Name: SideTable2
   m_TagString: Props
   m_Icon: {fileID: 0}
@@ -82,3 +84,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!61 &2108249921561727939
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394903802808102761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.8368292}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.92, y: 1.84}
+    newSize: {x: 1.92, y: 1.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.92, y: 0.8795104}
+  m_EdgeRadius: 0
+--- !u!114 &871003340982297524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394903802808102761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 79df940cef8fcbaf00000000671f9d3d27ed3d9b0b235705
+  m_ShapePath:
+  - {x: 0.08097726, y: 0.7029279, z: 0}
+  - {x: 0.97609776, y: 1.0678066, z: 0}
+  - {x: 0.9707319, y: 1.2658528, z: 0}
+  - {x: -0.112683035, y: 1.8187819, z: 0}
+  - {x: -0.917073, y: 1.410731, z: 0}
+  - {x: -0.9282941, y: 1.2017077, z: 0}
+  m_ShapePathHash: -790680343
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -430096
