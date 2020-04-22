@@ -6,6 +6,7 @@ using Photon.Realtime;
 
 public class RoomController : MonoBehaviourPunCallbacks
 {
+    public int inRoomSceneIndex;
     public int maxPlayerCount;
     public List<RoomInfo> roomList = new List<RoomInfo>();
     public string currentRoomName;
@@ -43,6 +44,16 @@ public class RoomController : MonoBehaviourPunCallbacks
         createRoom(lastRoomName, lastIsPublic);
     }
 
- 
+    public override void OnJoinedRoom()
+    {
+       
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("Load inRoom Scene");
+            PhotonNetwork.LoadLevel(inRoomSceneIndex);
+        }
+    }
+
+
 
 }
