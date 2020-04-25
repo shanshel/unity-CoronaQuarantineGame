@@ -6,18 +6,23 @@ public class EnumsData
 {
     public enum SoundEnum
     {
-        UISwipe, UIClick, UIBack, MenuMusic
+        UISwipe, UIClick, UIBack, MenuMusic, SceneSwipe, ErrorMessage, WarningMessage
     }
 
     public enum WindowEnum
     {
-       Main, CustomizeOption, DoctorCustomizition, PatientCustomizition, ServerList, InRoom
+       Main, CustomizeOption, DoctorCustomizition, PatientCustomizition, ServerList, InRoom, InGame, AnyFirstWindow
 
     }
 
     public enum PopupEnum
     {
         ServerCreate, ServerInfo, Info, Error
+    }
+
+    public enum SceneEnum
+    {
+        MainMenu, Lobby, InGame, Room, None, PrevScene,
     }
 
 }

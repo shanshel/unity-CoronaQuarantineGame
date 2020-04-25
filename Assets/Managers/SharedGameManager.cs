@@ -17,9 +17,10 @@ public class SharedGameManager : MonoBehaviour
         }
         else
         {
+            DontDestroyOnLoad(this.gameObject);
             _instance = this;
             DOTween.defaultAutoPlay = AutoPlay.None;
-            DontDestroyOnLoad(this.gameObject);
+           
         }
     }
 

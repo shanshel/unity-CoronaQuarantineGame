@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 using static EnumsData;
 
 public class UIManager : MonoBehaviour
@@ -10,11 +11,6 @@ public class UIManager : MonoBehaviour
     public static UIManager _inst { get { return _instance; } }
 
     // Start is called before the first frame update
-  
-
- 
-   
-  
     bool isInTransition;
 
     private void Awake()
@@ -38,22 +34,4 @@ public class UIManager : MonoBehaviour
 
 
 
-    public void onCustomiztionOptionButtonClicked()
-    {
-        UIWindow.transTo(WindowEnum.CustomizeOption);
-    }
-
-    public void onStartButtonClicked()
-    {
-        UIWindow.transTo(WindowEnum.ServerList);
-    }
-
-    public void onJoinRoomButtonClicked()
-    {
-        UIWindow.transTo(WindowEnum.InRoom);
-    }
-    public void onHideComplete()
-    {
-        Debug.Log("hide completed");
-    }
 }

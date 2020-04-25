@@ -58,7 +58,7 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 0
@@ -170,17 +170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
+    m_Value: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.7971698, b: 0.8066683, a: 1}
+    m_Value: {r: 0.3686275, g: 0.41301727, b: 0.85882354, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
     m_Value: {x: 0.7760884, y: 0.86298865, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.87180394, z: 0.7021352, w: 0}
+    m_Value: {x: 1, y: 0.9960219, z: 0.75117165, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.866555, z: 0.97074795, w: 0}

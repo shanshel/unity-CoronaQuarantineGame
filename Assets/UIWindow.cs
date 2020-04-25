@@ -12,23 +12,40 @@ public class UIWindow : MonoBehaviour
     public WindowEnum window;
     public RectTransform _rectTransform;
     public Tweener hideTween, showTween, idleTween;
+    public static bool ignoreNextOnHideCompleteEvent;
+    //public static WindowEnum lastTransToenum;
+    public static bool isFiristInitDone;
+    public bool isMainForThisScene;
+    public static List<WindowEnum> mainWindows = new List<WindowEnum>();
     private void Start()
     {
         hideTween = transform.DOScale(0, .4f).SetAutoKill(false).SetId(window.ToString() + "_hide").OnComplete(() => { UIWindow.onHideComplete(); });
         showTween = transform.DOScale(1f, .3f).SetAutoKill(false).SetId(window.ToString() + "_show").OnComplete(() => { UIWindow.onShowComplete(); });
         idleTween = transform.DOMove(new Vector3(10f, 10f, 0f), 20f).SetId(window.ToString() + "_idle").SetAutoKill(false);
         _rectTransform = GetComponent<RectTransform>();
+
+
         UIWindow.windows.Add(this);
-        if (window == WindowEnum.Main)
+        if (isMainForThisScene && !mainWindows.Contains(window))
+        {
+            UIWindow.mainWindows.Add(window);
+        }
+        if (mainWindows.Contains(window))
         {
             currentWindow = this;
-        }
-        else
+            targetWindow = this;
+            if (!isFiristInitDone)
+            {
+                gameObject.SetActive(true);
+            } else
+            {
+                gameObject.SetActive(false);
+            }
+        } else
         {
             gameObject.SetActive(false);
         }
-            
-
+        
     }
 
     public void hide()
@@ -51,8 +68,13 @@ public class UIWindow : MonoBehaviour
  
     public static void onHideComplete()
     {
+        if (ignoreNextOnHideCompleteEvent)
+        {
+            return;
+        }
         targetWindow.show();
         currentWindow = targetWindow;
+        
     }
 
     public static void onShowComplete()
@@ -60,24 +82,61 @@ public class UIWindow : MonoBehaviour
 
     }
 
-    public static void transTo(WindowEnum transToenum)
+    public static void beforeTransLoadNewScene()
     {
-        foreach (var win in UIWindow.windows)
+        UIWindow.windows.Clear();
+        windows = new List<UIWindow>();
+    }
+    public static void transWaitForNewSceneComplete()
+    {
+        ignoreNextOnHideCompleteEvent = false;
+        backTargetWindow = null;
+        targetWindow.show();
+    }
+    public static void transTo(WindowEnum transToenum, SceneEnum newScene = SceneEnum.None)
+    {
+
+        isFiristInitDone = true;
+        if (newScene != SceneEnum.None)
         {
-    
-            if (win.window == transToenum)
-            {
-                targetWindow = win;
-            }
-                
+            ignoreNextOnHideCompleteEvent = true;
+            currentWindow.hide();
+            //lastTransToenum = transToenum;
+            CustomSceneLoader._inst.loadScene(newScene);
         }
-        SoundManager._inst.playSoundOnce(SoundEnum.UISwipe);
-        currentWindow.hide();
+        else
+        {
+            foreach (var win in UIWindow.windows)
+            {
+                if (win.window == transToenum)
+                {
+                    targetWindow = win;
+                }
+            }
+            SoundManager._inst.playSoundOnce(SoundEnum.UISwipe);
+            currentWindow.hide();
+        }
+ 
     }
 
     public static void back()
     {
-        targetWindow = backTargetWindow;
-        currentWindow.hide();
+  
+        
+        if (backTargetWindow == null || mainWindows.Contains(currentWindow.window))
+        {
+            transTo(WindowEnum.AnyFirstWindow, SceneEnum.PrevScene);
+        }
+        else
+        {
+            targetWindow = backTargetWindow;
+            currentWindow.hide();
+        }
+       
+    }
+
+    public void onBackEvent()
+    {
+        UIManager._inst.back();
     }
 }
