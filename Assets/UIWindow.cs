@@ -119,6 +119,10 @@ public class UIWindow : MonoBehaviour
  
     }
 
+   
+
+
+
     public static void back()
     {
   

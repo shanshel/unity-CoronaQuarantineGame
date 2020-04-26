@@ -6,53 +6,30 @@ using Photon.Realtime;
 
 public class RoomController : MonoBehaviourPunCallbacks
 {
-    public int inRoomSceneIndex;
-    public int maxPlayerCount;
-    public List<RoomInfo> roomList = new List<RoomInfo>();
-    public string currentRoomName;
-    string lastRoomName;
-    bool lastIsPublic;
 
 
-    public void createRoom(string roomName, bool isPublic)
+    
+
+    private void Start()
     {
-        RoomOptions roomOption = new RoomOptions();
-        roomOption.MaxPlayers = (byte)maxPlayerCount;
-        roomOption.IsVisible = isPublic;
-        roomOption.IsOpen = true;
-
-        lastRoomName = roomName;
-        lastIsPublic = isPublic;
-        currentRoomName = roomName + getRandomRoomNumber();
-        PhotonNetwork.CreateRoom(currentRoomName, roomOption);
+        //Equal to On Join Room 
+        PhotonNetwork.IsMessageQueueRunning = true;
+        UIRoomCanvas._inst.updateRoomInfo(PhotonNetwork.CurrentRoom);
     }
 
-    public string getRandomRoomNumber()
+
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        return Random.Range(0, 10000).ToString();
+        UIRoomCanvas._inst.updateRoomInfo(PhotonNetwork.CurrentRoom);
     }
 
-    /* Callbacks */
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        this.roomList = roomList;
+        UIRoomCanvas._inst.updateRoomInfo(PhotonNetwork.CurrentRoom);
     }
 
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
-        Debug.Log("RoomCreatedFailed");
-        createRoom(lastRoomName, lastIsPublic);
-    }
 
-    public override void OnJoinedRoom()
-    {
-       
-        if (PhotonNetwork.IsMasterClient)
-        {
-            Debug.Log("Load inRoom Scene");
-            PhotonNetwork.LoadLevel(inRoomSceneIndex);
-        }
-    }
 
 
 

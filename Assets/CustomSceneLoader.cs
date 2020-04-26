@@ -36,16 +36,21 @@ public class CustomSceneLoader : MonoBehaviour
         }
         else if (scene == SceneEnum.InGame)
         {
-            StartCoroutine(loadSceneEnumerator(2));
+            StartCoroutine(loadSceneEnumerator(3));
         }
         else if (scene == SceneEnum.MainMenu)
         {
             StartCoroutine(loadSceneEnumerator(0));
         }
+        else if (scene == SceneEnum.Room)
+        {
+            StartCoroutine(loadSceneEnumerator(2));
+        }
         else if (scene == SceneEnum.PrevScene)
         {
             StartCoroutine(loadSceneEnumerator(prevScene));
         }
+       
         prevScene = SceneManager.GetActiveScene().buildIndex;
     }
 

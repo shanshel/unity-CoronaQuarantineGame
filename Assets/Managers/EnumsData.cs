@@ -11,7 +11,16 @@ public class EnumsData
 
     public enum WindowEnum
     {
-       Main, CustomizeOption, DoctorCustomizition, PatientCustomizition, ServerList, InRoom, InGame, AnyFirstWindow
+       
+        Main, 
+        CustomizeOption, 
+        DoctorCustomizition, 
+        PatientCustomizition, 
+        ServerList, 
+        CreateRoom,
+        InRoom, 
+        InGame, 
+        AnyFirstWindow
 
     }
 

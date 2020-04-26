@@ -6,14 +6,17 @@ using Photon.Pun;
 public class NetworkController : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
+
     void Start()
+    {
+        OnConnectedToServer();
+    }
+
+    public void OnConnectedToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
+    
+ 
 
-    // Update is called once per frame
-    public override void OnConnectedToMaster()
-    {
-        //Debug.Log(PhotonNetwork.CloudRegion);
-    }
 }

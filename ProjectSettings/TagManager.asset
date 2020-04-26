@@ -27,7 +27,7 @@ TagManager:
   - LightM
   - 
   - 
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -57,4 +57,7 @@ TagManager:
     locked: 0
   - name: Effects
     uniqueID: 89596683
+    locked: 0
+  - name: MiniMap
+    uniqueID: 3445216141
     locked: 0
