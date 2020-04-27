@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Realtime;
-
+using Photon.Pun;
+using UnityEngine.UI;
 public class UIRoomCanvas : MonoBehaviour
 {
     private static UIRoomCanvas _instance;
@@ -19,6 +20,7 @@ public class UIRoomCanvas : MonoBehaviour
     [SerializeField]
     UIPlayer UIPlayerPrefab;
 
+    public Button startGameButton;
     List<UIPlayer> uiPlayerList = new List<UIPlayer>();
     private void Awake()
     {
@@ -32,6 +34,16 @@ public class UIRoomCanvas : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        startGameButton.gameObject.SetActive(false);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            startGameButton.interactable = false;
+            startGameButton.gameObject.SetActive(true);
+        } 
+    }
+
 
 
     public void updateRoomInfo(Room info)
@@ -39,8 +51,31 @@ public class UIRoomCanvas : MonoBehaviour
   
         roomNameText.text = info.Name;
         roomPlayerCountText.text = info.PlayerCount + "/" + info.MaxPlayers;
-        roomStatusText.text = "Waiting For Other Players";
-        roomPasswordText.text = "(NO Password)";
+
+        if (!RoomController._inst.isReady)
+        {
+            if (info.PlayerCount < 2)
+            {
+                roomStatusText.text = "At Least 2 Players Required To Start";
+                startGameButton.interactable = false;
+            }
+            else
+            {
+                roomStatusText.text = "Ready To Play";
+                startGameButton.interactable = true;
+            }
+        }
+
+
+        if (info.CustomProperties.ContainsKey("Password"))
+        {
+            roomPasswordText.text = (string)info.CustomProperties["Password"];
+        }
+        else
+        {
+            roomPasswordText.text = "(NO Password)";
+        }
+       
 
         foreach (var uiPlayer in uiPlayerList)
         {
@@ -71,8 +106,22 @@ public class UIRoomCanvas : MonoBehaviour
     }
 
  
+    public void onLeaveRoomButtonClicked()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public void onStartGameButtonClicked()
+    {
+        RoomController._inst.onStartEvent();
+    }
     public void testInGame()
     {
         UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.InGame);
+    }
+
+    public void updateRoomTimer(int timer)
+    {
+        roomStatusText.text = "Game Start In " + timer.ToString() + " Seconds";
     }
 }

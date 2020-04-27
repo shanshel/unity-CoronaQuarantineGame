@@ -6,7 +6,15 @@ public class EnumsData
 {
     public enum SoundEnum
     {
-        UISwipe, UIClick, UIBack, MenuMusic, SceneSwipe, ErrorMessage, WarningMessage
+        UISwipe, 
+        UIClick, 
+        UIBack, 
+        MenuMusic, 
+        SceneSwipe, 
+        ErrorMessage, 
+        WarningMessage,
+        PlayerJoin, 
+        PlayerLeave,
     }
 
     public enum WindowEnum
@@ -32,6 +40,11 @@ public class EnumsData
     public enum SceneEnum
     {
         MainMenu, Lobby, InGame, Room, None, PrevScene,
+    }
+
+    public enum popupStatus
+    {
+        hiding, idle
     }
 
 }

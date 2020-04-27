@@ -17,6 +17,7 @@ public class UIWindow : MonoBehaviour
     public static bool isFiristInitDone;
     public bool isMainForThisScene;
     public static List<WindowEnum> mainWindows = new List<WindowEnum>();
+ 
     private void Start()
     {
         hideTween = transform.DOScale(0, .4f).SetAutoKill(false).SetId(window.ToString() + "_hide").OnComplete(() => { UIWindow.onHideComplete(); });
@@ -95,7 +96,7 @@ public class UIWindow : MonoBehaviour
     }
     public static void transTo(WindowEnum transToenum, SceneEnum newScene = SceneEnum.None)
     {
-
+       
         isFiristInitDone = true;
         if (newScene != SceneEnum.None)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
@@ -9,14 +10,20 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        OnConnectedToServer();
+        PhotonNetwork.IsMessageQueueRunning = true;
+        ConnectedToServer();
     }
 
-    public void OnConnectedToServer()
+    public void ConnectedToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
     }
-    
- 
+
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        PhotonNetwork.IsMessageQueueRunning = false;
+        UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.MainMenu);
+    }
 
 }
