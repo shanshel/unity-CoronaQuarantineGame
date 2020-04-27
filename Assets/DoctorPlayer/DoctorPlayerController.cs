@@ -19,22 +19,24 @@ public class DoctorPlayerController : MonoBehaviour
     private Vector2 moveAmount;
     private Animator anim;
     private float shotTime;
-
+    public Animator doctorAnimator;
+    public ParticleSystem dirt;
+    float timeCount = 1f;
+    private float surpisedTimer = 0f;
     public bool isMine;
     void Start()
     {
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-   
     }
 
 
     void Update()
     {
+        surpisedTimer -= Time.deltaTime;
         AnimationFN();
         //needleFN();
         aimFN();
-       
+        timeCount -= Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -51,8 +53,6 @@ public class DoctorPlayerController : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
         lightAngle = Quaternion.AngleAxis(angle, Vector3.forward);
         doctorLight.transform.rotation = rotation;
-
-
     }
    
     public void AnimationFN()
@@ -61,11 +61,18 @@ public class DoctorPlayerController : MonoBehaviour
         moveAmount = moveInput.normalized * speed;
         if (moveInput != Vector2.zero)
         {
-            anim.SetBool("isRunning", true);
+
+            doctorAnimator.SetBool("moved", true);
+            if (timeCount <= 0f)
+            {
+                Instantiate(dirt, transform.position, Quaternion.identity);
+                timeCount = 1f;
+            }
+            
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            doctorAnimator.SetBool("moved", false);
         }
      
     }
@@ -80,6 +87,21 @@ public class DoctorPlayerController : MonoBehaviour
                 shotTime = Time.time + timeBetweenShots;
             }
         } 
+    }
+
+    public void onSeeEnemy()
+    {
+        if (surpisedTimer <= 0)
+        {
+            doctorAnimator.SetTrigger("Surprised");
+            surpisedTimer = 10f;
+        }
+        else
+        {
+            
+        }
+        
+
     }
 
 

@@ -72,6 +72,7 @@ public class EnemyPlayerController : MonoBehaviour
                     for (var x = 0; x < allBodyPicesRenderer.Length; x++)
                     {
                         allBodyPicesRenderer[x].enabled = true;
+                        hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
                     }
                 }
                 else
