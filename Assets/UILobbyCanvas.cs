@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 using static EnumsData;
+using Photon.Pun;
 
 public class UILobbyCanvas : MonoBehaviour
 {
@@ -141,6 +143,11 @@ public class UILobbyCanvas : MonoBehaviour
     public void removeActionBlocker() 
     {
         actionBlockerObject.SetActive(false);
+    }
+
+    public void onBackButtonClicked()
+    {
+        PhotonNetwork.Disconnect();
     }
 
 

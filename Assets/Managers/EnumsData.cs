@@ -28,7 +28,8 @@ public class EnumsData
         CreateRoom,
         InRoom, 
         InGame, 
-        AnyFirstWindow
+        AnyFirstWindow,
+        None,
 
     }
 

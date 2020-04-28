@@ -127,6 +127,11 @@ public class RoomController : MonoBehaviourPunCallbacks
        
         if (!isMatchStarted)
         {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+            }
             isMatchStarted = true;
             UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.InGame);
         }

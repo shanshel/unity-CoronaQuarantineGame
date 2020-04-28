@@ -6,16 +6,18 @@ using static EnumsData;
 
 public class UIWindow : MonoBehaviour
 {
-    public static UIWindow currentWindow, backTargetWindow, targetWindow;
+    public static UIWindow currentWindow, targetWindow;
     public static List<UIWindow> windows = new List<UIWindow>();
 
     public WindowEnum window;
+    public WindowEnum backWindow;
     public RectTransform _rectTransform;
     public Tweener hideTween, showTween, idleTween;
     public static bool ignoreNextOnHideCompleteEvent;
     //public static WindowEnum lastTransToenum;
     public static bool isFiristInitDone;
     public bool isMainForThisScene;
+    
     public static List<WindowEnum> mainWindows = new List<WindowEnum>();
  
     private void Start()
@@ -51,9 +53,7 @@ public class UIWindow : MonoBehaviour
 
     public void hide()
     {
-        backTargetWindow = currentWindow;
         currentWindow.hideTween.Restart();
-    
     }
 
     public void show()
@@ -91,7 +91,7 @@ public class UIWindow : MonoBehaviour
     public static void transWaitForNewSceneComplete()
     {
         ignoreNextOnHideCompleteEvent = false;
-        backTargetWindow = null;
+
         targetWindow.show();
     }
     public static void transTo(WindowEnum transToenum, SceneEnum newScene = SceneEnum.None)
@@ -100,6 +100,7 @@ public class UIWindow : MonoBehaviour
         isFiristInitDone = true;
         if (newScene != SceneEnum.None)
         {
+    
             ignoreNextOnHideCompleteEvent = true;
             currentWindow.hide();
             //lastTransToenum = transToenum;
@@ -128,14 +129,25 @@ public class UIWindow : MonoBehaviour
     {
   
         
-        if (backTargetWindow == null || mainWindows.Contains(currentWindow.window))
+        if (currentWindow.backWindow == WindowEnum.AnyFirstWindow)
         {
             transTo(WindowEnum.AnyFirstWindow, SceneEnum.PrevScene);
         }
+        else if (currentWindow.backWindow == WindowEnum.None)
+        {
+            return;
+        }
         else
         {
-            targetWindow = backTargetWindow;
-            currentWindow.hide();
+            foreach (var win in UIWindow.windows)
+            {
+                if (win.window == currentWindow.backWindow)
+                {
+                    targetWindow = win;
+                    currentWindow.hide();
+                    return;
+                }
+            }
         }
        
     }

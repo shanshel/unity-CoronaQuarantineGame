@@ -36,7 +36,8 @@ public class LobbyController : MonoBehaviourPunCallbacks
     public Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>(){};
     public void createRoom(string roomName, bool isPublic, int maxPlayerCount)
     {
-      
+        if (!PhotonNetwork.IsConnectedAndReady)
+            return;
         RoomOptions roomOption = new RoomOptions();
         roomOption.MaxPlayers = (byte)maxPlayerCount;
         roomOption.IsVisible = true;
