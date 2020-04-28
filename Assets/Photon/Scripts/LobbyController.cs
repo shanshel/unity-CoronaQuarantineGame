@@ -13,7 +13,6 @@ public class LobbyController : MonoBehaviourPunCallbacks
     string lastRoomName;
     bool lastIsPublic;
     int lastMaxPlayerCount;
-
     private static LobbyController _instance;
     public static LobbyController _inst { get { return _instance; } }
 
@@ -28,19 +27,22 @@ public class LobbyController : MonoBehaviourPunCallbacks
         else
         {
             _instance = this;
+
         }
     }
 
 
 
-    public List<RoomInfo> roomList = new List<RoomInfo>();
+    public Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>(){};
     public void createRoom(string roomName, bool isPublic, int maxPlayerCount)
     {
+        if (!PhotonNetwork.IsConnectedAndReady)
+            return;
         RoomOptions roomOption = new RoomOptions();
         roomOption.MaxPlayers = (byte)maxPlayerCount;
-        roomOption.IsVisible = isPublic;
+        roomOption.IsVisible = true;
         roomOption.IsOpen = true;
-
+        roomOption.CustomRoomPropertiesForLobby = new string[] { "Password" };
         lastRoomName = roomName;
         lastIsPublic = isPublic;
         lastMaxPlayerCount = maxPlayerCount;
@@ -54,16 +56,22 @@ public class LobbyController : MonoBehaviourPunCallbacks
     }
 
 
+    public void joinRoom(RoomInfo room)
+    {
+        var hash = new ExitGames.Client.Photon.Hashtable();
+        PhotonNetwork.JoinRoom(room.Name);
+    }
+
     /* PUN Callbacks */
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.NickName = "Player" + Random.Range(1, 10000).ToString();
         PhotonNetwork.JoinLobby();
     }
     public override void OnJoinedLobby()
     {
         canJoinRoom = true;
+        UILobbyCanvas._inst.removeActionBlocker();
  
     }
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -72,23 +80,65 @@ public class LobbyController : MonoBehaviourPunCallbacks
         createRoom(lastRoomName, lastIsPublic, lastMaxPlayerCount);
     }
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    
+    public override void OnRoomListUpdate(List<RoomInfo> comingRoomList)
     {
-        this.roomList = roomList;
-        UILobbyCanvas._inst.updateServerList(this.roomList);
+        UILobbyCanvas._inst.clearServerList();
+        UpdateCachedRoomList(comingRoomList);
+        UILobbyCanvas._inst.updateServerList(cachedRoomList);
     }
 
-    public override void OnJoinedRoom()
+    private void UpdateCachedRoomList(List<RoomInfo> roomList)
     {
-       
-
-        if (PhotonNetwork.IsMasterClient)
+        foreach (RoomInfo info in roomList)
         {
-       
-            PhotonNetwork.IsMessageQueueRunning = false;
-            UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.Room);
-            //PhotonNetwork.LoadLevel(inRoomSceneIndex);
+            // Remove room from cached room list if it got closed, became invisible or was marked as removed
+            if (!info.IsOpen || !info.IsVisible || info.RemovedFromList)
+            {
+                if (cachedRoomList.ContainsKey(info.Name))
+                {
+                    cachedRoomList.Remove(info.Name);
+                }
+
+                continue;
+            }
+
+            // Update cached room info
+            if (cachedRoomList.ContainsKey(info.Name))
+            {
+                cachedRoomList[info.Name] = info;
+            }
+            // Add new room info to cache
+            else
+            {
+                cachedRoomList.Add(info.Name, info);
+            }
         }
     }
+    public override void OnJoinedRoom()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            var customRoomProprties = new ExitGames.Client.Photon.Hashtable();
+            if (!lastIsPublic)
+            {
+                var password = getRandomRoomNumber().ToString();
+                customRoomProprties.Add("Password", password);
+            }
+            customRoomProprties.Add("isReady", "NO");
+            Room _localRoom = PhotonNetwork.CurrentRoom;
+            _localRoom.SetCustomProperties(customRoomProprties);
+        }
+        PhotonNetwork.IsMessageQueueRunning = false;
+        UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.Room);
+    }
 
+
+    public override void OnLeftLobby()
+    {
+        PhotonNetwork.IsMessageQueueRunning = false;
+        UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.MainMenu);
+    }
+
+ 
 }
