@@ -5,7 +5,8 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class EnvLoader : MonoBehaviour
 {
-    public List<GameObject> props;
+    public List<GameObject> propsContainers;
+    List<Transform> props;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -13,6 +14,15 @@ public class EnvLoader : MonoBehaviour
     }
     void Start()
     {
+        foreach (var cont in propsContainers)
+        {
+            var localObjects = cont.GetComponentsInChildren<Transform>();
+            foreach (var _prop in localObjects)
+            {
+                props.Add(_prop);
+            }
+        }
+
         InvokeRepeating("LoadObjectClosetoPlayer", 1f, 1f);
     }
 
@@ -21,13 +31,14 @@ public class EnvLoader : MonoBehaviour
       
         for (var x = 0; x < props.Count; x++)
         {
-            if (Vector2.Distance(PlayerManager._inst.mainPlayerObject.transform.position, props[x].transform.position) < 60f)
+
+            if (Vector2.Distance(PlayerManager._inst.mainPlayerObject.transform.position, props[x].position) < 60f)
             {
-                props[x].SetActive(true);
+                props[x].gameObject.SetActive(true);
             }
             else
             {
-                props[x].SetActive(false);
+                props[x].gameObject.SetActive(false);
             }
            
         }
