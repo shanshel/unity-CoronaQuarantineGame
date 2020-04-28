@@ -61,6 +61,7 @@ ScriptedImporter:
     maxTextureSizeSet: 0
     compressionQualitySet: 0
     textureFormatSet: 0
+    applyGammaDecoding: 0
   spriteImportData:
   - name: 
     originalName: 
@@ -5802,7 +5803,7 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 47
+    compressionQuality: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 1
     allowsAlphaSplitting: 0
