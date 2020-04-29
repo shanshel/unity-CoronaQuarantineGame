@@ -10,7 +10,7 @@ public class UIRoomCanvas : MonoBehaviour
     private static UIRoomCanvas _instance;
     public static UIRoomCanvas _inst { get { return _instance; } }
 
-
+    
     [SerializeField]
     TextMeshProUGUI roomNameText, roomPasswordText, roomPlayerCountText, roomStatusText;
 
@@ -54,9 +54,9 @@ public class UIRoomCanvas : MonoBehaviour
 
         if (!RoomController._inst.isReady)
         {
-            if (info.PlayerCount < 2)
+            if (info.PlayerCount < RoomController._inst.minPlayerRequiredToStart)
             {
-                roomStatusText.text = "At Least 2 Players Required To Start";
+                roomStatusText.text = "At Least " + RoomController._inst.minPlayerRequiredToStart + " Players Required To Start";
                 startGameButton.interactable = false;
             }
             else

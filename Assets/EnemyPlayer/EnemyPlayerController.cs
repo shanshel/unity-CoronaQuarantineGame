@@ -44,14 +44,12 @@ public class EnemyPlayerController : MonoBehaviour
         }
 
         RenderOnlyIfSeenByDoctor();
-
-
-
     }
 
     void RenderOnlyIfSeenByDoctor()
     {
-        if (_renderer.isVisible)
+        /*
+        if (_renderer.isVisible && PlayerManager._inst.mainPlayerObject != null)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position);
             Debug.DrawRay(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position, Color.red);
@@ -100,7 +98,7 @@ public class EnemyPlayerController : MonoBehaviour
                 allBodyPicesRenderer[x].enabled = false;
             }
         }
-
+        */
 
     }
     private void FixedUpdate()

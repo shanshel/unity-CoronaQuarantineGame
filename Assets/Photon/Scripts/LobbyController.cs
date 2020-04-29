@@ -66,6 +66,11 @@ public class LobbyController : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.NickName = "Player" + Random.Range(1, 10000).ToString();
+
+        var playerProps = new ExitGames.Client.Photon.Hashtable();
+        playerProps.Add("DoctorsIndex", "0");
+        playerProps.Add("PatientIndex", "0");
+        PhotonNetwork.LocalPlayer.SetCustomProperties(playerProps);
         PhotonNetwork.JoinLobby();
     }
     public override void OnJoinedLobby()

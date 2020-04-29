@@ -24,14 +24,18 @@ public class DoctorPlayerController : MonoBehaviour
     float timeCount = 1f;
     private float surpisedTimer = 0f;
     public bool isMine;
+
+    public PlayerCharacterNetwork _charInNetwork;
     void Start()
     {
+       
         rb = GetComponent<Rigidbody2D>();
     }
 
 
     void Update()
     {
+        if (!_charInNetwork._photonView.IsMine) return;
         surpisedTimer -= Time.deltaTime;
         AnimationFN();
         //needleFN();
@@ -40,6 +44,7 @@ public class DoctorPlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!_charInNetwork._photonView.IsMine) return;
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
     }
 

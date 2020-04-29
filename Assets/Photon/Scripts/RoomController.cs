@@ -13,6 +13,8 @@ public class RoomController : MonoBehaviourPunCallbacks
 
     public float timer = 20f;
     public int intTimer;
+    [Range(1, 5)]
+    public int minPlayerRequiredToStart = 1;
     public bool isReady = false;
     bool isMatchStarted;
     private void Awake()
