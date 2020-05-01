@@ -847,7 +847,7 @@ MonoBehaviour:
   doctorLight: {fileID: 5221610655826318186}
   lightAngle: {x: 0, y: 0, z: 0, w: 0}
   doctorAnimator: {fileID: 5894588208499961658}
-  dirt: {fileID: 4314399244816200301, guid: d994d0722a373ca4f88efde7bf65e131, type: 3}
+  dirt: {fileID: 4314399244816200301, guid: ab748ef28843ece48b60c60e6e8f3e89, type: 3}
   isMine: 1
 --- !u!114 &63302552415763830
 MonoBehaviour:

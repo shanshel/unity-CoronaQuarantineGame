@@ -24,6 +24,8 @@ public class DoctorPlayerController : MonoBehaviour
     float timeCount = 1f;
     private float surpisedTimer = 0f;
     public bool isMine;
+    bool isRightStep = true;
+    float stepsTimer = 0.3f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,7 @@ public class DoctorPlayerController : MonoBehaviour
         //needleFN();
         aimFN();
         timeCount -= Time.deltaTime;
+        stepsTimer -= Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -63,6 +66,30 @@ public class DoctorPlayerController : MonoBehaviour
         {
 
             doctorAnimator.SetBool("moved", true);
+            if (stepsTimer >= 0)
+            {
+                return;
+            }
+            else
+            {
+                if (isRightStep)
+                {
+                    SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.DoctorSteps2);
+                    isRightStep = false;
+                }
+                else
+                {
+                    SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.DoctorSteps);
+                    isRightStep = true;
+                }
+                
+                Debug.Log(isRightStep);
+                stepsTimer = 0.3f;
+                
+            }
+
+
+            
             if (timeCount <= 0f)
             {
                 Instantiate(dirt, transform.position, Quaternion.identity);
@@ -94,14 +121,15 @@ public class DoctorPlayerController : MonoBehaviour
         if (surpisedTimer <= 0)
         {
             doctorAnimator.SetTrigger("Surprised");
+            Invoke("DelaySurpise",0.5f);
             surpisedTimer = 10f;
-        }
-        else
-        {
-            
         }
         
 
+    }
+    void DelaySurpise()
+    {
+        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.Surprise);
     }
 
 

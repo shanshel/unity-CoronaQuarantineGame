@@ -15,6 +15,11 @@ public class EnumsData
         WarningMessage,
         PlayerJoin, 
         PlayerLeave,
+        DoctorSteps,
+        DoctorSteps2,
+        NeedleThrow,
+        NeedlePop,
+        Surprise,
     }
 
     public enum WindowEnum
