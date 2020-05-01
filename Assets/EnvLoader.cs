@@ -5,22 +5,14 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class EnvLoader : MonoBehaviour
 {
-    public List<GameObject> propsContainers;
-    List<Transform> props;
+    public Transform[] props;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        LoadObjectClosetoPlayer();
-    }
+
     void Start()
     {
-        foreach (var cont in propsContainers)
+        foreach (var prop in props)
         {
-            var localObjects = cont.GetComponentsInChildren<Transform>();
-            foreach (var _prop in localObjects)
-            {
-                props.Add(_prop);
-            }
+            prop.gameObject.SetActive(false);
         }
 
         InvokeRepeating("LoadObjectClosetoPlayer", 1f, 1f);
@@ -28,11 +20,17 @@ public class EnvLoader : MonoBehaviour
 
     void LoadObjectClosetoPlayer()
     {
-      
-        for (var x = 0; x < props.Count; x++)
-        {
+        if (NetworkPlayers._inst._localCPlayer == null)
+            return;
 
-            if (Vector2.Distance(PlayerManager._inst.mainPlayerObject.transform.position, props[x].position) < 60f)
+
+        Debug.Log("i reach here");
+        Debug.Log("distance from " + NetworkPlayers._inst._localCPlayer.transform.position);
+        Debug.Log("distance To " + props[0].position);
+        Debug.Log("IS: " + Vector2.Distance(NetworkPlayers._inst._localCPlayer.transform.position, props[0].position));
+        for (var x = 0; x < props.Length; x++)
+        {
+            if (Vector2.Distance(NetworkPlayers._inst._localCPlayer.transform.position, props[x].position) < 60f)
             {
                 props[x].gameObject.SetActive(true);
             }
@@ -40,14 +38,9 @@ public class EnvLoader : MonoBehaviour
             {
                 props[x].gameObject.SetActive(false);
             }
-           
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

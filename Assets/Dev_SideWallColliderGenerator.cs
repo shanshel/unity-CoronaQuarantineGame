@@ -34,7 +34,6 @@ public class Dev_SideWallColliderGenerator : MonoBehaviour
     {
         Destroy(_rigid);
         _boxCollider.isTrigger = false;
-        Debug.Log("finished");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

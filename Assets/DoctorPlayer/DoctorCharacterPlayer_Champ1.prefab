@@ -762,8 +762,10 @@ GameObject:
   - component: {fileID: 2782159743629136662}
   - component: {fileID: 2287553154360734411}
   - component: {fileID: 2287553154360734412}
+  - component: {fileID: 7805240094010275747}
   - component: {fileID: 2287553154360734410}
   - component: {fileID: 63302552415763830}
+  - component: {fileID: 3079489875915139789}
   m_Layer: 12
   m_Name: DoctorCharacterPlayer_Champ1
   m_TagString: Doctor
@@ -826,7 +828,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2287553154360734410
+--- !u!114 &7805240094010275747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -834,6 +836,28 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2287553154360734414}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2287553154360734410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287553154360734414}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78769780afc0733469f9dc25ad45e75e, type: 3}
   m_Name: 
@@ -849,7 +873,23 @@ MonoBehaviour:
   doctorAnimator: {fileID: 5894588208499961658}
   dirt: {fileID: 4314399244816200301, guid: ab748ef28843ece48b60c60e6e8f3e89, type: 3}
   isMine: 1
+  _charInNetwork: {fileID: 0}
 --- !u!114 &63302552415763830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287553154360734414}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4307ac105adc93542ad97da0efc85072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Needle: {fileID: 6129696243112194905, guid: 4f58c7bced68c40408e87b04352db13a, type: 3}
+  doctorLight: {fileID: 5221610655826318186}
+  shotPoint: {fileID: 1132816498}
+--- !u!114 &3079489875915139789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -858,12 +898,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2287553154360734414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4307ac105adc93542ad97da0efc85072, type: 3}
+  m_Script: {fileID: 11500000, guid: 25706725b6db14648aad0cb765e6d471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Needle: {fileID: 6129696243112194905, guid: 4f58c7bced68c40408e87b04352db13a, type: 3}
-  doctorLight: {fileID: 5221610655826318186}
-  shotPoint: {fileID: 1132816498}
+  speed: 8
+  moveAnimationKey: isRunning
+  dirtPrefab: {fileID: 537916436715511688, guid: ab748ef28843ece48b60c60e6e8f3e89,
+    type: 3}
+  _thisPlayerTeam: 0
 --- !u!1 &5058364301016470207
 GameObject:
   m_ObjectHideFlags: 0

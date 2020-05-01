@@ -53,5 +53,9 @@ public class EnumsData
         hiding, idle
     }
 
+    public enum Team
+    {
+        Doctors, Patients, Both
+    }
 }
 
