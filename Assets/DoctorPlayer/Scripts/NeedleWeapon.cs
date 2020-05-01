@@ -23,6 +23,8 @@ public class NeedleWeapon : MonoBehaviour
             if (shotTime <= 0)
             {
                 Instantiate(Needle, shotPoint.position, doctorLight.transform.rotation);
+                SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedlePop);
+                SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedleThrow);
                 shotTime = 1f;
             }
         } 
