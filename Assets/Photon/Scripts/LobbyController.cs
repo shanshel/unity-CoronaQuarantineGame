@@ -43,6 +43,8 @@ public class LobbyController : MonoBehaviourPunCallbacks
         roomOption.IsVisible = true;
         roomOption.IsOpen = true;
         roomOption.CustomRoomPropertiesForLobby = new string[] { "Password" };
+        roomOption.PlayerTtl = 100000;
+        roomOption.EmptyRoomTtl = 2000;
         lastRoomName = roomName;
         lastIsPublic = isPublic;
         lastMaxPlayerCount = maxPlayerCount;
@@ -131,6 +133,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
                 customRoomProprties.Add("Password", password);
             }
             customRoomProprties.Add("isReady", "NO");
+            customRoomProprties.Add("Random100", Random.Range(0, 101).ToString());
             Room _localRoom = PhotonNetwork.CurrentRoom;
             _localRoom.SetCustomProperties(customRoomProprties);
         }

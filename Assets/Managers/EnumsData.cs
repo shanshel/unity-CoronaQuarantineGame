@@ -50,7 +50,7 @@ public class EnumsData
 
     public enum Team
     {
-        Doctors, Patients
+        Doctors, Patients, Both
     }
 }
 

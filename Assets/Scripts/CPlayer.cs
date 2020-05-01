@@ -16,6 +16,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public string moveAnimationKey = "moving";
     public GameObject aimObject, lightObject;
 
+    public PlayerMiniMap _playerMiniMap;
     //StepOptions
     [SerializeField]
     protected GameObject dirtPrefab;
@@ -29,8 +30,52 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     protected Vector2 moveAmount;
 
+    //Health
+    public int maxHealth = 10;
+    [HideInInspector]
+    public int currentHealth;
+    public bool isDead = false;
 
-    
+    protected virtual void Start()
+    {
+        currentHealth = maxHealth;
+        StartCoroutine(setUpPlayerMiniMap());
+    }
+
+    IEnumerator setUpPlayerMiniMap()
+    {
+        while(_thisPlayer == null)
+        {
+            yield return null;
+        }
+
+        if (_thisPlayer.IsLocal)
+        {
+            _playerMiniMap.setColor(Color.yellow);
+            _playerMiniMap.Activate();
+        }
+        else
+        {
+            if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == _thisPlayerTeam)
+            {
+                _playerMiniMap.setColor(Color.green);
+                _playerMiniMap.Activate();
+            }
+            else
+            {
+                _playerMiniMap.setColor(Color.red);
+            }
+        }
+
+        onNetworkPlayerDefine();
+
+    }
+
+    public virtual void onNetworkPlayerDefine()
+    {
+
+    }
+
   
     private void Update()
     {
@@ -108,4 +153,43 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     {
         throw new System.NotImplementedException();
     }
+
+    /* Health */
+    public void takeDamage(int amount)
+    {
+        if (isDead) return;
+
+        var newHealth = currentHealth - amount;
+        if (newHealth <= 0)
+        {
+            currentHealth = 0;
+            onDeath();
+        }
+        else
+        {
+            currentHealth = newHealth;
+        }
+
+    }
+
+    public void takeHealth(int amount)
+    {
+        if (isDead) return;
+        var newHealth = currentHealth + amount;
+        if (newHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth = newHealth;
+        }
+    }
+
+    public virtual void onDeath()
+    {
+        isDead = true;
+    }
+
+
 }

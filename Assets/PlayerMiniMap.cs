@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerMiniMap : MonoBehaviour
 {
+    public SpriteRenderer _sprite;
     // Start is called before the first frame update
-    void Start()
+
+
+    public void Activate()
     {
-        
+        gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Deactivate()
     {
-        
+        gameObject.SetActive(false);
     }
+
+    public void setColor(Color color)
+    {
+        _sprite.color = color;
+    }
+
 }
