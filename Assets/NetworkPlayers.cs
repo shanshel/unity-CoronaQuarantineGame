@@ -121,4 +121,16 @@ public class NetworkPlayers : MonoBehaviour
     }
 
 
+    public Transform getSpawnPoint(EnumsData.Team team)
+    {
+        if (team == EnumsData.Team.Doctors)
+        {
+            return doctorSpawnPoints[Random.Range(0, doctorSpawnPoints.Length)];
+        }
+        else
+        {
+            return patientSpawnPoints[Random.Range(0, patientSpawnPoints.Length)];
+        }
+    }
+
 }

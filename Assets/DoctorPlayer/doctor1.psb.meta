@@ -5614,8 +5614,8 @@ ScriptedImporter:
     uvTransform: {x: -208, y: 162}
   - name: EmptyNeedle
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7253992, y: 0.72282606}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -6296,8 +6296,8 @@ ScriptedImporter:
     uvTransform: {x: 585, y: 181}
   - name: FullNeedle
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.26057094, y: 0.67217624}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

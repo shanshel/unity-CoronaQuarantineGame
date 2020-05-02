@@ -43,6 +43,10 @@ public class EnumsData
         ServerCreate, ServerInfo, Info, Error
     }
 
+    public enum UIOverlay
+    {
+        dead
+    }
     public enum SceneEnum
     {
         MainMenu, Lobby, InGame, Room, None, PrevScene,
@@ -56,6 +60,11 @@ public class EnumsData
     public enum Team
     {
         Doctors, Patients, Both
+    }
+
+    public enum playerStatus
+    {
+        alive, dead, respawining
     }
 }
 

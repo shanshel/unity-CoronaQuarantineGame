@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using static EnumsData;
 
 public abstract class CPlayer : MonoBehaviour, IPunObservable
@@ -14,7 +15,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     //Editor Options
     public float speed;
     public string moveAnimationKey = "moving";
-    public GameObject aimObject, lightObject;
+    public GameObject aimObjectIcon, aimContainerObject;
 
     public PlayerMiniMap _playerMiniMap;
     //StepOptions
@@ -23,8 +24,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     protected float stepDirtTimer, stepDirtCooldownTime = 1f;
 
     //
-    public Quaternion lightAngle;
+    [HideInInspector]
+    public Quaternion lookQuaternion;
     //Network 
+    [HideInInspector]
     public Player _thisPlayer;
     public Team _thisPlayerTeam;
 
@@ -34,11 +37,28 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public int maxHealth = 10;
     [HideInInspector]
     public int currentHealth;
-    public bool isDead = false;
+    [HideInInspector]
+    public EnumsData.playerStatus cStatus = EnumsData.playerStatus.alive;
+    //public bool isDead = false;
 
+    public float respawnTime = 2f;
+    [HideInInspector]
+    public float respawnTimer;
+
+    //Wepaon 
+    public Weapon _currentWeaponObject, _defaultWeaponPrefab;
+
+    public bool isInDevMode = false;
     protected virtual void Start()
     {
+        if (isInDevMode)
+        {
+            NetworkPlayers._inst._localCPlayer = this;
+            NetworkPlayers._inst.playerList.Add("DevPlayer", this);
+
+        }
         currentHealth = maxHealth;
+        wearDefaultWeapon();
         StartCoroutine(setUpPlayerMiniMap());
     }
 
@@ -79,16 +99,39 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
   
     private void Update()
     {
-        if (!_photonView.IsMine) return;
+        if (!_photonView.IsMine && !isInDevMode) return;
+
+
+        if (cStatus == playerStatus.dead)
+        {
+            respawnTimer -= Time.deltaTime;
+            if (respawnTimer <= 0f)
+            {
+                respawn();
+            }
+            return;
+        }
+        if (cStatus != playerStatus.alive) return;
         moveAmount = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized *  speed;
         stepDirtTimer -= Time.deltaTime;
         Aiming();
         idleMoveAnimationUpdate();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            takeDamage(1);;
+            Debug.Log("current Health is: " + currentHealth);
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!_photonView.IsMine) return;
+        if (!_photonView.IsMine && !isInDevMode) return;
+        if (cStatus != playerStatus.alive) return;
         Move();
     }
 
@@ -116,12 +159,12 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     private void Attack()
     {
-
+        _currentWeaponObject.Shot();
     }
 
     private void Move()
     {
-        if (_photonView.IsMine)
+        if (_photonView.IsMine || isInDevMode)
             _rb.MovePosition(_rb.position + moveAmount * Time.fixedDeltaTime);
     }
 
@@ -133,13 +176,13 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     void Aiming()
     {
         var mousePos = InGameManager._inst.worldMousePosition;
-        aimObject.transform.position = new Vector2(mousePos.x, mousePos.y);
+        aimObjectIcon.transform.position = new Vector2(mousePos.x, mousePos.y);
 
-        Vector2 dir = mousePos - lightObject.transform.position;
+        Vector2 dir = mousePos - aimContainerObject.transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
-        lightAngle = Quaternion.AngleAxis(angle, Vector3.forward);
-        lightObject.transform.rotation = rotation;
+        lookQuaternion = Quaternion.AngleAxis(angle, Vector3.forward);
+        aimContainerObject.transform.rotation = rotation;
     }
 
     /* Abstract */
@@ -157,7 +200,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     /* Health */
     public void takeDamage(int amount)
     {
-        if (isDead) return;
+        if (cStatus != playerStatus.alive) return;
 
         var newHealth = currentHealth - amount;
         if (newHealth <= 0)
@@ -174,7 +217,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void takeHealth(int amount)
     {
-        if (isDead) return;
+        if (cStatus != playerStatus.alive) return;
         var newHealth = currentHealth + amount;
         if (newHealth > maxHealth)
         {
@@ -186,10 +229,50 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
     }
 
-    public virtual void onDeath()
+    public void onDeath()
     {
-        isDead = true;
+        cStatus = playerStatus.dead;
+        respawnTimer = respawnTime;
+        UIOverlay.show(EnumsData.UIOverlay.dead);
+        InGameManager._inst.setDeadFollowNexT();
+
     }
 
+    void respawn()
+    {
+        cStatus = playerStatus.respawining;
+        Transform point = NetworkPlayers._inst.getSpawnPoint(_thisPlayerTeam);
+        currentHealth = maxHealth;
+        Debug.Log("Will go to " + point.position);
+        _rb.simulated = false;
+        Vector2 pos = new Vector3(point.position.x, point.position.y, transform.position.z);
+        transform.DOMove(pos, 1f).OnComplete(() => { onRespawnFinished(); }).Play();
+    }
+    void onRespawnFinished()
+    {
+        _rb.simulated = true;
+        cStatus = playerStatus.alive;
+        InGameManager._inst.setCameraFollow(transform);
+        UIOverlay.hide(EnumsData.UIOverlay.dead);
+
+    }
+
+    /* Weapons */
+
+    public void wearWeapon(Weapon weaponPrefab)
+    {
+        if (_currentWeaponObject != null) 
+           Destroy(_currentWeaponObject);
+        _currentWeaponObject = Instantiate(weaponPrefab, aimContainerObject.transform);
+    }
+
+    public void wearDefaultWeapon()
+    {
+        if (_currentWeaponObject != null)
+            Destroy(_currentWeaponObject);
+        _currentWeaponObject = Instantiate(_defaultWeaponPrefab, aimContainerObject.transform);
+    }
+
+   
 
 }

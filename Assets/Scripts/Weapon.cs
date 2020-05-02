@@ -8,32 +8,31 @@ public class Weapon : MonoBehaviour
     Rigidbody2D _rigid;
     public EnumsData.Team usedBy;
     public string weaponName;
-    public float shotCooldown;
-    public int damage;
-
+    public float shotCooldown = 1f;
+    public float lifeTime = -1;
+    public float bulletCount = -1;
+    public Projectile projectile;
+    public Transform shotPoint;
     private int hitWallCounter = 0;
+    private float lastShotTime;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (collision.gameObject.tag == "Wall")
+        if (shotPoint == null)
+            shotPoint = transform;
+
+
+    }
+    public void Shot()
+    {
+        if (lastShotTime + shotCooldown > Time.time)
         {
-            onHitWall();
+            Debug.Log("Shot in Cooldown RightNow");
+            return;
         }
-        else if (collision.gameObject.tag == "Player")
-        {
-            var cPlayer = collision.gameObject.GetComponent<CPlayer>();
-       
-        }
+
+        Instantiate(projectile, shotPoint.position, transform.rotation);
+        lastShotTime = Time.time;
     }
 
-    public virtual void onHitWall()
-    {
-        hitWallCounter++;
-
-    }
-
-    public virtual void onHitEnemy()
-    {
-
-    }
 }
