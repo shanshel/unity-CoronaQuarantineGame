@@ -24,10 +24,7 @@ public class EnvLoader : MonoBehaviour
             return;
 
 
-        Debug.Log("i reach here");
-        Debug.Log("distance from " + NetworkPlayers._inst._localCPlayer.transform.position);
-        Debug.Log("distance To " + props[0].position);
-        Debug.Log("IS: " + Vector2.Distance(NetworkPlayers._inst._localCPlayer.transform.position, props[0].position));
+
         for (var x = 0; x < props.Length; x++)
         {
             if (Vector2.Distance(NetworkPlayers._inst._localCPlayer.transform.position, props[x].position) < 60f)
