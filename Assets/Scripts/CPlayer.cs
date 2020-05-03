@@ -14,6 +14,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public PhotonView _photonView;
     //Editor Options
     public float speed;
+    [HideInInspector]
+    public float baseSpeed;
     public string moveAnimationKey = "moving";
     public GameObject aimObjectIcon, aimContainerObject;
 
@@ -45,6 +47,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     [HideInInspector]
     public float respawnTimer;
 
+
+    public ParticleSystem speedTrail;
     //Wepaon 
     public Weapon _currentWeaponObject, _defaultWeaponPrefab;
 
@@ -60,6 +64,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         currentHealth = maxHealth;
         wearDefaultWeapon();
         StartCoroutine(setUpPlayerMiniMap());
+        baseSpeed = speed;
     }
 
     IEnumerator setUpPlayerMiniMap()
@@ -274,5 +279,17 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     }
 
    
+    /* Speed Trail */
+
+    public void speedTrailOn()
+    {
+        speedTrail.Play();
+    }
+
+    public void speedTrailOff()
+    {
+        speedTrail.Stop();
+
+    }
 
 }

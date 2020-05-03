@@ -20,6 +20,7 @@ public class EnumsData
         NeedleThrow,
         NeedlePop,
         Surprise,
+        pickUpSound,
     }
 
     public enum WindowEnum

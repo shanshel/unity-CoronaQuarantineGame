@@ -108,3 +108,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fc485ee0d4fd532438e5f029de9a728e, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+  - sound: 14
+    volume: 0.3
+    pitch: 1.4
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 56b9dc7f2f231a644a7eeb95cbfd432a, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}

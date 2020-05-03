@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     public EnumsData.Team canBePickedBy;
     public BoxCollider2D _collider;
+    public ParticleSystem destroyParticlePrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,9 +14,11 @@ public class Pickup : MonoBehaviour
         if (player != null)
         {
             _collider.enabled = false;
+            
             if (player._thisPlayerTeam == canBePickedBy || canBePickedBy == EnumsData.Team.Both)
             {
                 onPickedUp(player);
+               
             }
         }
     }

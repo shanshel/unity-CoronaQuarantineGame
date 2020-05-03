@@ -61,3 +61,6 @@ TagManager:
   - name: MiniMap
     uniqueID: 3445216141
     locked: 0
+  - name: UISortLayer
+    uniqueID: 3009861571
+    locked: 0
