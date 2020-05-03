@@ -59,6 +59,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
         currentHealth = maxHealth;
         wearDefaultWeapon();
+        UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
         StartCoroutine(setUpPlayerMiniMap());
     }
 
@@ -203,6 +204,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         if (cStatus != playerStatus.alive) return;
 
         var newHealth = currentHealth - amount;
+        UIInGameCanvas._inst.healthDecrease(currentHealth, maxHealth);
         if (newHealth <= 0)
         {
             currentHealth = 0;
@@ -218,6 +220,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public void takeHealth(int amount)
     {
         if (cStatus != playerStatus.alive) return;
+        UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
         var newHealth = currentHealth + amount;
         if (newHealth > maxHealth)
         {

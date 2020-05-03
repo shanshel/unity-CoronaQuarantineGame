@@ -874,7 +874,6 @@ MonoBehaviour:
   doctorAnimator: {fileID: 5894588208499961658}
   dirt: {fileID: 4314399244816200301, guid: d994d0722a373ca4f88efde7bf65e131, type: 3}
   isMine: 1
-  _charInNetwork: {fileID: 0}
 --- !u!114 &63302552415763830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,7 +1047,7 @@ SpriteMask:
   m_BackSortingLayer: 2
   m_FrontSortingOrder: 6
   m_BackSortingOrder: 6
-  m_IsCustomRangeActive: 0
+  m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0
 --- !u!1 &5221610655554690704
 GameObject:
