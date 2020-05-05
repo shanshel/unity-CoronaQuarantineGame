@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class InvItem : MonoBehaviour
 {
-  
-    public virtual void whenUseItem()
+    [HideInInspector]
+    public bool isUsed = false;
+    public GameObject visiableObject;
+
+    protected int slotIndex;
+    public void baseUseItem(int itemIndex)
+    {
+        slotIndex = itemIndex;
+        Debug.Log("baseUseItem");
+        onUseItem();
+    }
+
+    public virtual void onUseItem()
     {
 
     }

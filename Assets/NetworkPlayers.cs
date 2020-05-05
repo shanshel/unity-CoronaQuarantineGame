@@ -35,7 +35,15 @@ public class NetworkPlayers : MonoBehaviour
         else
         {
             _instance = this;
-            random100 = int.Parse((string)PhotonNetwork.CurrentRoom.CustomProperties["Random100"]);
+            if (PhotonNetwork.CurrentRoom != null)
+            {
+                random100 = int.Parse((string)PhotonNetwork.CurrentRoom.CustomProperties["Random100"]);
+
+            }else
+            {
+                //DevOnly
+                random100 = Random.Range(0, 100);
+            }
             setupPlayersInfo();
         }
     }
@@ -117,9 +125,14 @@ public class NetworkPlayers : MonoBehaviour
                 InGameManager._inst.setCameraFollow(cp.Value.transform);
             }
         }
+        onCPLocalPlayerReady();
 
     }
 
+    void onCPLocalPlayerReady()
+    {
+        Inventory._inst.whenNetworkPlayerReady();
+    }
 
     public Transform getSpawnPoint(EnumsData.Team team)
     {

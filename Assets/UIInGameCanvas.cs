@@ -35,6 +35,8 @@ public class UIInGameCanvas : MonoBehaviour
         uiHealthSlider.maxValue = maxValue;
         uiHealthSlider.value = newAmount;
         uiHealthIncreaseTween.Restart();
+        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.takeHealth);
+        Debug.Log(uiHealthSlider.value);
     }
 
     public void healthDecrease(int newAmount, int maxValue)
@@ -42,5 +44,14 @@ public class UIInGameCanvas : MonoBehaviour
         uiHealthSlider.maxValue = maxValue;
         uiHealthSlider.value = newAmount;
         uiHealthDecreaseTween.Restart();
+        Debug.Log(uiHealthSlider.value);
+        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.takeDamage);
+        ScreenManager._inst.quickShake();
+    }
+
+    public void healthUpdate(int newAmount, int maxValue)
+    {
+        uiHealthSlider.maxValue = maxValue;
+        uiHealthSlider.value = newAmount;
     }
 }

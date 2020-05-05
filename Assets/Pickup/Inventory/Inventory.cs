@@ -1,32 +1,92 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
+
+    private static Inventory _instance;
+    public static Inventory _inst { get { return _instance; } }
+
     public int maxSlot;
-    //public List<InvItem> slots = new List<InvItem>();
+    public GameObject inventoryContainer, inventorySlotTemplate;
+    public Dictionary<GameObject, bool> slotContainers = new Dictionary<GameObject, bool>() { };
+    public Dictionary<int, InvItem> invItems = new Dictionary<int, InvItem>() { };
+    bool isReadyToUse;
 
-    public Dictionary<int, InvItem> slots = new Dictionary<int, InvItem>() { };
-
-
-    public void onSlotClicked(int slotIndex)
+    private void Awake()
     {
-        if (slots.Count >= slotIndex)
+        if (_instance != null && _instance != this)
         {
-            slots[slotIndex].whenUseItem();
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
         }
     }
 
-    public void addItemToSlot(GameObject item)
+    private void Start()
     {
-        if (slots.Count == maxSlot) return;
-
-        for (var x = 0; x < slots.Count; x++) 
+        for (var i = 0; i < maxSlot; i++)
         {
-            
+            var newItem = Instantiate(inventorySlotTemplate, inventoryContainer.transform);
+            var button = newItem.GetComponent<Button>();
+            int slotIn = i;
+            button.onClick.AddListener(delegate { onSlotClicked (slotIn);  });
+            newItem.SetActive(true);
+            slotContainers.Add(newItem, false);
         }
-
-
+        
     }
+
+    public bool addItem(InvItem invItemPrefab)
+    {
+        if (invItems.Count == maxSlot || !isReadyToUse) return false;
+        int i = 0;
+        foreach (var slotInfo in slotContainers)
+        {
+            if (slotInfo.Value == false)
+            {
+                slotContainers[slotInfo.Key] = true;
+                var _item = Instantiate(invItemPrefab, slotInfo.Key.transform);
+                invItems.Add(i, _item);
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
+    public void removeItem(int index)
+    {
+        if (invItems.Count == 0 || invItems[index] == null || !isReadyToUse) return;
+        invItems.Remove(index);
+        int i = 0;
+        foreach(var slot in slotContainers)
+        {
+            if (i == index)
+            {
+                slotContainers[slot.Key] = false;
+                return;
+            }
+            i++;
+        }
+  
+    }
+    public void onSlotClicked(int index)
+    {
+        if (invItems.Count == 0 || invItems[index] == null || !isReadyToUse) return;
+
+        Debug.Log("no Error Before Use");
+        invItems[index].baseUseItem(index);
+    }
+
+
+    public void whenNetworkPlayerReady()
+    {
+        NetworkPlayers._inst._localCPlayer.playerInventory = this;
+        isReadyToUse = true;
+    }
+
 }

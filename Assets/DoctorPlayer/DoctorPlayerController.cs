@@ -33,20 +33,7 @@ public class DoctorPlayerController : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        surpisedTimer -= Time.deltaTime;
-        AnimationFN();
-        //needleFN();
-        aimFN();
-        timeCount -= Time.deltaTime;
-        stepsTimer -= Time.deltaTime;
-    }
-    private void FixedUpdate()
-    {
-       
-        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
-    }
+
 
     void aimFN()
     {

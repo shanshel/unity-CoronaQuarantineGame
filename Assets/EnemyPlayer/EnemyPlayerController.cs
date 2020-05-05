@@ -32,19 +32,7 @@ public class EnemyPlayerController : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        timer += Time.deltaTime;
 
-        if (isMain)
-        {
-            sneezeFN();
-            AnimationFN();
-            weoponFN();
-        }
-
-        RenderOnlyIfSeenByDoctor();
-    }
 
     void RenderOnlyIfSeenByDoctor()
     {

@@ -116,3 +116,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 56b9dc7f2f231a644a7eeb95cbfd432a, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+  - sound: 15
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 6198e59d14c411b4bbf17b33365c1360, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+  - sound: 16
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 18238c297128eaf499e3a156d8156e89, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}

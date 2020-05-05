@@ -36,6 +36,12 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - pickUpItem
+  - allowPick
+  - askToPick
+  - removeSpawn
+  - Network_RemovePickUp
+  - Nk_RemovePickUp
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

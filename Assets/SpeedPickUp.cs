@@ -5,39 +5,27 @@ using DG.Tweening;
 
 public class SpeedPickUp : Pickup
 {
-    public int speedAmount;
-    public GameObject[] objectsToDisable;
-    private CPlayer lastPlayer;
-
+    public InvItem invItemSpeedPrefab;
     public override void onPickedUp(CPlayer palyerPickedIt)
     {
-        if (palyerPickedIt.baseSpeed != palyerPickedIt.speed)
+
+        if (palyerPickedIt.playerInventory.addItem(invItemSpeedPrefab))
+        {
+            Debug.Log("ok Added");
+            SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.pickUpSound);
+            Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else
         {
             _collider.enabled = true;
-            return;
         }
-        palyerPickedIt.speed += speedAmount;
-        foreach (var sp in objectsToDisable)
-        {
-            sp.SetActive(false);
-        }
-        lastPlayer = palyerPickedIt;
-        palyerPickedIt.speedTrailOn();
-        Invoke("RemoveSpeedEffect", 5f);
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.pickUpSound);
-        Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
-
+      
     }
-    private void Start()
+
+
+    public override void onCustomInitComplete()
     {
         gameObject.transform.DOScale(1.5f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InBounce).Play();
-    }
-    void RemoveSpeedEffect()
-    {
-
-        lastPlayer.speed = lastPlayer.baseSpeed;
-        lastPlayer.speedTrailOff();
-
-        Destroy(gameObject);
     }
 }

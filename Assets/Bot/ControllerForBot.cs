@@ -23,16 +23,15 @@ public class ControllerForBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getinfected();
+      
     }
 
     public void getinfected()
     {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("isInfected", true);
+     
+        anim.SetBool("isInfected", true);
         float t = (Time.time - startTime) * colorChangingSpeed;
         rend1.material.color = Color.Lerp(startColor, endColor, t);
-        }
+     
     }
 }

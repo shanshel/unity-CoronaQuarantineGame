@@ -20,9 +20,10 @@ public class HealthPickup : Pickup
         Destroy(gameObject);
 
     }
-    private void Start()
+
+    public override void onCustomInitComplete()
     {
-        gameObject.transform.DOScale(1.5f, 2f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InBounce).Play();
+        gameObject.transform.DOScale(1.5f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InBounce).Play();
     }
 
 }

@@ -52,6 +52,9 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     //Wepaon 
     public Weapon _currentWeaponObject, _defaultWeaponPrefab;
 
+
+    //Inventory 
+    public Inventory playerInventory;
     public bool isInDevMode = false;
     protected virtual void Start()
     {
@@ -63,9 +66,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
         currentHealth = maxHealth;
         wearDefaultWeapon();
-        UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
         StartCoroutine(setUpPlayerMiniMap());
         baseSpeed = speed;
+
+        UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
     }
 
     IEnumerator setUpPlayerMiniMap()
@@ -181,9 +185,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     void Aiming()
     {
-        var mousePos = InGameManager._inst.worldMousePosition;
+        var mousePos = ScreenManager._inst.worldMousePosition;
         aimObjectIcon.transform.position = new Vector2(mousePos.x, mousePos.y);
-
         Vector2 dir = mousePos - aimContainerObject.transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
@@ -209,7 +212,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         if (cStatus != playerStatus.alive) return;
 
         var newHealth = currentHealth - amount;
-        UIInGameCanvas._inst.healthDecrease(currentHealth, maxHealth);
+        
         if (newHealth <= 0)
         {
             currentHealth = 0;
@@ -220,12 +223,12 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             currentHealth = newHealth;
         }
 
+        UIInGameCanvas._inst.healthDecrease(currentHealth, maxHealth);
     }
 
     public void takeHealth(int amount)
     {
         if (cStatus != playerStatus.alive) return;
-        UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
         var newHealth = currentHealth + amount;
         if (newHealth > maxHealth)
         {
@@ -235,6 +238,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             currentHealth = newHealth;
         }
+        UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
+
     }
 
     public void onDeath()
@@ -243,7 +248,6 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         respawnTimer = respawnTime;
         UIOverlay.show(EnumsData.UIOverlay.dead);
         InGameManager._inst.setDeadFollowNexT();
-
     }
 
     void respawn()
@@ -262,7 +266,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         cStatus = playerStatus.alive;
         InGameManager._inst.setCameraFollow(transform);
         UIOverlay.hide(EnumsData.UIOverlay.dead);
-
+        UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
     }
 
     /* Weapons */

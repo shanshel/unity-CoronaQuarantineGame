@@ -21,6 +21,8 @@ public class EnumsData
         NeedlePop,
         Surprise,
         pickUpSound,
+        takeHealth,
+        takeDamage,
     }
 
     public enum WindowEnum

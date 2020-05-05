@@ -924,6 +924,7 @@ MonoBehaviour:
   _currentWeaponObject: {fileID: 0}
   _defaultWeaponPrefab: {fileID: 3793498037073393735, guid: b30d4f86888b6ae49ae937ce7350a8fb,
     type: 3}
+  playerInventory: {fileID: 0}
   isInDevMode: 0
   bigLightShadowCaster: {fileID: 7841982148473784286}
 --- !u!114 &8299218938690850254
@@ -7214,7 +7215,7 @@ PrefabInstance:
     - target: {fileID: 4391872663990518798, guid: 07898f984f3920242b3d2799e8072bf3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4391872663990518800, guid: 07898f984f3920242b3d2799e8072bf3,
         type: 3}
