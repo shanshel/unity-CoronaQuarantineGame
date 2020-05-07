@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using static EnumsData;
+using System.IO;
 
 public abstract class CPlayer : MonoBehaviour, IPunObservable
 {
@@ -62,13 +63,14 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             NetworkPlayers._inst._localCPlayer = this;
             NetworkPlayers._inst.playerList.Add("DevPlayer", this);
-
+            NetworkPlayers._inst.setUpLocalPlayer(this);
         }
         currentHealth = maxHealth;
         wearDefaultWeapon();
         StartCoroutine(setUpPlayerMiniMap());
         baseSpeed = speed;
 
+        if (!_photonView.IsMine) return;
         UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
     }
 
@@ -131,11 +133,17 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && _photonView.IsMine)
         {
             takeDamage(1);;
-            Debug.Log("current Health is: " + currentHealth);
         }
+
+        overableUpdate();
+    }
+
+    public virtual void overableUpdate()
+    {
+
     }
 
     private void FixedUpdate()
@@ -175,7 +183,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     private void Move()
     {
         if (_photonView.IsMine || isInDevMode)
+        {
             _rb.MovePosition(_rb.position + moveAmount * Time.fixedDeltaTime);
+
+        }
     }
 
     private void Surprised()
@@ -209,6 +220,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     /* Health */
     public void takeDamage(int amount)
     {
+        if (!_photonView.IsMine) return;
         if (cStatus != playerStatus.alive) return;
 
         var newHealth = currentHealth - amount;
@@ -228,6 +240,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void takeHealth(int amount)
     {
+        if (!_photonView.IsMine) return;
         if (cStatus != playerStatus.alive) return;
         var newHealth = currentHealth + amount;
         if (newHealth > maxHealth)
@@ -244,6 +257,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void onDeath()
     {
+        if (!_photonView.IsMine) return;
         cStatus = playerStatus.dead;
         respawnTimer = respawnTime;
         UIOverlay.show(EnumsData.UIOverlay.dead);
@@ -252,6 +266,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     void respawn()
     {
+        if (!_photonView.IsMine) return;
         cStatus = playerStatus.respawining;
         Transform point = NetworkPlayers._inst.getSpawnPoint(_thisPlayerTeam);
         currentHealth = maxHealth;
@@ -262,6 +277,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     }
     void onRespawnFinished()
     {
+        if (!_photonView.IsMine) return;
         _rb.simulated = true;
         cStatus = playerStatus.alive;
         InGameManager._inst.setCameraFollow(transform);
@@ -273,16 +289,25 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void wearWeapon(Weapon weaponPrefab)
     {
-        if (_currentWeaponObject != null) 
-           Destroy(_currentWeaponObject);
-        _currentWeaponObject = Instantiate(weaponPrefab, aimContainerObject.transform);
+        if (_currentWeaponObject != null)
+            PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
+
+
+        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", weaponPrefab.name), Vector3.zero, Quaternion.identity);
+        wp.transform.SetParent(aimContainerObject.transform);
+      
+        _currentWeaponObject = wp.GetComponent<Weapon>();
     }
 
     public void wearDefaultWeapon()
     {
         if (_currentWeaponObject != null)
-            Destroy(_currentWeaponObject);
-        _currentWeaponObject = Instantiate(_defaultWeaponPrefab, aimContainerObject.transform);
+            PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
+
+        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity);
+        wp.transform.SetParent(aimContainerObject.transform);
+        _currentWeaponObject = wp.GetComponent<Weapon>();
+        //_currentWeaponObject = Instantiate(_defaultWeaponPrefab, aimContainerObject.transform);
     }
 
    

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132816497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01899968, y: 5.4480066, z: 0}
+  m_LocalPosition: {x: 0.01899968, y: 5.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5221610655826318185}
@@ -763,10 +763,9 @@ GameObject:
   - component: {fileID: 2287553154360734411}
   - component: {fileID: 2287553154360734412}
   - component: {fileID: 7805240094010275747}
-  - component: {fileID: 2287553154360734410}
-  - component: {fileID: 63302552415763830}
   - component: {fileID: 3079489875915139789}
   - component: {fileID: 8299218938690850254}
+  - component: {fileID: 3229923739814545313}
   m_Layer: 12
   m_Name: DoctorCharacterPlayer_Champ2
   m_TagString: Doctor
@@ -845,51 +844,13 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8299218938690850254}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2287553154360734410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287553154360734414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78769780afc0733469f9dc25ad45e75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
-  needle: {fileID: 0}
-  shotPoint: {fileID: 0}
-  timeBetweenShots: 0
-  weopon: {fileID: 0}
-  aimObject: {fileID: 781235578400565854}
-  doctorLight: {fileID: 5221610655826318186}
-  lightAngle: {x: 0, y: 0, z: 0, w: 0}
-  doctorAnimator: {fileID: 5894588208499961658}
-  dirt: {fileID: 4314399244816200301, guid: d994d0722a373ca4f88efde7bf65e131, type: 3}
-  isMine: 1
---- !u!114 &63302552415763830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287553154360734414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4307ac105adc93542ad97da0efc85072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Needle: {fileID: 6129696243112194905, guid: 4f58c7bced68c40408e87b04352db13a, type: 3}
-  doctorLight: {fileID: 5221610655826318186}
-  shotPoint: {fileID: 1132816498}
 --- !u!114 &3079489875915139789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,6 +904,17 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!210 &3229923739814545313
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287553154360734414}
+  m_Enabled: 1
+  m_SortingLayerID: -1690440409
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &5058364301016470207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1148,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 5154882018893552834}
@@ -1527,7 +1499,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7479163502431781430}
@@ -1550,13 +1522,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: moved
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Surprised
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
 --- !u!1 &6014707018674601765
 GameObject:
@@ -7215,7 +7187,7 @@ PrefabInstance:
     - target: {fileID: 4391872663990518798, guid: 07898f984f3920242b3d2799e8072bf3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4391872663990518800, guid: 07898f984f3920242b3d2799e8072bf3,
         type: 3}
@@ -7314,12 +7286,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07898f984f3920242b3d2799e8072bf3, type: 3}
---- !u!4 &879684525014552972 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4391872663990518803, guid: 07898f984f3920242b3d2799e8072bf3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3514589472639538591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &778345757543412613 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5040818987134392806, guid: 07898f984f3920242b3d2799e8072bf3,
@@ -7332,3 +7298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c75668829a8a34fadf7b9d32459fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &879684525014552972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4391872663990518803, guid: 07898f984f3920242b3d2799e8072bf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3514589472639538591}
+  m_PrefabAsset: {fileID: 0}

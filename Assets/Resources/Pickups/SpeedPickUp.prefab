@@ -80,6 +80,7 @@ MonoBehaviour:
   destroyParticlePrefab: {fileID: 7657479220425023012, guid: b05f347261fae4d44a32691ab8c41333,
     type: 3}
   pickKey: 
+  spawnChance: 100
   invItemSpeedPrefab: {fileID: 2310323199293783446, guid: 6702d948a4aba7e45aace96b3733bb11,
     type: 3}
 --- !u!114 &-6823339487130607538

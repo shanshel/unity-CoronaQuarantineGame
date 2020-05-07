@@ -23,6 +23,8 @@ public class EnumsData
         pickUpSound,
         takeHealth,
         takeDamage,
+        Gassing,
+        StartGassing,
     }
 
     public enum WindowEnum

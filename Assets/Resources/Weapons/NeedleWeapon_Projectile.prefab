@@ -40,7 +40,7 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110154492414049776}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
@@ -71,7 +71,7 @@ TrailRenderer:
   m_SortingLayerID: -1690440409
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.4
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -92,8 +92,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.5882353}
-      key1: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 0.5882353}
+      key1: {r: 0.9245283, g: 0.47832283, b: 0.41429335, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -121,11 +121,11 @@ TrailRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 1
-    alignment: 0
+    alignment: 1
     textureMode: 1
-    shadowBias: 0.5
+    shadowBias: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.05
+  m_MinVertexDistance: 0.5
   m_Autodestruct: 1
   m_Emitting: 1
 --- !u!1 &4016506321832391835
@@ -139,7 +139,9 @@ GameObject:
   - component: {fileID: 4016506321832391834}
   - component: {fileID: 2581808440216834229}
   - component: {fileID: 7703318553992788646}
-  - component: {fileID: 7811520052040737382}
+  - component: {fileID: 4286956184114558560}
+  - component: {fileID: -2798723585505123444}
+  - component: {fileID: 3027893317188917919}
   m_Layer: 18
   m_Name: NeedleWeapon_Projectile
   m_TagString: Untagged
@@ -173,7 +175,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0076070726, y: 0.050304472}
@@ -210,7 +212,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7811520052040737382
+--- !u!114 &4286956184114558560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,16 +221,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 4016506321832391835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18988618f6f8034087e9cafc218f08d, type: 3}
+  m_Script: {fileID: 11500000, guid: de00357840bdc4b40ae5a6ead8d15cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigid: {fileID: 7703318553992788646}
-  bulletSpeed: 5
-  lifeTime: 4
+  _polyCollider: {fileID: 0}
+  bulletSpeed: 10
+  lifeTime: 3
   damage: 1
   disapearingEffectPrefab: {fileID: 1237316534512216301, guid: f11b74a394cbbbc4099e3b8bdbcc4a75,
     type: 3}
   moveVector: {x: 0, y: 1}
+  _photonView: {fileID: -2798723585505123444}
+--- !u!114 &-2798723585505123444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016506321832391835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 3027893317188917919}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &3027893317188917919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016506321832391835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &4016506323102377212
 GameObject:
   m_ObjectHideFlags: 0

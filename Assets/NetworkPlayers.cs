@@ -82,7 +82,7 @@ public class NetworkPlayers : MonoBehaviour
                 {
                     //not doctor
                     var spawnPoint = patientSpawnPoints[Random.Range(0, patientSpawnPoints.Length)];
-                    var charachter = PhotonNetwork.Instantiate(Path.Combine("Doctors", "DoctorCharacterPlayer_Champ2"), spawnPoint.position, Quaternion.identity);
+                    var charachter = PhotonNetwork.Instantiate(Path.Combine("Patients", "PatientCharacterPlayer_Champ1"), spawnPoint.position, Quaternion.identity);
                     var charNetwork = charachter.GetComponent<CPlayer>();
                     charNetwork.SetPlayerNetworkInfo(p);
                     playerList.Add(p.NickName, charNetwork);
@@ -95,7 +95,7 @@ public class NetworkPlayers : MonoBehaviour
                     //not doctor
                     var spawnPoint = patientSpawnPoints[Random.Range(0, patientSpawnPoints.Length)];
 
-                    var charachter = PhotonNetwork.Instantiate(Path.Combine("Doctors", "DoctorCharacterPlayer_Champ2"), spawnPoint.position, Quaternion.identity);
+                    var charachter = PhotonNetwork.Instantiate(Path.Combine("Patients", "PatientCharacterPlayer_Champ1"), spawnPoint.position, Quaternion.identity);
                     var charNetwork = charachter.GetComponent<CPlayer>();
                     charNetwork.SetPlayerNetworkInfo(p);
                     playerList.Add(p.NickName, charNetwork);
@@ -119,6 +119,7 @@ public class NetworkPlayers : MonoBehaviour
     {
         foreach (var cp in playerList)
         {
+            if (cp.Value._thisPlayer == null) return;
             if (cp.Value._thisPlayer.IsLocal)
             {
                 _localCPlayer = cp.Value;
@@ -127,6 +128,12 @@ public class NetworkPlayers : MonoBehaviour
         }
         onCPLocalPlayerReady();
 
+    }
+    public void setUpLocalPlayer(CPlayer _cplayer)
+    {
+        _localCPlayer = _cplayer;
+        InGameManager._inst.setCameraFollow(_localCPlayer.transform);
+        onCPLocalPlayerReady();
     }
 
     void onCPLocalPlayerReady()

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -13,17 +15,21 @@ public class Weapon : MonoBehaviour
     public float bulletCount = -1;
     public Projectile projectile;
     public Transform shotPoint;
-    private int hitWallCounter = 0;
-    private float lastShotTime;
+    protected float lastShotTime;
 
     private void Start()
     {
         if (shotPoint == null)
             shotPoint = transform;
-
-
     }
-    public void Shot()
+
+    private void LateUpdate()
+    {
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+    }
+    public virtual void Setup() { }
+    public virtual void Shot()
     {
         if (lastShotTime + shotCooldown > Time.time)
         {
@@ -31,7 +37,7 @@ public class Weapon : MonoBehaviour
             return;
         }
 
-        Instantiate(projectile, shotPoint.position, transform.rotation);
+        PhotonNetwork.Instantiate(Path.Combine("weapons", projectile.name), shotPoint.position, transform.rotation);
         lastShotTime = Time.time;
     }
 

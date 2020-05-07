@@ -132,3 +132,35 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 18238c297128eaf499e3a156d8156e89, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+  - sound: 18
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: d24a2266d609b1149b26b85668dff85c, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+  - sound: 17
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 8314852991c14a649b7b0c13ee72cc2a, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+  - sound: 12
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: b22e2889016127d489c7d6db28ff1e3d, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+  - sound: 11
+    volume: 1
+    pitch: 1.2
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: dfa6ff46249b93243873b76ca43ac043, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}

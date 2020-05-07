@@ -53,6 +53,7 @@ MonoBehaviour:
   destroyParticlePrefab: {fileID: 7657479220425023012, guid: 71926fce666be6b48b5b2eca1300c9dc,
     type: 3}
   pickKey: 
+  spawnChance: 100
   healthAmount: 1
 --- !u!61 &2145546064345274941
 BoxCollider2D:

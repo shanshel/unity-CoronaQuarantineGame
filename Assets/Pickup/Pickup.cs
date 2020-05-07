@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour, IPunInstantiateMagicCallback
   
     public string pickKey;
 
+    public float spawnChance = 100f;
     Vector3 baseLocalScale;
     private void OnTriggerEnter2D(Collider2D collision)
     {
