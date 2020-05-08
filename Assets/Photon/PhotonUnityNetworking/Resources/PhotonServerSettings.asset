@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 5df2ff8b-555f-475c-b32b-4ba156372f10
+    AppIdRealtime: 
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
@@ -35,15 +35,10 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - pickUpItem
-  - allowPick
-  - askToPick
-  - removeSpawn
-  - Network_RemovePickUp
   - Nk_RemovePickUp
-  - RPC_UpdateBotStatus
+  - RespawnSpaceship
   - RPC_SpawnBots
+  - RPC_UpdateBotStatus
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
+  ShowSettings: 0
   DevRegionSetOnce: 0

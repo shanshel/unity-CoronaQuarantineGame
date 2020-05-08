@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5168810459555015035}
   - component: {fileID: 8919280813738905272}
   - component: {fileID: 4002311530775151983}
+  - component: {fileID: 3813936336424330402}
   m_Layer: 0
   m_Name: Safe
   m_TagString: Props
@@ -109,3 +110,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 0.8888066}
   m_EdgeRadius: 0
+--- !u!114 &3813936336424330402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341422112738249768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: ef8fcbaf
+  m_ShapePath:
+  - {x: -0.88, y: 0, z: 0}
+  - {x: 0.88, y: 0, z: 0}
+  - {x: 0.88, y: 3.24, z: 0}
+  - {x: -0.88, y: 3.24, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -210564
