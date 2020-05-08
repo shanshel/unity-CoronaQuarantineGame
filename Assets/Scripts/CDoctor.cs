@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CDoctor : CPlayer
 {
-    public GameObject bigLightShadowCaster;
+    
 
     private void Awake()
     {
@@ -21,10 +21,6 @@ public class CDoctor : CPlayer
     public override void onNetworkPlayerDefine()
     {
         base.onNetworkPlayerDefine();
-        if (base._thisPlayer.IsLocal)
-        {
-            bigLightShadowCaster.SetActive(true);
-        }
     }
 
 }

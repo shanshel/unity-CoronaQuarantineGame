@@ -18,8 +18,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     [HideInInspector]
     public float baseSpeed;
     public string moveAnimationKey = "moving";
-    public GameObject aimObjectIcon, aimContainerObject;
+    public GameObject aimObjectIcon, aimContainerObject, lightContainer, lightShadowCaster;
 
+    public SpriteRenderer[] _bodyPartEffectedToOutline;
+    public Material enemyOutlineMat, allieOutlineMat;
     public PlayerMiniMap _playerMiniMap;
     //StepOptions
     [SerializeField]
@@ -86,6 +88,14 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             _playerMiniMap.gameObject.SetActive(true);
             _playerMiniMap.setColor(Color.yellow);
             _playerMiniMap.Activate();
+            lightContainer.SetActive(true);
+            lightShadowCaster.SetActive(true);
+            
+            foreach(var bSprite in _bodyPartEffectedToOutline)
+            {
+                bSprite.material = allieOutlineMat;
+            }
+
         }
         else
         {
@@ -94,16 +104,28 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
                 _playerMiniMap.gameObject.SetActive(true);
                 _playerMiniMap.setColor(Color.green);
                 _playerMiniMap.Activate();
+                lightContainer.SetActive(true);
+                foreach (var bSprite in _bodyPartEffectedToOutline)
+                {
+                    bSprite.material = allieOutlineMat;
+                }
             }
             else
             {
                 _playerMiniMap.setColor(Color.red);
+                lightContainer.SetActive(false);
+                foreach (var bSprite in _bodyPartEffectedToOutline)
+                {
+                    bSprite.material = enemyOutlineMat;
+                }
             }
         }
 
         onNetworkPlayerDefine();
 
     }
+
+    
 
     public virtual void onNetworkPlayerDefine()
     {
