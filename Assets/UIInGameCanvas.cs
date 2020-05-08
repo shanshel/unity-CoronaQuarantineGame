@@ -9,8 +9,9 @@ public class UIInGameCanvas : MonoBehaviour
     private static UIInGameCanvas _instance;
     public static UIInGameCanvas _inst { get { return _instance; } }
 
-    public Slider uiHealthSlider;
-    public TextMeshProUGUI TimerText;
+    public Slider uiHealthSlider, uiInflictedSlider;
+    public TextMeshProUGUI TimerText, InflicedText;
+    
 
     Tweener uiHealthIncreaseTween, uiHealthDecreaseTween;
 
@@ -63,5 +64,11 @@ public class UIInGameCanvas : MonoBehaviour
         int seconds = (int)time - 60 * minutes;
 
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void setInflected(int inflected)
+    {
+        uiInflictedSlider.value = inflected;
+        InflicedText.text = inflected.ToString() + " Inflicted" ;
     }
 }

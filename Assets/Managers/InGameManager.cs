@@ -50,7 +50,8 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
             //Master
             if (PhotonNetwork.IsMasterClient && GameStatus == 1)
             {
-                GameTimer -= 1f;
+                if (GameTimer > 0f)
+                    GameTimer -= 1f;
             }
 
             //All Clients
@@ -145,6 +146,16 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             aiBots[index].die();
         }
+
+        int inflictedCount = 0;
+        foreach(var bot in aiBots)
+        {
+            if (!bot.isAlive)
+            {
+                inflictedCount++;
+            }
+        }
+        UIInGameCanvas._inst.setInflected(inflictedCount);
     }
 
 

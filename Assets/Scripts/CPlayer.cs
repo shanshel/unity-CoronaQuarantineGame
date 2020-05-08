@@ -67,14 +67,14 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
         currentHealth = maxHealth;
         wearDefaultWeapon();
-        StartCoroutine(setUpPlayerMiniMap());
+        StartCoroutine(setUpAccory());
         baseSpeed = speed;
 
         if (!_photonView.IsMine) return;
         UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
     }
 
-    IEnumerator setUpPlayerMiniMap()
+    IEnumerator setUpAccory()
     {
         while(_thisPlayer == null)
         {
@@ -83,6 +83,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
         if (_thisPlayer.IsLocal)
         {
+            _playerMiniMap.gameObject.SetActive(true);
             _playerMiniMap.setColor(Color.yellow);
             _playerMiniMap.Activate();
         }
@@ -90,6 +91,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == _thisPlayerTeam)
             {
+                _playerMiniMap.gameObject.SetActive(true);
                 _playerMiniMap.setColor(Color.green);
                 _playerMiniMap.Activate();
             }
