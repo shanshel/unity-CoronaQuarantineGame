@@ -1870,7 +1870,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1789378968538942531}
   - component: {fileID: 1021111703}
-  - component: {fileID: 1021111702}
   m_Layer: 0
   m_Name: PickupSpawner
   m_TagString: Untagged
@@ -1970,10 +1969,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef14d6821391544dade4724ba349686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _photonView: {fileID: 1021111702}
+  _photonView: {fileID: 0}
   pickupPrefabs:
   - {fileID: 2787682508843448757, guid: a75582f374d7509419c29c4a7f2cc422, type: 3}
   - {fileID: 5956337940649613775, guid: 196f5c2371f62b549911cdf0ab8bb340, type: 3}
+  - {fileID: 5755586169184134300, guid: bed4ef6be9bc6af4d99f6ddf93b20cc2, type: 3}
   pickupPoints:
   - {fileID: 1789378967132098927}
   - {fileID: 1789378968173547135}
@@ -2041,30 +2041,8 @@ MonoBehaviour:
   - {fileID: 1789378967381443375}
   - {fileID: 1789378966724691470}
   - {fileID: 1789378966739579778}
-  maxPickupSpawnedAtTime: 20
+  maxPickupSpawnedAtTime: 10
   spawnRefreshTime: 20
---- !u!114 &1021111702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789378968538942530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 0
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  viewIdField: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1789378968542219701
 GameObject:
   m_ObjectHideFlags: 0

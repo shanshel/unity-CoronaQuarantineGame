@@ -20,8 +20,12 @@ public class EnvLoader : MonoBehaviour
 
     void LoadObjectClosetoPlayer()
     {
-        if (NetworkPlayers._inst._localCPlayer == null)
+        if (NetworkPlayers._inst == null || NetworkPlayers._inst._localCPlayer == null)
+        {
+            Debug.Log("LoadObjectClosetoPlayer: Network Not Loaded");
             return;
+        }
+           
 
 
 

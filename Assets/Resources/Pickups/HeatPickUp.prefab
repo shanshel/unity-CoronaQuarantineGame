@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7522691163424135337}
   - component: {fileID: 2787682508843448757}
   - component: {fileID: 2145546064345274941}
-  - component: {fileID: -2175387112702877090}
+  - component: {fileID: 3377973397713446881}
   m_Layer: 0
   m_Name: HeatPickUp
   m_TagString: Untagged
@@ -81,7 +81,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6095195, y: 1.3596048}
   m_EdgeRadius: 0
---- !u!114 &-2175387112702877090
+--- !u!114 &3377973397713446881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

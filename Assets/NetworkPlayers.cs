@@ -139,6 +139,7 @@ public class NetworkPlayers : MonoBehaviour
     void onCPLocalPlayerReady()
     {
         Inventory._inst.whenNetworkPlayerReady();
+        InGameManager._inst.whenReadyToPlay();
     }
 
     public Transform getSpawnPoint(EnumsData.Team team)

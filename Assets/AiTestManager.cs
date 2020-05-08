@@ -15,7 +15,7 @@ public class AiTestManager : MonoBehaviour
     {
         for (var x = 0; x < 100; x++)
         {
-            Instantiate(aiprefab, PathPointMap._inst.pathPoints[Random.Range(0, PathPointMap._inst.pathPoints.Count)].transform.position, Quaternion.identity);
+            //Instantiate(aiprefab, PathPointMap._inst.pathPoints[Random.Range(0, PathPointMap._inst.pathPoints.Count)].transform.position, Quaternion.identity);
         }
     }
   

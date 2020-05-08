@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 public class UIInGameCanvas : MonoBehaviour
 {
     private static UIInGameCanvas _instance;
     public static UIInGameCanvas _inst { get { return _instance; } }
 
     public Slider uiHealthSlider;
+    public TextMeshProUGUI TimerText;
 
     Tweener uiHealthIncreaseTween, uiHealthDecreaseTween;
 
@@ -53,5 +55,13 @@ public class UIInGameCanvas : MonoBehaviour
     {
         uiHealthSlider.maxValue = maxValue;
         uiHealthSlider.value = newAmount;
+    }
+
+    public void setTime(float time)
+    {
+        int minutes = (int)time / 60;
+        int seconds = (int)time - 60 * minutes;
+
+        TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

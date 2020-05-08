@@ -10,6 +10,11 @@ public class ProjSneez : Projectile
    
     public override void whenHitWall(Collision2D collision)
     {
+        whenHitSomething();
+    }
+
+   public void whenHitSomething()
+    {
         if (isStopped) return;
         SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedlePop);
         CancelInvoke("disappear");
@@ -18,6 +23,15 @@ public class ProjSneez : Projectile
         isStopped = true;
     }
 
+    public override void whenHitBot(Collision2D collision)
+    {
+        whenHitSomething();
+    }
+
+    public override void whenHitPlayer(Collision2D collision)
+    {
+        whenHitSomething();
+    }
     public override void Setup()
     {
         SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedleThrow);
@@ -55,6 +69,15 @@ public class ProjSneez : Projectile
                 //Here logic to damage the player 
                 Debug.Log("damage player");
                 hittedPlayer.takeDamage(damage);
+            }
+        }
+        else if (collision.gameObject.layer == 19)
+        {
+            //hit the bot 
+            AIBotController hittedBot = collision.GetComponent<AIBotController>();
+            if (hittedBot != null)
+            {
+                hittedBot.getInflected();
             }
         }
     }

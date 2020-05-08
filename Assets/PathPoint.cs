@@ -9,8 +9,8 @@ public class PathPoint : MonoBehaviour
 
     private void Start()
     {
-        PathPointMap._inst.pathPoints.Add(this);
-        Invoke("buildPointLinks", 1f);
+        //PathPointMap._inst.addPointToPath(this);
+        //Invoke("buildPointLinks", 1f);
 
     }
 

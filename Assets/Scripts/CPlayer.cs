@@ -293,7 +293,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
 
 
-        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", weaponPrefab.name), Vector3.zero, Quaternion.identity);
+        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", weaponPrefab.name), Vector3.zero, Quaternion.identity, 8);
         wp.transform.SetParent(aimContainerObject.transform);
       
         _currentWeaponObject = wp.GetComponent<Weapon>();
@@ -304,7 +304,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         if (_currentWeaponObject != null)
             PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
 
-        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity);
+        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity, 8);
         wp.transform.SetParent(aimContainerObject.transform);
         _currentWeaponObject = wp.GetComponent<Weapon>();
         //_currentWeaponObject = Instantiate(_defaultWeaponPrefab, aimContainerObject.transform);

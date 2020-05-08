@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
-public class PickupSpawner : MonoBehaviour
+public class PickupSpawner : MonoBehaviourPunCallbacks
 {
 
     private static PickupSpawner _instance;
     public static PickupSpawner _inst { get { return _instance; } }
-    public PhotonView _photonView;
+    //public PhotonView _photonView;
     public Pickup[] pickupPrefabs;
     public Transform[] pickupPoints;
     public int maxPickupSpawnedAtTime = 20;
@@ -30,13 +30,13 @@ public class PickupSpawner : MonoBehaviour
     }
     void Start()
     {
-        if (!PhotonNetwork.IsMasterClient)
-            return;
         InvokeRepeating("spawnPickups", 1f, spawnRefreshTime);
     }
 
     void spawnPickups()
     {
+
+        if (!PhotonNetwork.IsMasterClient) return;
         foreach (var point in pickupPoints)
         {
             if (spawnedPickup.Count >= maxPickupSpawnedAtTime) return;
@@ -64,7 +64,7 @@ public class PickupSpawner : MonoBehaviour
     public void removePickup(string pickKey)
     {
         if (!spawnedPickup.ContainsKey(pickKey)) return;
-        _photonView.RPC("Nk_RemovePickUp", RpcTarget.AllViaServer, pickKey);
+        photonView.RPC("Nk_RemovePickUp", RpcTarget.AllViaServer, pickKey);
     }
 
     [PunRPC]

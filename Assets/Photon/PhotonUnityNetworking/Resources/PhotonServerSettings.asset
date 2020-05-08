@@ -42,6 +42,8 @@ MonoBehaviour:
   - removeSpawn
   - Network_RemovePickUp
   - Nk_RemovePickUp
+  - RPC_UpdateBotStatus
+  - RPC_SpawnBots
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
