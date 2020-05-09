@@ -20,7 +20,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public string moveAnimationKey = "moving";
     public GameObject aimObjectIcon, aimContainerObject, lightContainer, lightShadowCaster;
 
-    public SpriteRenderer[] _bodyPartEffectedToOutline;
+    public SpriteRenderer[] _bodyPartEffectedToOutline, allBodyPartSprites;
+    public SpriteRenderer _headSprite;
     public Material enemyOutlineMat, allieOutlineMat;
     public PlayerMiniMap _playerMiniMap;
     //StepOptions
@@ -59,49 +60,53 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     //Inventory 
     public Inventory playerInventory;
     public bool isInDevMode = false;
-    protected virtual void Start()
-    {
-        if (isInDevMode)
-        {
-            NetworkPlayers._inst._localCPlayer = this;
-            NetworkPlayers._inst.playerList.Add("DevPlayer", this);
-            NetworkPlayers._inst.setUpLocalPlayer(this);
-        }
-        currentHealth = maxHealth;
-        wearDefaultWeapon();
-        StartCoroutine(setUpAccory());
-        baseSpeed = speed;
 
-        if (!_photonView.IsMine) return;
-        UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
+
+    protected void Start()
+    {
+        NetworkPlayers._inst.playerList.Add(_photonView.Owner.NickName, this);
+
+        currentHealth = maxHealth;
+        //wearDefaultWeapon();
+        aimObjectIcon.SetActive(false);
+        baseSpeed = speed;
+        AfterStartDone();
     }
 
-    IEnumerator setUpAccory()
+    void AfterStartDone()
     {
-        while(_thisPlayer == null)
+        if (_photonView.IsMine)
         {
-            yield return null;
+            aimObjectIcon.SetActive(true);
+            UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
+            InGameManager._inst.setCameraFollow(transform);
+            playerInventory = Inventory._inst;
+            InGameManager._inst.setInventoryReady();
         }
+    }
+     
 
-        if (_thisPlayer.IsLocal)
+    public void changeBasedOnOtherPlayersInfo()
+    {
+        if (_photonView.IsMine)
         {
-            _playerMiniMap.gameObject.SetActive(true);
+            // This Is My Player
             _playerMiniMap.setColor(Color.yellow);
             _playerMiniMap.Activate();
             lightContainer.SetActive(true);
             lightShadowCaster.SetActive(true);
-            
-            foreach(var bSprite in _bodyPartEffectedToOutline)
+
+            foreach (var bSprite in _bodyPartEffectedToOutline)
             {
                 bSprite.material = allieOutlineMat;
             }
-
         }
         else
         {
+
             if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == _thisPlayerTeam)
             {
-                _playerMiniMap.gameObject.SetActive(true);
+                //This is Allie Player For Me
                 _playerMiniMap.setColor(Color.green);
                 _playerMiniMap.Activate();
                 lightContainer.SetActive(true);
@@ -112,6 +117,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             }
             else
             {
+                //This is enemy Player For Me
                 _playerMiniMap.setColor(Color.red);
                 lightContainer.SetActive(false);
                 foreach (var bSprite in _bodyPartEffectedToOutline)
@@ -121,13 +127,14 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             }
         }
 
-        onNetworkPlayerDefine();
-
+        whenPlayerSetupFinished();
     }
+
+ 
 
     
 
-    public virtual void onNetworkPlayerDefine()
+    public virtual void whenPlayerSetupFinished()
     {
 
     }
@@ -135,6 +142,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
   
     private void Update()
     {
+        renderToLocalPlayer();
+     
         if (!_photonView.IsMine && !isInDevMode) return;
 
 
@@ -162,7 +171,120 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             takeDamage(1);;
         }
 
+      
+        
         overableUpdate();
+    }
+
+    public virtual void renderToLocalPlayer()
+    {
+
+        if (NetworkPlayers._inst._localCPlayer == null) return;
+      
+  
+  
+
+        //if it's on my team render me 
+        if (_thisPlayerTeam == NetworkPlayers._inst._localCPlayer._thisPlayerTeam)
+        {
+            return;
+        }
+
+        if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == Team.Doctors)
+        {
+            if (_headSprite.isVisible)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(_headSprite.transform.position, NetworkPlayers._inst._localCPlayer.transform.position - _headSprite.transform.position, 50f, LayerMask.GetMask("DoctorPlayerLayer")  | LayerMask.GetMask("Wall"));
+
+                if (hit.transform.tag == "Doctor")
+                {
+                    //When Doctor Hitted (Mean That's I'm a Doctor)
+                    var doctorScript = hit.transform.GetComponent<CPlayer>();
+                    var dir = (_headSprite.transform.position - NetworkPlayers._inst._localCPlayer.transform.position);
+                    var lookAngle = doctorScript.lookQuaternion.eulerAngles.z;
+                   
+                    Quaternion rotation = Quaternion.AngleAxis(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, Vector3.forward);
+                    float doctorToEnemyAngle = rotation.eulerAngles.z;
+
+
+                    if (Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) < 45f && Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) > -45f)
+                    {
+
+                        _playerMiniMap.gameObject.SetActive(true);
+                        for (var x = 0; x < allBodyPartSprites.Length; x++)
+                        {
+                            allBodyPartSprites[x].enabled = true;
+                            //hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
+                        }
+                    }
+                    else
+                    {
+                        _playerMiniMap.gameObject.SetActive(false);
+                        for (var x = 0; x < allBodyPartSprites.Length; x++)
+                        {
+                            allBodyPartSprites[x].enabled = false;
+                        }
+                    }
+
+
+                }
+                else
+                {
+                    _playerMiniMap.gameObject.SetActive(false);
+                    for (var x = 0; x < allBodyPartSprites.Length; x++)
+                    {
+                        allBodyPartSprites[x].enabled = false;
+                    }
+                }
+            }
+            else
+            {
+                for (var x = 0; x < allBodyPartSprites.Length; x++)
+                {
+                    allBodyPartSprites[x].enabled = false;
+                }
+            }
+        }
+  
+        else if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == Team.Patients)
+        {
+            if (_headSprite.isVisible)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(_headSprite.transform.position, NetworkPlayers._inst._localCPlayer.transform.position - _headSprite.transform.position, 50f, (LayerMask.GetMask("PatientPlayerLayer") | LayerMask.GetMask("Wall")));
+                if (hit == null) return;
+                if (hit.transform.tag == "Patient")
+                {
+                    _playerMiniMap.gameObject.SetActive(true);
+
+                    _currentWeaponObject.VisiablePartContainer.SetActive(true);
+                    for (var x = 0; x < allBodyPartSprites.Length; x++)
+                    {
+                        allBodyPartSprites[x].enabled = true;
+                        //hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
+                    }
+                }
+                else
+                {
+                    _playerMiniMap.gameObject.SetActive(false);
+                    _currentWeaponObject.VisiablePartContainer.SetActive(false);
+                    for (var x = 0; x < allBodyPartSprites.Length; x++)
+                    {
+                        allBodyPartSprites[x].enabled = false;
+                    }
+                }
+            }
+            else
+            {
+                _playerMiniMap.gameObject.SetActive(false);
+                _currentWeaponObject.VisiablePartContainer.SetActive(false);
+                for (var x = 0; x < allBodyPartSprites.Length; x++)
+                {
+                    allBodyPartSprites[x].enabled = false;
+                }
+            }
+        }
+
+  
     }
 
     public virtual void overableUpdate()
@@ -327,7 +449,6 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     {
         if (_currentWeaponObject != null)
             PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
-
         GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity, 8);
         wp.transform.SetParent(aimContainerObject.transform);
         _currentWeaponObject = wp.GetComponent<Weapon>();

@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     public GameObject inventoryContainer, inventorySlotTemplate;
     public Dictionary<GameObject, bool> slotContainers = new Dictionary<GameObject, bool>() { };
     public Dictionary<int, InvItem> invItems = new Dictionary<int, InvItem>() { };
-    bool isReadyToUse;
+    public bool isReadyToUse;
 
     private void Awake()
     {
@@ -83,10 +83,6 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void whenNetworkPlayerReady()
-    {
-        NetworkPlayers._inst._localCPlayer.playerInventory = this;
-        isReadyToUse = true;
-    }
+
 
 }

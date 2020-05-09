@@ -12,15 +12,4 @@ public class CDoctor : CPlayer
         _thisPlayerTeam = EnumsData.Team.Doctors;
     }
 
-
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    public override void onNetworkPlayerDefine()
-    {
-        base.onNetworkPlayerDefine();
-    }
-
 }

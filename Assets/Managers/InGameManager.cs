@@ -18,6 +18,7 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     public float GameTimer = 300f;
     private void Awake()
     {
+      
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -32,7 +33,16 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         SoundManager._inst.stopAllMusic();
 
+        NetworkPlayers._inst.setUpRoomInfo();
+        NetworkPlayers._inst.initLocalPlayerInRightTeamBasedOnNetworkList();
+   
         StartCoroutine(gameLoop());
+    }
+
+
+    public void setInventoryReady()
+    {
+        Inventory._inst.isReadyToUse = true;
     }
 
     IEnumerator gameLoop()
@@ -41,7 +51,12 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
         //While Preparing 
         while(GameStatus == 0)
         {
-            yield return new WaitForSeconds(1f);
+            if(NetworkPlayers._inst.playerList.Count == PhotonNetwork.PlayerList.Length)
+            {
+                GameStatus = 1;
+                NetworkPlayers._inst.changePlayerInfoBasedOnOtherPlayers();
+            }
+            yield return new WaitForSeconds(.1f);
         }
 
         //While InGame
@@ -76,15 +91,7 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
 
 
  
-    
-
-    public void whenReadyToPlay()
-    {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            GameStatus = 1;
-        }
-    }
+   
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

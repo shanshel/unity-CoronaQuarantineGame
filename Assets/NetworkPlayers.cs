@@ -35,20 +35,24 @@ public class NetworkPlayers : MonoBehaviour
         else
         {
             _instance = this;
-            if (PhotonNetwork.CurrentRoom != null)
-            {
-                random100 = int.Parse((string)PhotonNetwork.CurrentRoom.CustomProperties["Random100"]);
-
-            }else
-            {
-                //DevOnly
-                random100 = Random.Range(0, 100);
-            }
-            setupPlayersInfo();
+           
         }
     }
 
-    void setupPlayersInfo()
+    public void setUpRoomInfo()
+    {
+        if (PhotonNetwork.CurrentRoom != null)
+        {
+            random100 = int.Parse((string)PhotonNetwork.CurrentRoom.CustomProperties["Random100"]);
+        }
+        else
+        {
+            //DevOnly
+            random100 = Random.Range(0, 100);
+        }
+    }
+
+    public void initLocalPlayerInRightTeamBasedOnNetworkList()
     {
         if (random100 > 50f)
         {
@@ -74,18 +78,15 @@ public class NetworkPlayers : MonoBehaviour
                     //doctor
                     var spawnPoint = doctorSpawnPoints[Random.Range(0, doctorSpawnPoints.Length)];
                     var charachter = PhotonNetwork.Instantiate(Path.Combine("Doctors", "DoctorCharacterPlayer_Champ2"), spawnPoint.position, Quaternion.identity);
-                    var charNetwork = charachter.GetComponent<CPlayer>();
-                    charNetwork.SetPlayerNetworkInfo(p);
-                    playerList.Add(p.NickName, charNetwork);
+                    _localCPlayer = charachter.GetComponent<CPlayer>();
                 }
                 else
                 {
                     //not doctor
                     var spawnPoint = patientSpawnPoints[Random.Range(0, patientSpawnPoints.Length)];
                     var charachter = PhotonNetwork.Instantiate(Path.Combine("Patients", "PatientCharacterPlayer_Champ1"), spawnPoint.position, Quaternion.identity);
-                    var charNetwork = charachter.GetComponent<CPlayer>();
-                    charNetwork.SetPlayerNetworkInfo(p);
-                    playerList.Add(p.NickName, charNetwork);
+                    _localCPlayer = charachter.GetComponent<CPlayer>();
+
                 }
             }
             else
@@ -94,11 +95,8 @@ public class NetworkPlayers : MonoBehaviour
                 {
                     //not doctor
                     var spawnPoint = patientSpawnPoints[Random.Range(0, patientSpawnPoints.Length)];
-
                     var charachter = PhotonNetwork.Instantiate(Path.Combine("Patients", "PatientCharacterPlayer_Champ1"), spawnPoint.position, Quaternion.identity);
-                    var charNetwork = charachter.GetComponent<CPlayer>();
-                    charNetwork.SetPlayerNetworkInfo(p);
-                    playerList.Add(p.NickName, charNetwork);
+                    _localCPlayer = charachter.GetComponent<CPlayer>();
                 }
                 else
                 {
@@ -106,40 +104,21 @@ public class NetworkPlayers : MonoBehaviour
                     var spawnPoint = doctorSpawnPoints[Random.Range(0, doctorSpawnPoints.Length)];
 
                     var charachter = PhotonNetwork.Instantiate(Path.Combine("Doctors", "DoctorCharacterPlayer_Champ2"), spawnPoint.position, Quaternion.identity);
-                    var charNetwork = charachter.GetComponent<CPlayer>();
-                    charNetwork.SetPlayerNetworkInfo(p);
-                    playerList.Add(p.NickName, charNetwork);
+                    _localCPlayer = charachter.GetComponent<CPlayer>();
+
                 }
             }
             //playerList
         }
     
     }
-    void Start()
+
+    public void changePlayerInfoBasedOnOtherPlayers()
     {
-        foreach (var cp in playerList)
+        foreach (var p in playerList)
         {
-            if (cp.Value._thisPlayer == null) return;
-            if (cp.Value._thisPlayer.IsLocal)
-            {
-                _localCPlayer = cp.Value;
-                InGameManager._inst.setCameraFollow(cp.Value.transform);
-            }
+            p.Value.changeBasedOnOtherPlayersInfo();
         }
-        onCPLocalPlayerReady();
-
-    }
-    public void setUpLocalPlayer(CPlayer _cplayer)
-    {
-        _localCPlayer = _cplayer;
-        InGameManager._inst.setCameraFollow(_localCPlayer.transform);
-        onCPLocalPlayerReady();
-    }
-
-    void onCPLocalPlayerReady()
-    {
-        Inventory._inst.whenNetworkPlayerReady();
-        InGameManager._inst.whenReadyToPlay();
     }
 
     public Transform getSpawnPoint(EnumsData.Team team)

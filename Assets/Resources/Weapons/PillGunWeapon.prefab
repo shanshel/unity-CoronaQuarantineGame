@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4574676399366095213}
   - component: {fileID: 3125844442516055724}
   - component: {fileID: 6409754923094489982}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -215,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3793498037009581118}
   - component: {fileID: 3793498037009581119}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3793498037009581057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.174, y: -0.092, z: 0}
+  m_LocalPosition: {x: 0.01, y: 3.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3793498037563840581}
@@ -289,7 +290,7 @@ GameObject:
   - component: {fileID: 3793498037073393732}
   - component: {fileID: -4769403013174158482}
   - component: {fileID: -5784979797098046380}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PillGunWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,6 +334,7 @@ MonoBehaviour:
   projectile: {fileID: 7844594584049950369, guid: a1c930670208ad749b36df8029ef1f48,
     type: 3}
   shotPoint: {fileID: 3346867154265277062}
+  VisiablePartContainer: {fileID: 3793498037549174672}
   bulletCountText: {fileID: 6409754923094489982}
   bulletContainer: {fileID: 4470039222721406868}
 --- !u!114 &-5784979797098046380
@@ -352,7 +354,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -366,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3793498037549174673}
   - component: {fileID: 3793498037549174670}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RenderPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3793498037563840581}
   - component: {fileID: 3793498037563840578}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 3793498037563840580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.024999615, y: 1.7244961, z: 1.6664841}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
   m_Children:
   - {fileID: 3793498037009581118}
   m_Father: {fileID: 3793498037549174673}
@@ -490,7 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3346867154265277062}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: shotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4470039222721406868}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

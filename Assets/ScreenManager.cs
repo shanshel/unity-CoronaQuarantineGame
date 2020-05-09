@@ -35,7 +35,6 @@ public class ScreenManager : MonoBehaviour
         else
         {
             _instance = this;
-            mainCamera = Camera.main;
             postProccessVolume = GetComponent<Volume>();
             postProccessVolume.profile.TryGet(typeof(Vignette), out _vignette);
         }

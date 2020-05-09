@@ -36,57 +36,9 @@ public class EnemyPlayerController : MonoBehaviour
 
     void RenderOnlyIfSeenByDoctor()
     {
-        /*
-        if (_renderer.isVisible && PlayerManager._inst.mainPlayerObject != null)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position);
-            Debug.DrawRay(transform.position, PlayerManager._inst.mainPlayerObject.transform.position - transform.position, Color.red);
-
-            Debug.Log(hit.transform.name);
-            if (hit.transform.tag == "Doctor")
-            {
-                var doctorScript = hit.transform.GetComponent<DoctorPlayerController>();
-                var dir = (transform.position - PlayerManager._inst.mainPlayerObject.transform.position);
-                var lightAngle = doctorScript.lightAngle.eulerAngles.z;
-
-                Quaternion rotation = Quaternion.AngleAxis(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, Vector3.forward);
-                float doctorToEnemyAngle = rotation.eulerAngles.z;
-    
-
-                if (Mathf.DeltaAngle(lightAngle, doctorToEnemyAngle) < 60f && Mathf.DeltaAngle(lightAngle, doctorToEnemyAngle) > -60f)
-                {
-                    for (var x = 0; x < allBodyPicesRenderer.Length; x++)
-                    {
-                        allBodyPicesRenderer[x].enabled = true;
-                        hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
-                    }
-                }
-                else
-                {
-                    for (var x = 0; x < allBodyPicesRenderer.Length; x++)
-                    {
-                        allBodyPicesRenderer[x].enabled = false;
-                    }
-                }
-
-           
-            }
-            else
-            {
-                for (var x = 0; x < allBodyPicesRenderer.Length; x++)
-                {
-                    allBodyPicesRenderer[x].enabled = false;
-                }
-            }
-        }
-        else
-        {
-            for (var x = 0; x < allBodyPicesRenderer.Length; x++)
-            {
-                allBodyPicesRenderer[x].enabled = false;
-            }
-        }
-        */
+        
+       
+  
 
     }
     private void FixedUpdate()

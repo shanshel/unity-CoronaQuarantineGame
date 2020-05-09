@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
     public Projectile projectile;
     public Transform shotPoint;
     protected float lastShotTime;
-
+    public GameObject VisiablePartContainer;
     private void Start()
     {
         if (shotPoint == null)
