@@ -27,7 +27,6 @@ public class Dev_FrontWallColliderGenerator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit");
         if (transform.position.y < collision.gameObject.transform.position.y) return;
         Dev_SideWallColliderGenerator colScript = collision.gameObject.GetComponent<Dev_SideWallColliderGenerator>();
         if (colScript != null)

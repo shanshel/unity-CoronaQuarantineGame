@@ -51,6 +51,10 @@ public class NetworkPlayers : MonoBehaviour
             random100 = Random.Range(0, 100);
         }
     }
+    public void setUpRoomInfo_DevVersion()
+    {
+        random100 = Random.Range(0, 100);
+    }
 
     public void initLocalPlayerInRightTeamBasedOnNetworkList()
     {

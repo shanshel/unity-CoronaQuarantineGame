@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Photon.Pun;
+using System.IO;
+
 public class Weapon_PillGun : Weapon
 {
 
@@ -23,18 +26,21 @@ public class Weapon_PillGun : Weapon
        
             return;
         }
+        if (bulletCount == 0) return;
         if (bulletCount != -1)
         {
             bulletCount--;
             bulletCountText.text = bulletCount.ToString();
         }
+       
+
+        PhotonNetwork.Instantiate(Path.Combine("weapons", projectile.name), shotPoint.position, transform.rotation);
+        forceBack();
+        lastShotTime = Time.time;
         if (bulletCount == 0)
         {
             NetworkPlayers._inst._localCPlayer.wearDefaultWeapon();
         }
-        Instantiate(projectile, shotPoint.position, transform.rotation);
-        forceBack();
-        lastShotTime = Time.time;
     }
 
     private void Update()

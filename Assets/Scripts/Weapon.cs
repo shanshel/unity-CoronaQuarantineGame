@@ -17,10 +17,27 @@ public class Weapon : MonoBehaviour
     public Transform shotPoint;
     protected float lastShotTime;
     public GameObject VisiablePartContainer;
+    private PhotonView _photonView;
+
+    private void Awake()
+    {
+        _photonView = GetComponent<PhotonView>();
+    }
     private void Start()
     {
         if (shotPoint == null)
             shotPoint = transform;
+
+        //SetParent
+        foreach (var pO in NetworkPlayers._inst.playerList)
+        {
+            if (pO.Value.isDevMe || pO.Value._photonView.Owner.NickName == _photonView.Owner.NickName)
+            {
+                transform.SetParent(pO.Value.aimContainerObject.transform);
+                pO.Value._currentWeaponObject = this;
+            }
+        }
+        
     }
 
     private void LateUpdate()

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EnumsData;
 
 public class CDoctor : CPlayer
 {
@@ -11,5 +12,6 @@ public class CDoctor : CPlayer
     {
         _thisPlayerTeam = EnumsData.Team.Doctors;
     }
+
 
 }

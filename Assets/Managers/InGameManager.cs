@@ -13,6 +13,7 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     public AIBotController aiBotPrefab;
     public List<AIBotController> aiBots = new List<AIBotController>();
 
+    public bool isDev = false;
     // 0=preparing; 1=playing; 2=finishing; 3=finished
     public int GameStatus = 0;
     public float GameTimer = 300f;
@@ -31,10 +32,24 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Start()
     {
-        SoundManager._inst.stopAllMusic();
+        if (!PhotonNetwork.IsConnected)
+        {
+            isDev = true;
+        }
 
-        NetworkPlayers._inst.setUpRoomInfo();
-        NetworkPlayers._inst.initLocalPlayerInRightTeamBasedOnNetworkList();
+        if (!isDev)
+        {
+            SoundManager._inst.stopAllMusic();
+            NetworkPlayers._inst.setUpRoomInfo();
+            NetworkPlayers._inst.initLocalPlayerInRightTeamBasedOnNetworkList();
+        }
+        else
+        {
+            PhotonNetwork.OfflineMode = true;
+            NetworkPlayers._inst.setUpRoomInfo_DevVersion();
+        }
+
+        
    
         StartCoroutine(gameLoop());
     }
@@ -51,9 +66,10 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
         //While Preparing 
         while(GameStatus == 0)
         {
-            if(NetworkPlayers._inst.playerList.Count == PhotonNetwork.PlayerList.Length)
+            if(isDev || NetworkPlayers._inst.playerList.Count == PhotonNetwork.PlayerList.Length)
             {
                 GameStatus = 1;
+                yield return new WaitForSeconds(.1f);
                 NetworkPlayers._inst.changePlayerInfoBasedOnOtherPlayers();
             }
             yield return new WaitForSeconds(.1f);

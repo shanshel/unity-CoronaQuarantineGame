@@ -6,6 +6,11 @@ public class ProjNeedle : Projectile
 {
     // Start is called before the first frame update
     bool isStopped = false;
+
+    public override void Setup()
+    {
+        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedleThrow);
+    }
     public override void whenHitWall(Collision2D collision)
     {
        
@@ -26,8 +31,5 @@ public class ProjNeedle : Projectile
         base.whenHitBot(collision);
     }
 
-    public override void Setup()
-    {
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedleThrow);
-    }
+ 
 }

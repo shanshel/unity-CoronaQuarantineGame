@@ -49,7 +49,8 @@ public class ProjPill : Projectile
 
     void destroyImiditly()
     {
-        PhotonNetwork.Destroy(gameObject);
+        if (_photonView.IsMine)
+            PhotonNetwork.Destroy(gameObject);
     }
 
 

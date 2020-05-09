@@ -59,23 +59,32 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     //Inventory 
     public Inventory playerInventory;
-    public bool isInDevMode = false;
-
+    public bool isDevMe = false;
+    bool isPlayerReady;
 
     protected void Start()
     {
-        NetworkPlayers._inst.playerList.Add(_photonView.Owner.NickName, this);
-
-        currentHealth = maxHealth;
-        //wearDefaultWeapon();
+        if (!PhotonNetwork.IsConnected)
+        {
+            InGameManager._inst.isDev = true;
+        }
+        if (!InGameManager._inst.isDev)
+        {
+            NetworkPlayers._inst.playerList.Add(_photonView.Owner.NickName, this);
+        } else
+        {
+            NetworkPlayers._inst.playerList.Add(Random.Range(0, 100000).ToString(), this);
+            NetworkPlayers._inst._localCPlayer = this;
+        }
         aimObjectIcon.SetActive(false);
+        currentHealth = maxHealth;
         baseSpeed = speed;
         AfterStartDone();
     }
 
     void AfterStartDone()
     {
-        if (_photonView.IsMine)
+        if (isDevMe || _photonView.IsMine)
         {
             aimObjectIcon.SetActive(true);
             UIInGameCanvas._inst.healthUpdate(currentHealth, maxHealth);
@@ -88,14 +97,15 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void changeBasedOnOtherPlayersInfo()
     {
-        if (_photonView.IsMine)
+        if (isDevMe || _photonView.IsMine)
         {
             // This Is My Player
             _playerMiniMap.setColor(Color.yellow);
             _playerMiniMap.Activate();
             lightContainer.SetActive(true);
             lightShadowCaster.SetActive(true);
-
+            
+            wearDefaultWeapon();
             foreach (var bSprite in _bodyPartEffectedToOutline)
             {
                 bSprite.material = allieOutlineMat;
@@ -128,6 +138,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
 
         whenPlayerSetupFinished();
+        isPlayerReady = true;
     }
 
  
@@ -142,9 +153,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
   
     private void Update()
     {
-        renderToLocalPlayer();
+        if (!isPlayerReady) return;
+        weaponRenderer();
      
-        if (!_photonView.IsMine && !isInDevMode) return;
+        if (!_photonView.IsMine && !isDevMe) return;
 
 
         if (cStatus == playerStatus.dead)
@@ -168,7 +180,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
         if (Input.GetKeyDown(KeyCode.Tab) && _photonView.IsMine)
         {
-            takeDamage(1);;
+            takeDamage(1);
         }
 
       
@@ -176,10 +188,29 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         overableUpdate();
     }
 
+    void weaponRenderer()
+    {
+        /*
+        if (allBodyPartSprites[0].enabled)
+        {
+            if (_currentWeaponObject && _currentWeaponObject.VisiablePartContainer != null)
+            {
+                _currentWeaponObject.VisiablePartContainer.SetActive(true);
+            } else
+            {
+                _currentWeaponObject.VisiablePartContainer.SetActive(false);
+            }
+        } else
+        {
+            _currentWeaponObject.VisiablePartContainer.SetActive(false);
+        }
+        */
+    }
+    /*
     public virtual void renderToLocalPlayer()
     {
-
-        if (NetworkPlayers._inst._localCPlayer == null) return;
+     
+        if (NetworkPlayers._inst._localCPlayer == null || _currentWeaponObject == null) return;
       
   
   
@@ -284,9 +315,10 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             }
         }
 
+       
   
     }
-
+    */
     public virtual void overableUpdate()
     {
 
@@ -294,7 +326,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     private void FixedUpdate()
     {
-        if (!_photonView.IsMine && !isInDevMode) return;
+        if (!isPlayerReady) return;
+        if (!_photonView.IsMine && !isDevMe) return;
         if (cStatus != playerStatus.alive) return;
         Move();
     }
@@ -328,7 +361,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     private void Move()
     {
-        if (_photonView.IsMine || isInDevMode)
+        if (_photonView.IsMine || isDevMe)
         {
             _rb.MovePosition(_rb.position + moveAmount * Time.fixedDeltaTime);
 
@@ -435,24 +468,28 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void wearWeapon(Weapon weaponPrefab)
     {
+        if (!_photonView.IsMine) return;
         if (_currentWeaponObject != null)
             PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
-
-
-        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", weaponPrefab.name), Vector3.zero, Quaternion.identity, 8);
-        wp.transform.SetParent(aimContainerObject.transform);
-      
+        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", weaponPrefab.name), Vector3.zero, Quaternion.identity, 0);
         _currentWeaponObject = wp.GetComponent<Weapon>();
     }
 
     public void wearDefaultWeapon()
     {
+        if (!_photonView.IsMine) return;
         if (_currentWeaponObject != null)
             PhotonNetwork.Destroy(_currentWeaponObject.gameObject);
-        GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity, 8);
-        wp.transform.SetParent(aimContainerObject.transform);
-        _currentWeaponObject = wp.GetComponent<Weapon>();
-        //_currentWeaponObject = Instantiate(_defaultWeaponPrefab, aimContainerObject.transform);
+
+        if (!InGameManager._inst.isDev)
+        {
+            GameObject wp = PhotonNetwork.Instantiate(Path.Combine("Weapons", _defaultWeaponPrefab.name), Vector3.zero, Quaternion.identity, 0);
+        }
+        else
+        {
+            Instantiate(_defaultWeaponPrefab, Vector3.zero, Quaternion.identity);
+        }
+     
     }
 
    

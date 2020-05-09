@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
         else if (collision.gameObject.layer == 12)
         {
             CPlayer player = collision.gameObject.GetComponent<CPlayer>();
-            if (player.isInDevMode || player._photonView.IsMine) return;
+            if (player.isDevMe || player._photonView.IsMine) return;
             whenHitPlayer(collision);
         }
         else if (collision.gameObject.layer == 19)

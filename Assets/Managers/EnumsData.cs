@@ -67,6 +67,10 @@ public class EnumsData
         Doctors, Patients, Both
     }
 
+    public enum VisbilityTeam
+    {
+        None, Doctors, Patients
+    }
     public enum playerStatus
     {
         alive, dead, respawining
