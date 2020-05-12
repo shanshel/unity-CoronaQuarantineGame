@@ -16,4 +16,10 @@ public class CPatient : CPlayer
     {
         baseMouthBone.rotation = lookQuaternion;
     }
+
+    protected override void overwriteableAttack()
+    {
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.Hatshu, transform.position);
+        _animator.SetTrigger("Sneez");
+    }
 }

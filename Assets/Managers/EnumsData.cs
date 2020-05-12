@@ -18,13 +18,23 @@ public class EnumsData
         DoctorSteps,
         DoctorSteps2,
         NeedleThrow,
-        NeedlePop,
+        NeedleHit,
         Surprise,
         pickUpSound,
         takeHealth,
         takeDamage,
         Gassing,
         StartGassing,
+        PatientKillDoctor,
+        PlayerCollidWithWall,
+        Hatshu,
+        WhileWaitForRespawn,
+        DoctorTakeDamage,
+        PatientTakeDamage,
+        DoctorDie, 
+        PatientDie,
+        Step1A,Step2A, Step1B, Step2B
+
     }
 
     public enum WindowEnum

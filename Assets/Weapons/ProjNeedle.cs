@@ -5,31 +5,53 @@ using UnityEngine;
 public class ProjNeedle : Projectile
 {
     // Start is called before the first frame update
-    bool isStopped = false;
+
 
     public override void Setup()
     {
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedleThrow);
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.NeedleThrow, transform.position);
     }
     public override void whenHitWall(Collision2D collision)
     {
-       
-        if (isStopped) return;
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.NeedlePop);
-
-        _rigid.velocity = Vector3.zero;
-        isStopped = true;
+        hitSomething(collision);
     }
-
-    public override void whenHitPlayer(Collision2D collision)
+    void hitSomething(Collision2D collision, bool dealDamage = false)
     {
-        base.whenHitPlayer(collision);
+        if (isLifetimeFinished) return;
+        isLifetimeFinished = true;
+        _rigid.velocity = Vector3.zero;
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.NeedleHit, transform.position);
+
+        if (dealDamage)
+        {
+            CPlayer hittedPlayer = collision.transform.GetComponent<CPlayer>();
+            if (hittedPlayer != null)
+            {
+                hittedPlayer.takeDamage(damage);
+                if (hittedPlayer.cStatus == EnumsData.playerStatus.dead)
+                {
+                    bulletOwner.onKillSomeone();
+                }
+            }
+        }
+        disappear();
     }
+
+    public override void whenHitDoctor(Collision2D collision)
+    {
+        hitSomething(collision);
+    }
+
 
     public override void whenHitBot(Collision2D collision)
     {
-        base.whenHitBot(collision);
+        hitSomething(collision);
     }
 
- 
+    public override void whenHitPatient(Collision2D collision)
+    {
+        hitSomething(collision, true);
+    }
+
+
 }

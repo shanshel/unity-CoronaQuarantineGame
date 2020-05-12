@@ -22,4 +22,8 @@ public class Sound
     [HideInInspector]
     public AudioSource audioSource;
 
+    public bool is3D;
+    [Range(2f, 100f)]
+    public float maxDistanceToHear = 25f;
+  
 }

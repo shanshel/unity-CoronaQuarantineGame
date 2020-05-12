@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EnumsData;
 
 public class Projectile : MonoBehaviour
 {
@@ -10,23 +11,54 @@ public class Projectile : MonoBehaviour
     public PolygonCollider2D _polyCollider;
     public float bulletSpeed = 10f;
     public float lifeTime = 3f;
+    public bool isLifetimeFinished;
     public int damage = 1;
 
     public GameObject disapearingEffectPrefab;
     public Vector2 moveVector = Vector2.up;
     protected Vector2 lastVelocity;
     public PhotonView _photonView;
+
+    protected CPlayer bulletOwner;
     void Start()
     {
-        Invoke("disappear", lifeTime);
+       
         _rigid.velocity = transform.up * bulletSpeed;
+
+        bulletOwner = NetworkPlayers._inst.getCplayerByActorNumber(_photonView.CreatorActorNr);
+        if (bulletOwner != null)
+        {
+            Debug.LogError("We Found the Owner For The Bullet");
+        }
+        else
+        {
+            Debug.LogError("There is No Owner to the bullet");
+        }
         Setup();
     }
 
+   
     public virtual void Setup() { }
 
 
+    private void Update()
+    {
+        lifeTime -= Time.deltaTime;
+        if (!isLifetimeFinished && lifeTime <= 0f)
+        {
+            isLifetimeFinished = true;
+            disappear();
+        }
+
+        overwriteableUpdate();
+    }
+
+    public virtual void overwriteableUpdate()
+    {
+
+    }
     // Update is called once per frame
+
 
     void FixedUpdate()
     {
@@ -40,48 +72,76 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.layer == 13)
         {
             whenHitWall(collision);
+            return;
         }
-        else if (collision.gameObject.layer == 12)
+
+  
+        if (collision.gameObject.tag == "Doctor")
         {
-            CPlayer player = collision.gameObject.GetComponent<CPlayer>();
-            if (player.isDevMe || player._photonView.IsMine) return;
-            whenHitPlayer(collision);
+            whenHitDoctor(collision);
         }
-        else if (collision.gameObject.layer == 19)
+        else if (collision.gameObject.tag == "Patient")
+        {
+            whenHitPatient(collision);
+        }
+        else if (collision.gameObject.tag == "BotAI")
         {
             whenHitBot(collision);
         }
 
     }
-  
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "Doctor")
+        {
+
+            whenTriggerWithDoctor(collision);
+        }
+        else if (collision.gameObject.tag == "Patient")
+        {
+
+            whenTriggerWithPatient(collision);
+        }
+        else if (collision.gameObject.tag == "BotAI")
+        {
+            whenTriggerWithBot(collision);
+        }
+    }
     public virtual void whenHitWall(Collision2D collision)
     {
-        //_rigid.velocity = Vector3.zero;
-        //bulletSpeed = 0;
-
-        //moveVector = transform.localRotation.eulerAngles;
-        //return;
-        // Vector3 reflectedVelocity = n;
-
-        //_rigid.velocity = reflectedVelocity;
-        // rotate the object by the same ammount we changed its velocity
-        //Quaternion rotation = Quaternion.FromToRotation(_rigid.velocity, reflectedVelocity);
-        //transform.rotation = rotation * transform.rotation;
-        //bulletSpeed = 0;
+  
     }
 
+    public virtual void whenHitDoctor(Collision2D collision)
+    {
+        _rigid.velocity = Vector3.zero;
+    }
+
+    public virtual void whenHitPatient(Collision2D collision)
+    {
+        _rigid.velocity = Vector3.zero;
+    }
     public virtual void whenHitBot(Collision2D collision)
     {
         _rigid.velocity = Vector3.zero;
-        //bulletSpeed = 0;
     }
 
-    public virtual void whenHitPlayer(Collision2D collision)
+    public virtual void whenTriggerWithDoctor(Collider2D collision)
     {
-        _rigid.velocity = Vector3.zero;
-        //bulletSpeed = 0;
+
     }
+
+    public virtual void whenTriggerWithPatient(Collider2D collision)
+    {
+
+    }
+    public virtual void whenTriggerWithBot(Collider2D collision)
+    {
+
+    }
+
     public virtual void disappear()
     {
 

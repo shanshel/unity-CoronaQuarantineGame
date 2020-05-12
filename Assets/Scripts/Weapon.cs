@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     protected float lastShotTime;
     public GameObject VisiablePartContainer;
     private PhotonView _photonView;
+    protected CPlayer weaponOwner;
 
     private void Awake()
     {
@@ -37,7 +38,17 @@ public class Weapon : MonoBehaviour
                 pO.Value._currentWeaponObject = this;
             }
         }
-        
+
+        weaponOwner = NetworkPlayers._inst.getCplayerByActorNumber(_photonView.CreatorActorNr);
+        if (weaponOwner != null)
+        {
+            Debug.LogError("We Found the Owner For The Weapon");
+        }
+        else
+        {
+            Debug.LogError("There is No Owner to the Weapon Owner");
+        }
+
     }
 
     private void LateUpdate()

@@ -48,8 +48,6 @@ public class UIInGameCanvas : MonoBehaviour
         uiHealthSlider.maxValue = maxValue;
         uiHealthSlider.value = newAmount;
         uiHealthDecreaseTween.Restart();
-        Debug.Log(uiHealthSlider.value);
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.takeDamage);
         ScreenManager._inst.quickShake();
     }
 

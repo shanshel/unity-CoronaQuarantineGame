@@ -228,6 +228,7 @@ MonoBehaviour:
   _polyCollider: {fileID: 0}
   bulletSpeed: 10
   lifeTime: 3
+  isLifetimeFinished: 0
   damage: 1
   disapearingEffectPrefab: {fileID: 1237316534512216301, guid: f11b74a394cbbbc4099e3b8bdbcc4a75,
     type: 3}

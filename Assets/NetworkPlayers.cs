@@ -137,4 +137,16 @@ public class NetworkPlayers : MonoBehaviour
         }
     }
 
+    public CPlayer getCplayerByActorNumber(int actorNumber)
+    {
+        foreach (var p in playerList)
+        {
+            if (p.Value._photonView.CreatorActorNr == actorNumber)
+            {
+                return p.Value;
+            }
+        }
+        return null;
+    }
+
 }

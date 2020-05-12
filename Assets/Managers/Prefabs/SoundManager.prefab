@@ -52,6 +52,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 441bca5411f905543a624c9e81c7eced, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 2
     volume: 1
     pitch: 1
@@ -60,6 +62,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e88959671cb9e25448feac4cd84c0d97, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 3
     volume: 0.4
     pitch: 1
@@ -68,6 +72,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 91b8b7ff157791e49be25fe5be552e8d, type: 3}
     isMusic: 1
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 4
     volume: 1
     pitch: 1
@@ -76,6 +82,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 441bca5411f905543a624c9e81c7eced, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 5
     volume: 1
     pitch: 1
@@ -84,6 +92,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: bb404bad7e6bbb64e937c662f811f983, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 6
     volume: 1
     pitch: 1
@@ -92,6 +102,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5ed13ba5e69732f4ca38a533b88f441d, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 7
     volume: 1
     pitch: 1.4
@@ -100,6 +112,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 07a6f134787ee234d805b33b2ddfe650, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 8
     volume: 1
     pitch: 1.4
@@ -108,14 +122,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fc485ee0d4fd532438e5f029de9a728e, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
   - sound: 14
-    volume: 0.3
+    volume: 1
     pitch: 1.4
     playOnAwake: 0
     isLooping: 0
     clip: {fileID: 8300000, guid: 56b9dc7f2f231a644a7eeb95cbfd432a, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 15
     volume: 1
     pitch: 1.2
@@ -124,6 +142,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6198e59d14c411b4bbf17b33365c1360, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 16
     volume: 1
     pitch: 1.2
@@ -132,6 +152,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 18238c297128eaf499e3a156d8156e89, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 18
     volume: 1
     pitch: 1.2
@@ -140,22 +162,28 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d24a2266d609b1149b26b85668dff85c, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 17
     volume: 1
     pitch: 1.2
     playOnAwake: 0
     isLooping: 0
-    clip: {fileID: 8300000, guid: 8314852991c14a649b7b0c13ee72cc2a, type: 3}
+    clip: {fileID: 8300000, guid: d722186b45923e64f88704717d23f83d, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 12
     volume: 1
     pitch: 1.2
     playOnAwake: 0
     isLooping: 0
-    clip: {fileID: 8300000, guid: b22e2889016127d489c7d6db28ff1e3d, type: 3}
+    clip: {fileID: 8300000, guid: 666f3510f74d0bd4fa7bbc5fbff12afd, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
   - sound: 11
     volume: 1
     pitch: 1.2
@@ -164,3 +192,126 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dfa6ff46249b93243873b76ca43ac043, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 19
+    volume: 1
+    pitch: 0.9
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 48e1b3ee318b19b4aa764d8f4367bfb7, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 20
+    volume: 1
+    pitch: 0.9
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 5bb16af0b0d8266478017c811e642c67, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 22
+    volume: 1
+    pitch: 1.1
+    playOnAwake: 0
+    isLooping: 1
+    clip: {fileID: 8300000, guid: 996f8220ef20b2a4587f85b72d6484e3, type: 3}
+    isMusic: 1
+    audioSource: {fileID: 0}
+    is3D: 0
+    maxDistanceToHear: 20
+  - sound: 21
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 6b3d2ca7c661df440b43a98eedc13593, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 23
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 7e7323c21d579c047b848db3016d08b9, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 24
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: ae22a5be90952394890be66446cdd096, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 25
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 4e5d64199888c6242a7f83955be6ac3b, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 26
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: eef06fd182252914db84c96d294f0f73, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 27
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 7b8fe7c4e9e5dd640957db5c7301d064, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 28
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 9f8225036431a2f4a949c3d67f6dd38f, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 29
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: ee36ed2cae5583043bfbf64158e95900, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 30
+    volume: 1
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: f5be3f48176b21041a705051c9079f05, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  maxInitPerSound: 0

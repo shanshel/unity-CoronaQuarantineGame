@@ -62,6 +62,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public bool isDevMe = false;
     bool isPlayerReady;
 
+    //Head Healthbar 
+    public HeadHealthBar healthBar;
     protected void Start()
     {
         if (!PhotonNetwork.IsConnected)
@@ -154,7 +156,6 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     private void Update()
     {
         if (!isPlayerReady) return;
-        weaponRenderer();
      
         if (!_photonView.IsMine && !isDevMe) return;
 
@@ -178,155 +179,65 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Tab) && _photonView.IsMine)
-        {
-            takeDamage(1);
-        }
+
 
       
         
         overableUpdate();
     }
 
-    void weaponRenderer()
-    {
-        /*
-        if (allBodyPartSprites[0].enabled)
-        {
-            if (_currentWeaponObject && _currentWeaponObject.VisiablePartContainer != null)
-            {
-                _currentWeaponObject.VisiablePartContainer.SetActive(true);
-            } else
-            {
-                _currentWeaponObject.VisiablePartContainer.SetActive(false);
-            }
-        } else
-        {
-            _currentWeaponObject.VisiablePartContainer.SetActive(false);
-        }
-        */
-    }
-    /*
-    public virtual void renderToLocalPlayer()
-    {
-     
-        if (NetworkPlayers._inst._localCPlayer == null || _currentWeaponObject == null) return;
-      
-  
-  
-
-        //if it's on my team render me 
-        if (_thisPlayerTeam == NetworkPlayers._inst._localCPlayer._thisPlayerTeam)
-        {
-            return;
-        }
-
-        if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == Team.Doctors)
-        {
-            if (_headSprite.isVisible)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(_headSprite.transform.position, NetworkPlayers._inst._localCPlayer.transform.position - _headSprite.transform.position, 50f, LayerMask.GetMask("DoctorPlayerLayer")  | LayerMask.GetMask("Wall"));
-
-                if (hit.transform.tag == "Doctor")
-                {
-                    //When Doctor Hitted (Mean That's I'm a Doctor)
-                    var doctorScript = hit.transform.GetComponent<CPlayer>();
-                    var dir = (_headSprite.transform.position - NetworkPlayers._inst._localCPlayer.transform.position);
-                    var lookAngle = doctorScript.lookQuaternion.eulerAngles.z;
-                   
-                    Quaternion rotation = Quaternion.AngleAxis(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, Vector3.forward);
-                    float doctorToEnemyAngle = rotation.eulerAngles.z;
-
-
-                    if (Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) < 45f && Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) > -45f)
-                    {
-
-                        _playerMiniMap.gameObject.SetActive(true);
-                        for (var x = 0; x < allBodyPartSprites.Length; x++)
-                        {
-                            allBodyPartSprites[x].enabled = true;
-                            //hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
-                        }
-                    }
-                    else
-                    {
-                        _playerMiniMap.gameObject.SetActive(false);
-                        for (var x = 0; x < allBodyPartSprites.Length; x++)
-                        {
-                            allBodyPartSprites[x].enabled = false;
-                        }
-                    }
-
-
-                }
-                else
-                {
-                    _playerMiniMap.gameObject.SetActive(false);
-                    for (var x = 0; x < allBodyPartSprites.Length; x++)
-                    {
-                        allBodyPartSprites[x].enabled = false;
-                    }
-                }
-            }
-            else
-            {
-                for (var x = 0; x < allBodyPartSprites.Length; x++)
-                {
-                    allBodyPartSprites[x].enabled = false;
-                }
-            }
-        }
-  
-        else if (NetworkPlayers._inst._localCPlayer._thisPlayerTeam == Team.Patients)
-        {
-            if (_headSprite.isVisible)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(_headSprite.transform.position, NetworkPlayers._inst._localCPlayer.transform.position - _headSprite.transform.position, 50f, (LayerMask.GetMask("PatientPlayerLayer") | LayerMask.GetMask("Wall")));
-                if (hit == null) return;
-                if (hit.transform.tag == "Patient")
-                {
-                    _playerMiniMap.gameObject.SetActive(true);
-
-                    _currentWeaponObject.VisiablePartContainer.SetActive(true);
-                    for (var x = 0; x < allBodyPartSprites.Length; x++)
-                    {
-                        allBodyPartSprites[x].enabled = true;
-                        //hit.transform.GetComponent<DoctorPlayerController>().onSeeEnemy();
-                    }
-                }
-                else
-                {
-                    _playerMiniMap.gameObject.SetActive(false);
-                    _currentWeaponObject.VisiablePartContainer.SetActive(false);
-                    for (var x = 0; x < allBodyPartSprites.Length; x++)
-                    {
-                        allBodyPartSprites[x].enabled = false;
-                    }
-                }
-            }
-            else
-            {
-                _playerMiniMap.gameObject.SetActive(false);
-                _currentWeaponObject.VisiablePartContainer.SetActive(false);
-                for (var x = 0; x < allBodyPartSprites.Length; x++)
-                {
-                    allBodyPartSprites[x].enabled = false;
-                }
-            }
-        }
-
-       
-  
-    }
-    */
+    
+    
     public virtual void overableUpdate()
     {
 
     }
 
+    float timeBetweenSteps = .1f;
+    float stepTimer;
+    Vector3 lastPosition;
+    int stepCircile;
     private void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            timeBetweenSteps += .05f;
+        }
         if (!isPlayerReady) return;
+        stepTimer -= Time.fixedDeltaTime;
+        if (Vector3.Distance(transform.position, lastPosition) >= .3f && stepTimer <= 0f)
+        {
+            lastPosition = transform.position;
+            stepTimer = timeBetweenSteps;
+            if (stepCircile == 0)
+            {
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step1A, transform.position);
+            }
+            else if (stepCircile == 1)
+            {
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step2A, transform.position);
+
+            }
+            else  if (stepCircile == 2)
+            {
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step1B, transform.position);
+            }
+            else if (stepCircile == 3)
+            {
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step2B, transform.position);
+            }
+
+            if (stepCircile == 3)
+            {
+                stepCircile = 0;
+            }
+            else
+            {
+                stepCircile++;
+            }
+          
+
+        }
         if (!_photonView.IsMine && !isDevMe) return;
         if (cStatus != playerStatus.alive) return;
         Move();
@@ -357,6 +268,11 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     private void Attack()
     {
         _currentWeaponObject.Shot();
+        overwriteableAttack();
+    }
+    protected virtual void overwriteableAttack()
+    {
+
     }
 
     private void Move()
@@ -393,14 +309,37 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     /* Photon */
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        throw new System.NotImplementedException();
+
+        if (stream.IsWriting)
+        {
+            stream.SendNext(this.currentHealth);
+
+        }
+        else
+        {
+            this.currentHealth = (int)stream.ReceiveNext();
+            healthBar.setHealth(this.currentHealth, maxHealth);
+        }
+
+  
     }
 
     /* Health */
     public void takeDamage(int amount)
     {
-        if (!_photonView.IsMine) return;
+
         if (cStatus != playerStatus.alive) return;
+        if (_thisPlayerTeam == Team.Doctors)
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.DoctorTakeDamage, transform.position);
+        }
+        else
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.PatientTakeDamage, transform.position);
+        }
+        healthBar.Shake();
+        if (!_photonView.IsMine) return;
+       
 
         var newHealth = currentHealth - amount;
         
@@ -415,12 +354,15 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
 
         UIInGameCanvas._inst.healthDecrease(currentHealth, maxHealth);
+        healthBar.setHealth(currentHealth, maxHealth);
     }
+
+ 
 
     public void takeHealth(int amount)
     {
-        if (!_photonView.IsMine) return;
         if (cStatus != playerStatus.alive) return;
+        if (!_photonView.IsMine) return;
         var newHealth = currentHealth + amount;
         if (newHealth > maxHealth)
         {
@@ -431,25 +373,43 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             currentHealth = newHealth;
         }
         UIInGameCanvas._inst.healthIncrease(currentHealth, maxHealth);
-
+        healthBar.setHealth(currentHealth, maxHealth);
     }
 
     public void onDeath()
     {
+        if (_thisPlayerTeam == Team.Doctors)
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.DoctorDie, transform.position);
+        }
+        else
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.PatientDie, transform.position);
+        }
+
         if (!_photonView.IsMine) return;
+        SoundManager._inst.playSoundOnce(SoundEnum.WhileWaitForRespawn);
         cStatus = playerStatus.dead;
         respawnTimer = respawnTime;
         UIOverlay.show(EnumsData.UIOverlay.dead);
         InGameManager._inst.setDeadFollowNexT();
     }
 
+    public void onKillSomeone()
+    {
+        if (_thisPlayerTeam == Team.Patients)
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.PatientKillDoctor, transform.position);
+        }
+      
+    }
     void respawn()
     {
         if (!_photonView.IsMine) return;
+        SoundManager._inst.stopSound(SoundEnum.WhileWaitForRespawn);
         cStatus = playerStatus.respawining;
         Transform point = NetworkPlayers._inst.getSpawnPoint(_thisPlayerTeam);
         currentHealth = maxHealth;
-        Debug.Log("Will go to " + point.position);
         _rb.simulated = false;
         Vector2 pos = new Vector3(point.position.x, point.position.y, transform.position.z);
         transform.DOMove(pos, 1f).OnComplete(() => { onRespawnFinished(); }).Play();
@@ -504,6 +464,14 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     {
         speedTrail.Stop();
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 13)
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.PlayerCollidWithWall, transform.position);
+        }
     }
 
 }

@@ -9,8 +9,7 @@ public class WeaponPickup : Pickup
     {
         if (palyerPickedIt.playerInventory.addItem(invItemWeapon))
         {
-            Debug.Log("ok Added");
-            SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.pickUpSound);
+            SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.pickUpSound, transform.position);
             Instantiate(destroyParticlePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

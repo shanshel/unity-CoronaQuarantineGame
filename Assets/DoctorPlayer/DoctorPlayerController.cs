@@ -63,12 +63,12 @@ public class DoctorPlayerController : MonoBehaviour
             {
                 if (isRightStep)
                 {
-                    SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.DoctorSteps2);
+                    SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.DoctorSteps2, transform.position);
                     isRightStep = false;
                 }
                 else
                 {
-                    SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.DoctorSteps);
+                    SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.DoctorSteps, transform.position);
                     isRightStep = true;
                 }
                 
@@ -118,7 +118,7 @@ public class DoctorPlayerController : MonoBehaviour
     }
     void DelaySurpise()
     {
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.Surprise);
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.Surprise, transform.position);
     }
 
 

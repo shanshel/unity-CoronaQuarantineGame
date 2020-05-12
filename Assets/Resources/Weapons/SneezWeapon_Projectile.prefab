@@ -211,7 +211,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0076070726, y: 0.050304472}
+  m_Offset: {x: 0.18378007, y: 0.050304472}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -222,7 +222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07068482, y: 0.61552894}
+  m_Size: {x: 0.42303085, y: 0.61552894}
   m_EdgeRadius: 0
 --- !u!50 &3444998321676066155
 Rigidbody2D:
@@ -258,9 +258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigid: {fileID: 3444998321676066155}
-  _polyCollider: {fileID: 669986759697155612}
+  _polyCollider: {fileID: 7874906277840696010}
   bulletSpeed: 10
   lifeTime: 3
+  isLifetimeFinished: 0
   damage: 1
   disapearingEffectPrefab: {fileID: 1237316534512216301, guid: f11b74a394cbbbc4099e3b8bdbcc4a75,
     type: 3}
@@ -334,7 +335,7 @@ GameObject:
   - component: {fileID: 8256725299146474302}
   - component: {fileID: 8256725299146474303}
   - component: {fileID: 8256725299146474288}
-  - component: {fileID: 669986759697155612}
+  - component: {fileID: 7874906277840696010}
   m_Layer: 18
   m_Name: Sneeze
   m_TagString: Untagged
@@ -425,7 +426,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &669986759697155612
+--- !u!60 &7874906277840696010
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

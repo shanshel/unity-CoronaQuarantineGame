@@ -13,7 +13,12 @@ public class ProjPill : Projectile
 
     public override void Setup()
     {
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.StartGassing);
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.StartGassing, transform.position);
+    }
+
+    void hitSomething()
+    {
+
     }
     public override void whenHitWall(Collision2D collision)
     {
@@ -33,7 +38,7 @@ public class ProjPill : Projectile
         partc2.SetActive(true);
         zone.DOColor(new Color(0.9339623f, 0.3216002f, 0.3216002f, 1f), .3f).SetAutoKill(true).Play();
         Instantiate(disapearingEffectPrefab, transform.position, Quaternion.identity);
-        SoundManager._inst.playSoundOnce(EnumsData.SoundEnum.Gassing);
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.Gassing, transform.position);
         Invoke("beforeDestroy", 2.5f);
     }
 
@@ -53,23 +58,22 @@ public class ProjPill : Projectile
             PhotonNetwork.Destroy(gameObject);
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void whenTriggerWithPatient(Collider2D collision)
     {
-       if (collision.gameObject.layer == 12)
+        CPlayer hittedPlayer = collision.transform.parent.GetComponent<CPlayer>();
+        if (hittedPlayer != null)
         {
-            CPlayer hittedPlayer = collision.GetComponent<CPlayer>();
-            if (hittedPlayer != null )
+            hittedPlayer.takeDamage(damage);
+            if (hittedPlayer.cStatus == EnumsData.playerStatus.dead)
             {
-                //&& hittedPlayer != NetworkPlayers._inst._localCPlayer
-                //Here logic to damage the player 
-                Debug.Log("damage player");
-                hittedPlayer.takeDamage(damage);
+                bulletOwner.onKillSomeone();
             }
         }
     }
+ 
 
-    private void Update()
+
+    public override void overwriteableUpdate()
     {
         if (isReachEnd)
         {
