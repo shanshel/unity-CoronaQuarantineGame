@@ -13,5 +13,10 @@ public class CDoctor : CPlayer
         _thisPlayerTeam = EnumsData.Team.Doctors;
     }
 
+    protected override void overwriteableAttack()
+    {
+        _animator.SetTrigger("Attack");
+    }
+
 
 }

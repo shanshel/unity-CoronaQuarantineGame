@@ -55,6 +55,7 @@ public class VisibilitySystemActor : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (NetworkPlayers._inst == null || NetworkPlayers._inst._localCPlayer == null) return;
         if (visiblityTeam == NetworkPlayers._inst._localCPlayer._thisPlayerTeam)
         {
          
@@ -74,7 +75,15 @@ public class VisibilitySystemActor : MonoBehaviour
             }
             if (hitRay.transform.tag == "Patient")
             {
+                CPlayer patientCPlayer = hitRay.transform.GetComponent<CPlayer>();
+
                 show();
+                CPlayer seenBy = transform.parent.GetComponent<CPlayer>();
+                if (seenBy != null && seenBy.cStatus != playerStatus.dead)
+                {
+                    patientCPlayer.suprise();
+                }
+                
                 if (player)
                     player._currentWeaponObject.VisiablePartContainer.SetActive(true);
             }
@@ -105,7 +114,12 @@ public class VisibilitySystemActor : MonoBehaviour
 
                 if (Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) < 45f && Mathf.DeltaAngle(lookAngle, doctorToEnemyAngle) > -45f)
                 {
-                  
+                    CPlayer seenBy = transform.parent.GetComponent<CPlayer>();
+                    if (seenBy != null && seenBy.cStatus != playerStatus.dead)
+                    {
+                        doctorScript.suprise();
+                    }
+                   
                     show();
                 }
                 else

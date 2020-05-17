@@ -155,7 +155,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 18
-    volume: 1
+    volume: 0.7
     pitch: 1.2
     playOnAwake: 0
     isLooping: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 17
-    volume: 1
+    volume: 0.7
     pitch: 1.2
     playOnAwake: 0
     isLooping: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 19
-    volume: 1
+    volume: 0.7
     pitch: 0.9
     playOnAwake: 0
     isLooping: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 20
-    volume: 1
-    pitch: 0.9
+    volume: 0.2
+    pitch: 0.7
     playOnAwake: 0
     isLooping: 0
     clip: {fileID: 8300000, guid: 5bb16af0b0d8266478017c811e642c67, type: 3}
@@ -215,7 +215,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 22
-    volume: 1
+    volume: 0.7
     pitch: 1.1
     playOnAwake: 0
     isLooping: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 23
-    volume: 1
+    volume: 0.7
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 24
-    volume: 1
+    volume: 0.7
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 25
-    volume: 1
+    volume: 0.7
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 26
-    volume: 1
+    volume: 0.7
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 27
-    volume: 1
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 28
-    volume: 1
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 29
-    volume: 1
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     isLooping: 0
@@ -305,11 +305,31 @@ MonoBehaviour:
     is3D: 1
     maxDistanceToHear: 20
   - sound: 30
-    volume: 1
+    volume: 0.5
     pitch: 1
     playOnAwake: 0
     isLooping: 0
     clip: {fileID: 8300000, guid: f5be3f48176b21041a705051c9079f05, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 31
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 6c835e6706604e64ebe6e4a9a8566735, type: 3}
+    isMusic: 0
+    audioSource: {fileID: 0}
+    is3D: 1
+    maxDistanceToHear: 20
+  - sound: 32
+    volume: 0.7
+    pitch: 1
+    playOnAwake: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: af02bfb583516a347ad9394f546c3ab8, type: 3}
     isMusic: 0
     audioSource: {fileID: 0}
     is3D: 1

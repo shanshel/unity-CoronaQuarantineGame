@@ -69,4 +69,9 @@ public class Weapon : MonoBehaviour
         lastShotTime = Time.time;
     }
 
+    public bool isCanShot()
+    {
+        return (lastShotTime + shotCooldown < Time.time);
+    }
+
 }

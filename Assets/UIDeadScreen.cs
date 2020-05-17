@@ -18,6 +18,10 @@ public class UIDeadScreen : UIOverlay
 
     void UpdateTimer()
     {
+        if (NetworkPlayers._inst == null || NetworkPlayers._inst._localCPlayer == null)
+        {
+            return;
+        }
         var timer = NetworkPlayers._inst._localCPlayer.respawnTimer;
         if (timer < 0) timer = 0;
         timeToRespawnText.text = Mathf.FloorToInt(timer).ToString() + " Sec";

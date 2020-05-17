@@ -49,7 +49,11 @@ public class CustomSceneLoader : MonoBehaviour
         {
             StartCoroutine(loadSceneEnumerator(prevScene));
         }
-       
+        else if (scene == SceneEnum.ResultScene)
+        {
+            StartCoroutine(loadSceneEnumerator(4));
+        }
+
         prevScene = SceneManager.GetActiveScene().buildIndex;
     }
 

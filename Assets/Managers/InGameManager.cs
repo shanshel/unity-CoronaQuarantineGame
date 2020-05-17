@@ -14,9 +14,12 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     public List<AIBotController> aiBots = new List<AIBotController>();
 
     public bool isDev = false;
-    // 0=preparing; 1=playing; 2=finishing; 3=finished
+    // 0=preparing; 1=preparing; 2=playing; 3=finishing; 4=finished
     public int GameStatus = 0;
-    public float GameTimer = 300f;
+    public float GameTimer = 900f;
+    public int InfectionCount;
+    public int QuarantinedCount;
+    int onPlayerReady = 0;
     private void Awake()
     {
       
@@ -41,17 +44,21 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             SoundManager._inst.stopAllMusic();
             NetworkPlayers._inst.setUpRoomInfo();
-            NetworkPlayers._inst.initLocalPlayerInRightTeamBasedOnNetworkList();
+        
         }
         else
         {
             PhotonNetwork.OfflineMode = true;
             NetworkPlayers._inst.setUpRoomInfo_DevVersion();
         }
-
-        
-   
         StartCoroutine(gameLoop());
+        photonView.RPC("playerReady", RpcTarget.MasterClient);
+    }
+
+    [PunRPC]
+    public void playerReady()
+    {
+        onPlayerReady++;
     }
 
 
@@ -63,31 +70,77 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     IEnumerator gameLoop()
     {
 
-        //While Preparing 
-        while(GameStatus == 0)
+        while (PhotonNetwork.PlayerList.Length != onPlayerReady)
         {
-            if(isDev || NetworkPlayers._inst.playerList.Count == PhotonNetwork.PlayerList.Length)
-            {
-                GameStatus = 1;
-                yield return new WaitForSeconds(.1f);
-                NetworkPlayers._inst.changePlayerInfoBasedOnOtherPlayers();
-            }
-            yield return new WaitForSeconds(.1f);
+            yield return null;
         }
+        NetworkPlayers._inst.initLocalPlayerInRightTeamBasedOnNetworkList();
+
+        while (NetworkPlayers._inst.playerList.Count != PhotonNetwork.PlayerList.Length)
+        {
+            yield return null;
+        }
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameStatus = 1;
+        }
+        NetworkPlayers._inst.changePlayerInfoBasedOnOtherPlayers();
+        Tutorial._inst.showTutorial(NetworkPlayers._inst._localCPlayer._thisPlayerTeam);
+        PickupSpawner._inst.startSpawning();
+        yield return new WaitForSeconds(5f);
+        Tutorial._inst.hideTutorial(NetworkPlayers._inst._localCPlayer._thisPlayerTeam);
+        NetworkPlayers._inst.markPlayersReady();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameStatus = 2;
+        }
+       
 
         //While InGame
-        while(GameStatus == 1)
+        while(GameStatus != 3)
         {
             //Master
-            if (PhotonNetwork.IsMasterClient && GameStatus == 1)
+            if (PhotonNetwork.IsMasterClient)
             {
                 if (GameTimer > 0f)
                     GameTimer -= 1f;
+
+
+                int doctorTeamPoints = 0;
+                int patientTeamPoints = 0;
+                foreach (var cP in NetworkPlayers._inst.playerList)
+                {
+                    if (cP.Value._thisPlayerTeam == EnumsData.Team.Doctors)
+                    {
+                        doctorTeamPoints = doctorTeamPoints + cP.Value.killsOnBotCount + cP.Value.killsOnPlayersCount;
+                    }
+                    else
+                    {
+                        patientTeamPoints = patientTeamPoints + cP.Value.killsOnBotCount + cP.Value.killsOnPlayersCount;
+                    }
+                }
+ 
+                InfectionCount = patientTeamPoints;
+                QuarantinedCount = doctorTeamPoints;
             }
 
             //All Clients
             UIInGameCanvas._inst.setTime(GameTimer);
+            UIInGameCanvas._inst.updateInfectionSlider(InfectionCount, QuarantinedCount);
+
+            if (GameTimer <= 0f)
+            {
+                GameStatus = 3;
+            }
             yield return new WaitForSeconds(1f);
+        }
+
+        while(GameStatus == 3)
+        {
+            yield return new WaitForSeconds(2f);
+            MatchStatistic.calcWinner();
+            UIWindow.transTo(EnumsData.WindowEnum.AnyFirstWindow, EnumsData.SceneEnum.ResultScene);
+            yield return new WaitForSeconds(5f);
         }
     }
 
@@ -115,11 +168,18 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             stream.SendNext(this.GameStatus);
             stream.SendNext(this.GameTimer);
+            stream.SendNext(this.QuarantinedCount);
+            stream.SendNext(this.InfectionCount);
+            stream.SendNext(this.onPlayerReady);
+            
         }
         else
         {
             this.GameStatus = (int)stream.ReceiveNext();
             this.GameTimer = (float)stream.ReceiveNext();
+            this.QuarantinedCount = (int)stream.ReceiveNext();
+            this.InfectionCount = (int)stream.ReceiveNext();
+            this.onPlayerReady = (int)stream.ReceiveNext();
         }
     }
 
@@ -157,6 +217,7 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
     public void UpdateBotStatus(int index, bool isAlive)
     {
         photonView.RPC("RPC_UpdateBotStatus", RpcTarget.All, index, isAlive);
+        
     }
     [PunRPC]
     public void RPC_UpdateBotStatus(int index, bool isAlive)
@@ -178,7 +239,6 @@ public class InGameManager : MonoBehaviourPunCallbacks, IPunObservable
                 inflictedCount++;
             }
         }
-        UIInGameCanvas._inst.setInflected(inflictedCount);
     }
 
 

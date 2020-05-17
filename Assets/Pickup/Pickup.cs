@@ -48,7 +48,6 @@ public class Pickup : MonoBehaviour, IPunInstantiateMagicCallback
     private void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
-
     }
 
     private void Start()

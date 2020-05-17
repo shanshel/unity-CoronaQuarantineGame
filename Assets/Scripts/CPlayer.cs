@@ -13,6 +13,8 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     public Rigidbody2D _rb;
     public Animator _animator;
     public PhotonView _photonView;
+
+
     //Editor Options
     public float speed;
     [HideInInspector]
@@ -64,6 +66,16 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     //Head Healthbar 
     public HeadHealthBar healthBar;
+
+    //Attack Cooldown 
+    float canMoveTimer;
+    float spriuseTimer;
+
+    //Statistics
+    public int killsOnPlayersCount, killsOnBotCount, deathCount;
+
+    //
+    bool isMoving;
     protected void Start()
     {
         if (!PhotonNetwork.IsConnected)
@@ -140,11 +152,32 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
 
         whenPlayerSetupFinished();
-        isPlayerReady = true;
+        
     }
 
  
+    public void markPlayerAsReady()
+    {
+        isPlayerReady = true;
+    }
 
+
+    bool stickerCanBeSendNow = true;
+    GameObject stickerObject;
+    public void sendSticker(string prefabName)
+    {
+        stickerCanBeSendNow = false;
+        Vector3 pos = transform.position;
+        pos.y += 3f;
+        stickerObject = PhotonNetwork.Instantiate(Path.Combine("Stickers", prefabName), pos, Quaternion.identity);
+        stickerObject.transform.DOScale(Vector3.zero, .25f).SetDelay(1f).SetAutoKill(true).Play();
+        Invoke("removeSticker", 1.5f);
+    }
+
+    public void removeSticker()
+    {
+        PhotonNetwork.Destroy(stickerObject);
+    }
     
 
     public virtual void whenPlayerSetupFinished()
@@ -193,9 +226,9 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     }
 
-    float timeBetweenSteps = .1f;
+    float timeBetweenSteps = .2f;
     float stepTimer;
-    Vector3 lastPosition;
+
     int stepCircile;
     private void FixedUpdate()
     {
@@ -205,9 +238,16 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
         if (!isPlayerReady) return;
         stepTimer -= Time.fixedDeltaTime;
-        if (Vector3.Distance(transform.position, lastPosition) >= .3f && stepTimer <= 0f)
+        canMoveTimer -= Time.fixedDeltaTime;
+        spriuseTimer -= Time.fixedDeltaTime;
+        if (!isMoving)
         {
-            lastPosition = transform.position;
+            SoundManager._inst.stopSound(SoundEnum.Step1A);
+            SoundManager._inst.stopSound(SoundEnum.Step2A);
+        }
+        else if (isMoving && stepTimer <= 0f)
+        {
+  
             stepTimer = timeBetweenSteps;
             if (stepCircile == 0)
             {
@@ -220,11 +260,15 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             }
             else  if (stepCircile == 2)
             {
-                SoundManager._inst.playSoundOnceAt(SoundEnum.Step1B, transform.position);
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step1A, transform.position);
+
+                //SoundManager._inst.playSoundOnceAt(SoundEnum.Step1B, transform.position);
             }
             else if (stepCircile == 3)
             {
-                SoundManager._inst.playSoundOnceAt(SoundEnum.Step2B, transform.position);
+                //SoundManager._inst.playSoundOnceAt(SoundEnum.Step2B, transform.position);
+                SoundManager._inst.playSoundOnceAt(SoundEnum.Step2A, transform.position);
+
             }
 
             if (stepCircile == 3)
@@ -235,8 +279,6 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
             {
                 stepCircile++;
             }
-          
-
         }
         if (!_photonView.IsMine && !isDevMe) return;
         if (cStatus != playerStatus.alive) return;
@@ -267,8 +309,30 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     private void Attack()
     {
+        if (canMoveTimer > 0f) return;
+        if (!_currentWeaponObject.isCanShot()) return;
+        canMoveTimer = .3f;
         _currentWeaponObject.Shot();
         overwriteableAttack();
+    }
+
+    public void suprise()
+    {
+        if (cStatus == playerStatus.dead) return;
+        if (spriuseTimer > 0f) return;
+        spriuseTimer = 6f;
+        canMoveTimer = .3f;
+        _animator.SetTrigger("Surprised");
+        if (!_photonView.IsMine) return;
+        if (_thisPlayerTeam == Team.Doctors)
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.DoctorHuh, transform.position);
+        } 
+        else
+        {
+            SoundManager._inst.playSoundOnceAt(SoundEnum.PatientHuh, transform.position);
+        }
+
     }
     protected virtual void overwriteableAttack()
     {
@@ -279,6 +343,19 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
     {
         if (_photonView.IsMine || isDevMe)
         {
+            if (canMoveTimer > 0f)
+            {
+                isMoving = false;
+            }
+
+            if (moveAmount.magnitude >= .1f)
+            {
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
+            }
             _rb.MovePosition(_rb.position + moveAmount * Time.fixedDeltaTime);
 
         }
@@ -313,15 +390,25 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         if (stream.IsWriting)
         {
             stream.SendNext(this.currentHealth);
+            stream.SendNext(this.killsOnPlayersCount);
+            stream.SendNext(this.killsOnBotCount);
+            stream.SendNext(this.deathCount);
+            stream.SendNext(this.isMoving);
+            MatchStatistic.updatePlayerStatistic(_photonView.Owner.ActorNumber, killsOnPlayersCount, killsOnBotCount, deathCount);
 
         }
         else
         {
             this.currentHealth = (int)stream.ReceiveNext();
+            this.killsOnPlayersCount = (int)stream.ReceiveNext();
+            this.killsOnBotCount = (int)stream.ReceiveNext();
+            this.deathCount = (int)stream.ReceiveNext();
+            this.isMoving = (bool)stream.ReceiveNext();
             healthBar.setHealth(this.currentHealth, maxHealth);
+            MatchStatistic.updatePlayerStatistic(_photonView.Owner.ActorNumber, killsOnPlayersCount, killsOnBotCount, deathCount);
         }
 
-  
+
     }
 
     /* Health */
@@ -357,6 +444,11 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         healthBar.setHealth(currentHealth, maxHealth);
     }
 
+    public bool isWilldie()
+    {
+        return (currentHealth - 1 == 0);
+    }
+
  
 
     public void takeHealth(int amount)
@@ -378,6 +470,7 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
 
     public void onDeath()
     {
+       
         if (_thisPlayerTeam == Team.Doctors)
         {
             SoundManager._inst.playSoundOnceAt(SoundEnum.DoctorDie, transform.position);
@@ -388,11 +481,15 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         }
 
         if (!_photonView.IsMine) return;
+        _animator.SetBool("Died", true);
+        deathCount++;
         SoundManager._inst.playSoundOnce(SoundEnum.WhileWaitForRespawn);
         cStatus = playerStatus.dead;
         respawnTimer = respawnTime;
         UIOverlay.show(EnumsData.UIOverlay.dead);
         InGameManager._inst.setDeadFollowNexT();
+        UIInGameCanvas._inst.setLocalPlayerStats(killsOnPlayersCount, killsOnBotCount, deathCount);
+
     }
 
     public void onKillSomeone()
@@ -401,18 +498,39 @@ public abstract class CPlayer : MonoBehaviour, IPunObservable
         {
             SoundManager._inst.playSoundOnceAt(SoundEnum.PatientKillDoctor, transform.position);
         }
-      
+        Debug.LogError("on Kill someone Reached");
+
+        if (_photonView.IsMine)
+        {
+            killsOnPlayersCount++;
+            UIInGameCanvas._inst.setLocalPlayerStats(killsOnPlayersCount, killsOnBotCount, deathCount);
+            Debug.LogError("Yes I Killed Someone" + " " + killsOnPlayersCount);
+        }
+    }
+
+  
+
+    public void onKillBot()
+    {
+        if (_photonView.IsMine)
+        {
+            killsOnBotCount++;
+            UIInGameCanvas._inst.setLocalPlayerStats(killsOnPlayersCount, killsOnBotCount, deathCount);
+        }
     }
     void respawn()
     {
         if (!_photonView.IsMine) return;
         SoundManager._inst.stopSound(SoundEnum.WhileWaitForRespawn);
         cStatus = playerStatus.respawining;
+        _animator.SetBool("Died", false);
         Transform point = NetworkPlayers._inst.getSpawnPoint(_thisPlayerTeam);
         currentHealth = maxHealth;
         _rb.simulated = false;
         Vector2 pos = new Vector3(point.position.x, point.position.y, transform.position.z);
-        transform.DOMove(pos, 1f).OnComplete(() => { onRespawnFinished(); }).Play();
+        transform.DOMove(pos, .5f).OnComplete(() => { onRespawnFinished(); }).Play();
+        healthBar.setHealth(this.currentHealth, maxHealth);
+
     }
     void onRespawnFinished()
     {

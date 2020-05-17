@@ -65,14 +65,15 @@ public class NetworkPlayers : MonoBehaviour
         int currentIndex = 0;
         foreach (var p in PhotonNetwork.PlayerList)
         {
+          
 
             if (!p.IsLocal)
             {
                 currentIndex++;
                 continue;
             }
-            int doctorIndex = int.Parse((string)p.CustomProperties["DoctorsIndex"]);
-            int patientIndex = int.Parse((string)p.CustomProperties["PatientIndex"]);
+            //int doctorIndex = int.Parse((string)p.CustomProperties["DoctorsIndex"]);
+            //int patientIndex = int.Parse((string)p.CustomProperties["PatientIndex"]);
 
 
             if (isFirstSetToDoctors)
@@ -122,6 +123,7 @@ public class NetworkPlayers : MonoBehaviour
         foreach (var p in playerList)
         {
             p.Value.changeBasedOnOtherPlayersInfo();
+            MatchStatistic.createPlayerStatistic(p.Value._photonView.Owner.NickName, p.Value._thisPlayerTeam, p.Value._photonView.Owner.ActorNumber);
         }
     }
 
@@ -147,6 +149,14 @@ public class NetworkPlayers : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void markPlayersReady()
+    {
+        foreach (var p in playerList)
+        {
+            p.Value.markPlayerAsReady();
+        }
     }
 
 }

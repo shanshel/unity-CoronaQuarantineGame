@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usedBy: 0
   weaponName: Needle
-  shotCooldown: 1
+  shotCooldown: 0.8
   lifeTime: -1
   bulletCount: -1
   projectile: {fileID: 4286956184114558560, guid: 31f1774c4807e6b41b7bf4912ea09fa7,

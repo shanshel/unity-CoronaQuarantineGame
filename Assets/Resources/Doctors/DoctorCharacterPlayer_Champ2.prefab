@@ -917,6 +917,9 @@ MonoBehaviour:
   playerInventory: {fileID: 0}
   isDevMe: 0
   healthBar: {fileID: 630560356769307508}
+  killsOnPlayersCount: 0
+  killsOnBotCount: 0
+  deathCount: 0
 --- !u!114 &8299218938690850254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,6 +1629,12 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 1
     Name: Surprised
+  - Type: 4
+    SynchronizeType: 1
+    Name: Died
+  - Type: 9
+    SynchronizeType: 1
+    Name: Attack
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0

@@ -16,6 +16,7 @@ public class ProjSneez : Projectile
     {
         if (isLifetimeFinished) return;
         isLifetimeFinished = true;
+        SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.NeedleHit, transform.position);
         SoundManager._inst.playSoundOnceAt(EnumsData.SoundEnum.Gassing, transform.position);
         disappear();
         _rigid.velocity = Vector3.zero;
@@ -45,15 +46,17 @@ public class ProjSneez : Projectile
         CPlayer player = collision.transform.parent.GetComponent<CPlayer>();
         if (player != null)
         {
+            if (player.cStatus == EnumsData.playerStatus.dead) return;
             if (!cPlayersHitted.Contains(player))
             {
                 cPlayersHitted.Add(player);
             }
-            player.takeDamage(damage);
-            if (player.cStatus == EnumsData.playerStatus.dead)
+            if (player.isWilldie())
             {
                 bulletOwner.onKillSomeone();
             }
+            player.takeDamage(damage);
+         
             player.speed = player.speed / 2;
         }
     }
@@ -99,6 +102,13 @@ public class ProjSneez : Projectile
         AIBotController hittedBot = collision.transform.parent.GetComponent<AIBotController>();
         if (hittedBot != null)
         {
+            if (hittedBot.isAlive)
+            {
+                if (NetworkPlayers._inst._localCPlayer._photonView.CreatorActorNr == _photonView.CreatorActorNr)
+                {
+                    NetworkPlayers._inst._localCPlayer.onKillBot();
+                }
+            }
             hittedBot.getInflected();
         }
     }

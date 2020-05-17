@@ -63,11 +63,12 @@ public class ProjPill : Projectile
         CPlayer hittedPlayer = collision.transform.parent.GetComponent<CPlayer>();
         if (hittedPlayer != null)
         {
-            hittedPlayer.takeDamage(damage);
-            if (hittedPlayer.cStatus == EnumsData.playerStatus.dead)
+            if (hittedPlayer.isWilldie())
             {
                 bulletOwner.onKillSomeone();
             }
+            hittedPlayer.takeDamage(damage);
+
         }
     }
  

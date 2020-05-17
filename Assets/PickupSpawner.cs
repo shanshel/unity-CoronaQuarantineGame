@@ -12,7 +12,7 @@ public class PickupSpawner : MonoBehaviourPunCallbacks
     public Pickup[] pickupPrefabs;
     public Transform[] pickupPoints;
     public int maxPickupSpawnedAtTime = 20;
-    public float spawnRefreshTime = 20f;
+    public float spawnRefreshTime = 60f;
     
     public Dictionary<string, Pickup> spawnedPickup = new Dictionary<string, Pickup>();
 
@@ -28,7 +28,9 @@ public class PickupSpawner : MonoBehaviourPunCallbacks
             _instance = this;
         }
     }
-    void Start()
+
+
+    public void startSpawning()
     {
         InvokeRepeating("spawnPickups", 1f, spawnRefreshTime);
     }
@@ -37,18 +39,22 @@ public class PickupSpawner : MonoBehaviourPunCallbacks
     {
 
         if (!PhotonNetwork.IsMasterClient) return;
+
+   
         foreach (var point in pickupPoints)
         {
             if (spawnedPickup.Count >= maxPickupSpawnedAtTime) return;
-            var spawnChance = Random.Range(0, 10);
-            //if (spawnChance < 5) continue;
-
-            var randomPickupIndex = Random.Range(0, pickupPrefabs.Length);
             var pickupKey = point.name.Trim();
             if (spawnedPickup.ContainsKey(pickupKey))
             {
                 continue;
             }
+
+            var spawnChance = Random.Range(0, 10);
+            if (spawnChance < 5) continue;
+
+            var randomPickupIndex = Random.Range(0, pickupPrefabs.Length);
+       
             object[] initData = new object[1] { pickupKey };
 
             var gameObj = PhotonNetwork.Instantiate(

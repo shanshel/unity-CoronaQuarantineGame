@@ -9,7 +9,7 @@ public class FollowLocalPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NetworkPlayers._inst._localCPlayer == null) return;
+        if (NetworkPlayers._inst == null || NetworkPlayers._inst._localCPlayer == null) return;
         var pos = NetworkPlayers._inst._localCPlayer.transform.position;
         if (isFollow2D)
         {

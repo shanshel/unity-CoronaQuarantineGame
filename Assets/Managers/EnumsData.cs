@@ -33,7 +33,8 @@ public class EnumsData
         PatientTakeDamage,
         DoctorDie, 
         PatientDie,
-        Step1A,Step2A, Step1B, Step2B
+        Step1A,Step2A, Step1B, Step2B,
+        DoctorHuh, PatientHuh
 
     }
 
@@ -48,6 +49,7 @@ public class EnumsData
         CreateRoom,
         InRoom, 
         InGame, 
+        ResultWindow,
         AnyFirstWindow,
         None,
 
@@ -64,7 +66,7 @@ public class EnumsData
     }
     public enum SceneEnum
     {
-        MainMenu, Lobby, InGame, Room, None, PrevScene,
+        MainMenu, Lobby, InGame, Room, ResultScene, None, PrevScene, 
     }
 
     public enum popupStatus

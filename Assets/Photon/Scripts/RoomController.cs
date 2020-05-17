@@ -35,6 +35,7 @@ public class RoomController : MonoBehaviourPunCallbacks
         //Equal to On Join Room 
         PhotonNetwork.IsMessageQueueRunning = true;
         UIRoomCanvas._inst.updateRoomInfo(PhotonNetwork.CurrentRoom);
+        MatchStatistic.reset();
     }
 
     private void Update()

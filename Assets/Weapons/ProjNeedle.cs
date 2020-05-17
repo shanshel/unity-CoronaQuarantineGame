@@ -27,11 +27,12 @@ public class ProjNeedle : Projectile
             CPlayer hittedPlayer = collision.transform.GetComponent<CPlayer>();
             if (hittedPlayer != null)
             {
-                hittedPlayer.takeDamage(damage);
-                if (hittedPlayer.cStatus == EnumsData.playerStatus.dead)
+                if (hittedPlayer.isWilldie())
                 {
                     bulletOwner.onKillSomeone();
                 }
+                hittedPlayer.takeDamage(damage);
+         
             }
         }
         disappear();

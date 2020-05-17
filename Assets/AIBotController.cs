@@ -36,6 +36,8 @@ public class AIBotController : MonoBehaviour
     public void getInflected()
     {
         if (!isAlive)return;
+
+       
         InGameManager._inst.UpdateBotStatus(botIndex, false);
     }
  

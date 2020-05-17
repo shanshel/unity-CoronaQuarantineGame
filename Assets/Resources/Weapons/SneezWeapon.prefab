@@ -276,12 +276,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usedBy: 1
   weaponName: Hatshu
-  shotCooldown: 1
+  shotCooldown: 1.4
   lifeTime: -1
   bulletCount: -1
   projectile: {fileID: 5745525049240073909, guid: a77ccfb9c1bdee5479c9f92ce3d1a825,
     type: 3}
   shotPoint: {fileID: 5563665732382209639}
+  VisiablePartContainer: {fileID: 0}
 --- !u!114 &-3868859384765325284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +300,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

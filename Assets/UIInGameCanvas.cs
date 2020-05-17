@@ -10,11 +10,11 @@ public class UIInGameCanvas : MonoBehaviour
     public static UIInGameCanvas _inst { get { return _instance; } }
 
     public Slider uiHealthSlider, uiInflictedSlider;
-    public TextMeshProUGUI TimerText, InflicedText;
-    
-
+    public TextMeshProUGUI TimerText, infectedText, quarantinedText;
+    public GameObject stickerCanvas;
+    public string[] listOfStickers = new string[5];
     Tweener uiHealthIncreaseTween, uiHealthDecreaseTween;
-
+    TextMeshProUGUI killText, deathText, botInteractText;
     private void Awake()
     {
         
@@ -65,9 +65,31 @@ public class UIInGameCanvas : MonoBehaviour
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void setInflected(int inflected)
+    public void updateInfectionSlider(int infectionCount, int quarantinedCount)
     {
-        uiInflictedSlider.value = inflected;
-        InflicedText.text = inflected.ToString() + " Inflicted" ;
+    
+        uiInflictedSlider.maxValue = 50;
+     
+        uiInflictedSlider.value = 25 + infectionCount - quarantinedCount;
+        infectedText.text = infectionCount + " Infected";
+        quarantinedText.text = quarantinedCount + " Quarantined";
+    }
+
+    public void setLocalPlayerStats(int killsOnPlayers, int killsOnBot, int death)
+    {
+        killText.text = killsOnPlayers.ToString();
+        deathText.text = death.ToString();
+        botInteractText.text = killsOnBot.ToString();
+    }
+
+    public void openStickerPanel()
+    {
+        stickerCanvas.SetActive(true);
+    }
+
+    public void onStickerSlotClicked(int index)
+    {
+        NetworkPlayers._inst._localCPlayer.sendSticker(listOfStickers[index]);
+        stickerCanvas.SetActive(false);
     }
 }
