@@ -20,7 +20,8 @@ public class SharedGameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             _instance = this;
             DOTween.defaultAutoPlay = AutoPlay.None;
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = 60;
+            Cursor.visible = false;
         }
     }
 

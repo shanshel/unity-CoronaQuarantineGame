@@ -7349,6 +7349,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGamePlayerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1855468274397509784, guid: 58e51bd761c6b1647806b5352b1eb074,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1690440409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855468274397509784, guid: 58e51bd761c6b1647806b5352b1eb074,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 1855468274397509785, guid: 58e51bd761c6b1647806b5352b1eb074,
         type: 3}
       propertyPath: m_LocalPosition.x
