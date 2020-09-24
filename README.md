@@ -9,3 +9,4 @@ This is a prototype for multiplayer game
 # Gameplay Video (click on image)
 [![alt text](http://i3.ytimg.com/vi/8-hiaRkx8uQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=8-hiaRkx8uQ)
 
+<a href="http://..." target="_blank">external link</a>
